@@ -1,11 +1,10 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/widgets.dart';
-import 'package:multi_split_view/multi_split_view.dart';
 
 class GetStartedExample extends Example {
   @override
-  Widget buildMainWidget(BuildContext context) => MainWidget();
+  Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
 
 class Person {
