@@ -33,11 +33,14 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <span style="color:black">Loading...</span>
+  </div>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    var serviceWorkerVersion = '3104516434';
+    var serviceWorkerVersion = '785720104';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
