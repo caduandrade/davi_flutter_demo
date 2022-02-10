@@ -7,7 +7,7 @@ void main() {
   Size? maxSize;
   // maxSize = const Size(400, 200);
   runApp(DemoFluApp(
-      title: 'EasyTable (0.1.0)',
+      title: 'EasyTable (0.3.0)',
       widgetBackground: Colors.white,
       resizable: true,
       appMenuBuilder: () {

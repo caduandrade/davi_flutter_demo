@@ -22,12 +22,32 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  List<Person>? _rows;
+  EasyTableModel<Person>? _model;
 
   @override
   void initState() {
     super.initState();
-    _rows = [
+
+    _model = EasyTableModel<Person>(rows: [
+      Person('Landon', 19),
+      Person('Sari', 22),
+      Person('Julian', 37),
+      Person('Carey', 39),
+      Person('Cadu', 43),
+      Person('Delmar', 72)
+    ], columns: [
+      EasyTableColumn.valueMapper((row) => row.name, name: 'Name'),
+      EasyTableColumn.valueMapper((row) => row.age, name: 'Age')
+    ]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return EasyTable<Person>(_model);
+  }
+
+  void _withAppender() {
+    List<Person> rows = [
       Person('Landon', 19),
       Person('Sari', 22),
       Person('Julian', 37),
@@ -35,13 +55,10 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', 43),
       Person('Delmar', 72)
     ];
-  }
 
-  @override
-  Widget build(BuildContext context) {
-    return EasyTable<Person>(rows: _rows, columns: [
-      EasyTableColumn.auto((row) => row.name, name: 'Name'),
-      EasyTableColumn.auto((row) => row.age, name: 'Age')
-    ]);
+    _model = EasyTableModel<Person>(rows: rows);
+    _model!.columnAppender()
+      ..valueMapper((row) => row.name, name: 'Name')
+      ..valueMapper((row) => row.age, name: 'Age');
   }
 }
