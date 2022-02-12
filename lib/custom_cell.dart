@@ -36,11 +36,13 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', 5),
       Person('Delmar', 2)
     ];
-    _model = EasyTableModel<Person>(rows: rows);
-    _model!.columnAppender()
-      ..valueMapper((row) => row.name, name: 'Name')
-      ..cellBuilder((context, row) => StarsWidget(stars: row.stars),
-          name: 'Rate', width: 150);
+    _model = EasyTableModel<Person>(rows: rows, columns: [
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(
+          name: 'Rate',
+          width: 150,
+          cellBuilder: (context, row) => StarsWidget(stars: row.stars))
+    ]);
   }
 
   @override

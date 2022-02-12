@@ -2,7 +2,7 @@ import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/widgets.dart';
 
-class GetStartedExample extends Example {
+class RowCallbacksExample extends Example {
   @override
   Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
@@ -43,6 +43,16 @@ class MainWidgetState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model);
+    return EasyTable<Person>(_model,
+        onRowTap: (person) => _onRowTap(context, person),
+        onRowDoubleTap: (person) => _onRowDoubleTap(context, person));
+  }
+
+  _onRowTap(BuildContext context, Person person) {
+    DemoFlu.printOnConsole(context, 'Tap on ${person.name}!');
+  }
+
+  _onRowDoubleTap(BuildContext context, Person person) {
+    DemoFlu.printOnConsole(context, 'Double tap on ${person.name}!');
   }
 }
