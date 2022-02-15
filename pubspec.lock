@@ -63,7 +63,7 @@ packages:
       path: "../easy_table_flutter"
       relative: true
     source: path
-    version: "0.4.0"
+    version: "0.6.0"
   fake_async:
     dependency: transitive
     description:

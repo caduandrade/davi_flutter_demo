@@ -48,11 +48,11 @@ class MainWidgetState extends State<MainWidget> {
         onRowDoubleTap: (person) => _onRowDoubleTap(context, person));
   }
 
-  _onRowTap(BuildContext context, Person person) {
+  void _onRowTap(BuildContext context, Person person) {
     DemoFlu.printOnConsole(context, 'Tap on ${person.name}!');
   }
 
-  _onRowDoubleTap(BuildContext context, Person person) {
+  void _onRowDoubleTap(BuildContext context, Person person) {
     DemoFlu.printOnConsole(context, 'Double tap on ${person.name}!');
   }
 }

@@ -4,11 +4,13 @@ import 'package:easy_table_demo/get_started.dart';
 import 'package:easy_table_demo/row_callbacks.dart';
 import 'package:flutter/material.dart';
 
+import 'null_cell_color.dart';
+
 void main() {
   Size? maxSize;
-  // maxSize = const Size(400, 200);
+  //maxSize = const Size(400, 201);
   runApp(DemoFluApp(
-      title: 'EasyTable (0.5.0)',
+      title: 'EasyTable (0.7.0)',
       widgetBackground: Colors.white,
       resizable: true,
       appMenuBuilder: () {
@@ -31,7 +33,14 @@ void main() {
               codeFile: 'lib/row_callbacks.dart',
               maxSize: maxSize,
               consoleEnabled: true,
-              indentation: 1)
+              indentation: 1),
+          MenuItem(name: 'Null values', indentation: 1),
+          MenuItem(
+              name: 'Cell color',
+              builder: () => NullCellColorExample(),
+              codeFile: 'lib/null_cell_color.dart',
+              maxSize: maxSize,
+              indentation: 2),
         ];
       }));
 }
