@@ -1,7 +1,6 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class NullCellColorExample extends Example {
   @override
@@ -48,6 +47,7 @@ class MainWidgetState extends State<MainWidget> {
     return EasyTableTheme(
         child: EasyTable<Person>(_model),
         data: EasyTableThemeData(
-            nullCellColor: ((rowIndex) => Colors.grey[300])));
+            cell: CellThemeData(
+                nullValueColor: ((rowIndex) => Colors.grey[300]))));
   }
 }
