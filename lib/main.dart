@@ -3,12 +3,13 @@ import 'package:easy_table_demo/columns_fit.dart';
 import 'package:easy_table_demo/custom_cell.dart';
 import 'package:easy_table_demo/get_started.dart';
 import 'package:easy_table_demo/null_cell_color.dart';
+import 'package:easy_table_demo/pinned_column.dart';
 import 'package:easy_table_demo/row_callbacks.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   Size? maxSize;
-  // maxSize = const Size(400, 201);
+   // maxSize = const Size(400, 201);
   runApp(DemoFluApp(
       title: 'EasyTable (0.8.0)',
       widgetBackground: Colors.white,
@@ -47,6 +48,12 @@ void main() {
               codeFile: 'lib/null_cell_color.dart',
               maxSize: maxSize,
               indentation: 2),
+          MenuItem(
+              name: 'Pinned column',
+              builder: () => PinnedColumnExample(),
+              codeFile: 'lib/pinned_column.dart',
+              maxSize: maxSize,
+              indentation: 1)
         ];
       }));
 }
