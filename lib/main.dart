@@ -9,9 +9,9 @@ import 'package:flutter/material.dart';
 
 void main() {
   Size? maxSize;
-   // maxSize = const Size(400, 201);
+  // maxSize = const Size(400, 201);
   runApp(DemoFluApp(
-      title: 'EasyTable (0.8.0)',
+      title: 'EasyTable (1.2.0)',
       widgetBackground: Colors.white,
       resizable: true,
       appMenuBuilder: () {
