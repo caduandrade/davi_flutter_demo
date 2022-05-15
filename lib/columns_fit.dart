@@ -28,14 +28,16 @@ class MainWidgetState extends State<MainWidget> {
   void initState() {
     super.initState();
 
-    _model = EasyTableModel<Person>(rows: [
+    List<Person> rows = [
       Person('Landon', 19),
       Person('Sari', 22),
       Person('Julian', 37),
       Person('Carey', 39),
       Person('Cadu', 43),
       Person('Delmar', 72)
-    ], columns: [
+    ];
+
+    _model = EasyTableModel<Person>(rows: rows, columns: [
       EasyTableColumn(name: 'Name', weight: 5, stringValue: (row) => row.name),
       EasyTableColumn(name: 'Age', weight: 1, intValue: (row) => row.age)
     ]);
