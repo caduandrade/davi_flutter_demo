@@ -7,13 +7,14 @@ import 'package:easy_table_demo/get_started.dart';
 import 'package:easy_table_demo/null_cell_color.dart';
 import 'package:easy_table_demo/pinned_column.dart';
 import 'package:easy_table_demo/row_callbacks.dart';
+import 'package:easy_table_demo/theme_divider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   Size? maxSize;
-  // maxSize = const Size(400, 201);
+//   maxSize = const Size(400, 200);
   runApp(DemoFluApp(
-      title: 'EasyTable (1.3.0)',
+      title: 'EasyTable (1.4.0)',
       widgetBackground: Colors.white,
       resizable: true,
       appMenuBuilder: () {
@@ -55,19 +56,25 @@ void main() {
               maxSize: maxSize,
               consoleEnabled: true,
               indentation: 1),
-          DemoMenuItem(name: 'Null values', indentation: 1),
-          DemoMenuItem(
-              name: 'Cell color',
-              builder: () => NullCellColorExample(),
-              codeFile: 'lib/null_cell_color.dart',
-              maxSize: maxSize,
-              indentation: 2),
           DemoMenuItem(
               name: 'Pinned column',
               builder: () => PinnedColumnExample(),
               codeFile: 'lib/pinned_column.dart',
               maxSize: maxSize,
-              indentation: 1)
+              indentation: 1),
+          DemoMenuItem(name: 'Theme', indentation: 1, italic: true),
+          DemoMenuItem(
+              name: 'Null value color',
+              builder: () => NullCellColorExample(),
+              codeFile: 'lib/null_cell_color.dart',
+              maxSize: maxSize,
+              indentation: 2),
+          DemoMenuItem(
+              name: 'Dividers thickness and color',
+              builder: () => ThemeDividerExample(),
+              codeFile: 'lib/theme_divider.dart',
+              maxSize: maxSize,
+              indentation: 2)
         ];
       }));
 }
