@@ -42,7 +42,7 @@ class MainWidgetState extends State<MainWidget> {
       EasyTableColumn(
           pinned: true,
           width: 30,
-          cellBuilder: (BuildContext context, Person row) {
+          cellBuilder: (BuildContext context, Person row, int visibleRowIndex) {
             return InkWell(
                 child: const Icon(Icons.edit, size: 16),
                 onTap: () => _onEdit(row));

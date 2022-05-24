@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   demoflu: ^0.14.0
-  easy_table: ^1.4.0
+  easy_table: ^1.5.0
     #path: ../easy_table_flutter
 
   # The following adds the Cupertino Icons font to your application.

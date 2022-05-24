@@ -3,14 +3,19 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "main.dart.js": "95081c0d94b6a002d61ae5bf67ff0a6a",
+  "canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
+"canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
+"canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
+"canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
+"flutter.js": "0816e65a103ba8ba51b174eeeeb2cb67",
+"main.dart.js": "fbcb4b05f548715a3e632351ae7dc7bf",
 "version.json": "689f6a91503abb0d9a53455e1e3bb07d",
 "assets/lib/get_started.dart": "0b6c7ae41911e245504c3260ef63a0ae",
-"assets/lib/custom_cell_widget.dart": "860d6290e3651c6c65df36e4c9ba1bf8",
+"assets/lib/custom_cell_widget.dart": "0974b0d2e983597c352079489a3829d9",
 "assets/lib/row_callbacks.dart": "76baaa04c29eb77f0cb09891ba809c5c",
 "assets/lib/null_cell_color.dart": "c0d17cff9af3d0e520e566acd60a1457",
 "assets/lib/columns_fit.dart": "7151224282cccfe4181f9caf84e5f5dc",
-"assets/lib/pinned_column.dart": "be5e1f09d4d465766e1effd5e6c96364",
+"assets/lib/pinned_column.dart": "b021eb020ddd77ea9ce99fe6c5377561",
 "assets/lib/column_style.dart": "77e9c0e10f8953baf2039020218e0bc1",
 "assets/lib/cell_style.dart": "492221ba39243b82cdb57b2d8702dde5",
 "assets/lib/theme_divider.dart": "622304e1abf438d58bf4241f1c1e7e8a",
@@ -28,8 +33,8 @@ const RESOURCES = {
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "manifest.json": "2750c5461e2a6d58fbfe67f67841ff18",
-"index.html": "b300886dddb02b50ebe6a6e4120d1c0d",
-"/": "b300886dddb02b50ebe6a6e4120d1c0d"
+"index.html": "34329a9ce5db22f04545bb88f02a26fa",
+"/": "34329a9ce5db22f04545bb88f02a26fa"
 };
 
 // The application shell files that are downloaded before a service worker can

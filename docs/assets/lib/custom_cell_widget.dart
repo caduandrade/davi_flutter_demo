@@ -41,7 +41,8 @@ class MainWidgetState extends State<MainWidget> {
       EasyTableColumn(
           name: 'Rate',
           width: 150,
-          cellBuilder: (context, row) => StarsWidget(stars: row.stars))
+          cellBuilder: (context, row, visibleRowIndex) =>
+              StarsWidget(stars: row.stars))
     ]);
   }
 
