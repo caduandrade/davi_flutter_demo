@@ -3,16 +3,17 @@ import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class HorizontalScrollbarWhenNeededExample extends Example {
+class MultiSortExample extends Example {
   @override
   Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
 
 class Person {
-  Person(this.name, this.age);
+  Person(this.name, this.age, this.weight);
 
   final String name;
   final int age;
+  final double weight;
 }
 
 class MainWidget extends StatefulWidget {
@@ -29,25 +30,23 @@ class MainWidgetState extends State<MainWidget> {
   void initState() {
     super.initState();
     List<Person> rows = [
-      Person('Landon', 19),
-      Person('Sari', 22),
-      Person('Julian', 37),
-      Person('Carey', 39),
-      Person('Cadu', 43),
-      Person('Delmar', 72)
+      Person('Carolyn', 22, 17),
+      Person('Cornell', 22, 20.1),
+      Person('Christine', 37, 18.6),
+      Person('Carey', 37, 23),
+      Person('Cadu', 43, 27.2),
+      Person('Catherine', 43, 25.3)
     ];
     _model = EasyTableModel<Person>(rows: rows, columns: [
       EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', width: 120, intValue: (row) => row.age)
+      EasyTableColumn(name: 'Age', width: 120, intValue: (row) => row.age),
+      EasyTableColumn(
+          name: 'Weight', width: 120, doubleValue: (row) => row.weight)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTableTheme(
-        child: EasyTable<Person>(_model),
-        data: const EasyTableThemeData(
-            scrollbar:
-                TableScrollbarThemeData(horizontalOnlyWhenNeeded: true)));
+    return EasyTable(_model, multiSortEnabled: true);
   }
 }

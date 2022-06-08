@@ -6,6 +6,7 @@ import 'package:easy_table_demo/custom_cell_widget.dart';
 import 'package:easy_table_demo/get_started.dart';
 import 'package:easy_table_demo/horizontal_scrollbar_when_needed.dart';
 import 'package:easy_table_demo/infinite_scroll.dart';
+import 'package:easy_table_demo/multi_sort.dart';
 import 'package:easy_table_demo/null_cell_color.dart';
 import 'package:easy_table_demo/pinned_column.dart';
 import 'package:easy_table_demo/row_callbacks.dart';
@@ -16,7 +17,7 @@ void main() {
   Size? maxSize;
   // maxSize = const Size(400, 200);
   runApp(DemoFluApp(
-      title: 'EasyTable (1.5.1)',
+      title: 'EasyTable (1.6.0)',
       widgetBackground: Colors.white,
       resizable: true,
       appMenuBuilder: () {
@@ -31,6 +32,12 @@ void main() {
               name: 'Columns fit',
               builder: () => ColumnsFitExample(),
               codeFile: 'lib/columns_fit.dart',
+              maxSize: maxSize,
+              indentation: 1),
+          DemoMenuItem(
+              name: 'Multi sort',
+              builder: () => MultiSortExample(),
+              codeFile: 'lib/multi_sort.dart',
               maxSize: maxSize,
               indentation: 1),
           DemoMenuItem(
