@@ -1,19 +1,18 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class MultiSortExample extends Example {
+class RowHoverForegroundExample extends Example {
   @override
   Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
 
 class Person {
-  Person(this.name, this.age, this.weight);
+  Person(this.name, this.age, this.color);
 
   final String name;
   final int age;
-  final double weight;
+  final Color color;
 }
 
 class MainWidget extends StatefulWidget {
@@ -29,24 +28,30 @@ class MainWidgetState extends State<MainWidget> {
   @override
   void initState() {
     super.initState();
+
     List<Person> rows = [
-      Person('Carolyn', 22, 17),
-      Person('Cornell', 22, 20.1),
-      Person('Christine', 37, 18.6),
-      Person('Carey', 37, 23),
-      Person('Cadu', 43, 27.2),
-      Person('Catherine', 43, 25.3)
+      Person('Landon', 19, Colors.yellow[200]!),
+      Person('Sari', 22, Colors.yellow[200]!),
+      Person('Julian', 37, Colors.blue[200]!),
+      Person('Carey', 39, Colors.green[200]!),
+      Person('Cadu', 43, Colors.green[200]!),
+      Person('Delmar', 72, Colors.green[200]!)
     ];
+
     _model = EasyTableModel<Person>(rows: rows, columns: [
       EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
       EasyTableColumn(name: 'Age', intValue: (row) => row.age),
       EasyTableColumn(
-          name: 'Weight', width: 120, doubleValue: (row) => row.weight)
+          name: 'Color', width: 66, cellBackground: (data) => data.row.color)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable(_model, multiSortEnabled: true);
+    return EasyTableTheme(
+        data: EasyTableThemeData(
+            row: RowThemeData(
+                hoverForeground: (rowIndex) => Colors.blue.withOpacity(.2))),
+        child: EasyTable<Person>(_model));
   }
 }

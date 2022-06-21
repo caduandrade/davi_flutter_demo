@@ -1,7 +1,8 @@
+import 'dart:math';
+
 import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class InfiniteScrollExample extends Example {
   @override
@@ -15,44 +16,51 @@ class MainWidget extends StatefulWidget {
   State<StatefulWidget> createState() => MainWidgetState();
 }
 
+class Value {
+  factory Value(int index) {
+    Random random = Random();
+    return Value._(index, random.nextInt(99999).toRadixString(16),
+        random.nextInt(99999).toRadixString(16));
+  }
+  Value._(this.index, this.random1, this.random2);
+
+  final int index;
+  final String random1;
+  final String random2;
+}
+
 class MainWidgetState extends State<MainWidget> {
-  final UniqueKey _tableKey = UniqueKey();
-  EasyTableModel<String>? _model;
+  EasyTableModel<Value>? _model;
   bool _loading = false;
 
   @override
   void initState() {
     super.initState();
-    List<String> rows = List.generate(30, (index) => 'value $index');
-    _model = EasyTableModel<String>(
-        rows: rows,
-        columns: [EasyTableColumn(name: 'Value', stringValue: (row) => row)]);
+    List<Value> rows = List.generate(30, (index) => Value(index));
+    _model = EasyTableModel<Value>(rows: rows, columns: [
+      EasyTableColumn(name: 'Index', intValue: (row) => row.index),
+      EasyTableColumn(name: 'Random 1', stringValue: (row) => row.random1),
+      EasyTableColumn(name: 'Random 2', stringValue: (row) => row.random2)
+    ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    EasyTable table = EasyTable<String>(_model,
-        key: _tableKey, onLastVisibleRowListener: _onLastVisibleRowListener);
-
-    List<Widget> children = [Positioned.fill(key: _tableKey, child: table)];
-
-    if (_loading) {
-      children.add(const Positioned(
-          child: LoadingWidget(), left: 0, right: 0, bottom: 0));
-    }
-    return Stack(children: children);
+    return EasyTable<Value>(_model,
+        lastRowWidget: const LoadingWidget(),
+        onLastRowWidget: _onLastRowWidget);
   }
 
-  void _onLastVisibleRowListener(int lastVisibleRowIndex) {
-    if (!_loading && lastVisibleRowIndex == _model!.visibleRowsLength - 1) {
+  void _onLastRowWidget(bool visible) {
+    if (visible && !_loading) {
       setState(() {
         _loading = true;
       });
       Future.delayed(const Duration(seconds: 2), () {
         setState(() {
           _loading = false;
-          List<String> newValues = List.generate(
-              30, (index) => 'value ${_model!.visibleRowsLength + index}');
+          List<Value> newValues =
+              List.generate(15, (index) => Value(_model!.rowsLength + index));
           _model!.addRows(newValues);
         });
       });
@@ -65,11 +73,12 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: const Text('Loading...',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontStyle: FontStyle.italic, color: Colors.white)),
-        padding: const EdgeInsets.all(8),
-        color: Colors.grey.withAlpha(240));
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
+      SizedBox(width: 16, height: 16, child: CircularProgressIndicator()),
+      SizedBox(width: 8),
+      Text('Loading...',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontStyle: FontStyle.italic))
+    ]);
   }
 }

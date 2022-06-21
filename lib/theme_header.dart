@@ -2,7 +2,7 @@ import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
 
-class ThemeDividerExample extends Example {
+class ThemeHeaderExample extends Example {
   @override
   Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
@@ -38,15 +38,13 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
       EasyTableColumn(
-          name: 'Age',
-          width: 120,
-          intValue: (row) => row.age,
-          headerTextStyle: TextStyle(color: Colors.blue[900]!),
-          headerAlignment: Alignment.center,
-          cellAlignment: Alignment.center,
-          cellTextStyle: TextStyle(color: Colors.blue[700]!))
+          name: '',
+          pinStatus: PinStatus.left,
+          width: 30,
+          cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
@@ -54,10 +52,16 @@ class MainWidgetState extends State<MainWidget> {
   Widget build(BuildContext context) {
     return EasyTableTheme(
         child: EasyTable<Person>(_model),
-        data: const EasyTableThemeData(
-            columnDividerThickness: 2,
-            columnDividerColor: Colors.blue,
-            row:
-                RowThemeData(dividerThickness: 2, dividerColor: Colors.green)));
+        data: EasyTableThemeData(
+            header: const HeaderThemeData(
+                bottomBorderHeight: 4, bottomBorderColor: Colors.blue),
+            headerCell: HeaderCellThemeData(
+                height: 40,
+                alignment: Alignment.center,
+                textStyle: const TextStyle(fontStyle: FontStyle.italic),
+                resizeAreaWidth: 10,
+                resizeAreaHoverColor: Colors.blue.withOpacity(.5),
+                sortIconColor: Colors.green,
+                expandableName: false)));
   }
 }

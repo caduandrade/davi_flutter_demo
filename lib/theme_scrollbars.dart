@@ -2,7 +2,7 @@ import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
 
-class CellStyleExample extends Example {
+class ThemeScrollbarsExample extends Example {
   @override
   Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
@@ -38,21 +38,30 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
       EasyTableColumn(
-          name: 'Age',
-          intValue: (row) => row.age,
-          cellStyleBuilder: (data) => data.row.age >= 30 && data.row.age < 40
-              ? CellStyle(
-                  background: Colors.blue[800],
-                  alignment: Alignment.center,
-                  textStyle: const TextStyle(color: Colors.white))
-              : null)
+          name: '',
+          pinStatus: PinStatus.left,
+          width: 30,
+          cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model);
+    return EasyTableTheme(
+        child: EasyTable<Person>(_model),
+        data: const EasyTableThemeData(
+            scrollbar: TableScrollbarThemeData(
+                thickness: 16,
+                thumbColor: Colors.black,
+                pinnedHorizontalColor: Colors.yellow,
+                unpinnedHorizontalColor: Colors.green,
+                verticalColor: Colors.blue,
+                borderThickness: 8,
+                pinnedHorizontalBorderColor: Colors.orange,
+                unpinnedHorizontalBorderColor: Colors.purple,
+                verticalBorderColor: Colors.pink)));
   }
 }

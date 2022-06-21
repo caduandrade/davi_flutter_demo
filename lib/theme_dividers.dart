@@ -1,9 +1,8 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class HorizontalScrollbarWhenNeededExample extends Example {
+class ThemeDividerExample extends Example {
   @override
   Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
@@ -28,6 +27,7 @@ class MainWidgetState extends State<MainWidget> {
   @override
   void initState() {
     super.initState();
+
     List<Person> rows = [
       Person('Landon', 19),
       Person('Sari', 22),
@@ -36,9 +36,15 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', 43),
       Person('Delmar', 72)
     ];
+
     _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', width: 120, intValue: (row) => row.age)
+      EasyTableColumn(
+          name: '',
+          pinStatus: PinStatus.left,
+          width: 30,
+          cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
@@ -47,7 +53,11 @@ class MainWidgetState extends State<MainWidget> {
     return EasyTableTheme(
         child: EasyTable<Person>(_model),
         data: const EasyTableThemeData(
+            columnDividerThickness: 4,
+            columnDividerColor: Colors.blue,
+            header: HeaderThemeData(columnDividerColor: Colors.purple),
+            row: RowThemeData(dividerThickness: 4, dividerColor: Colors.green),
             scrollbar:
-                TableScrollbarThemeData(horizontalOnlyWhenNeeded: true)));
+                TableScrollbarThemeData(columnDividerColor: Colors.orange)));
   }
 }

@@ -3,7 +3,7 @@ import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class PinnedColumnExample extends Example {
+class ScrollbarAlwaysVisibleExample extends Example {
   @override
   Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
@@ -28,8 +28,7 @@ class MainWidgetState extends State<MainWidget> {
   @override
   void initState() {
     super.initState();
-
-    List<Person> persons = [
+    List<Person> rows = [
       Person('Landon', 19),
       Person('Sari', 22),
       Person('Julian', 37),
@@ -37,25 +36,19 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', 43),
       Person('Delmar', 72)
     ];
-
-    _model = EasyTableModel(rows: persons, columns: [
-      EasyTableColumn(
-          pinStatus: PinStatus.left,
-          width: 30,
-          cellBuilder: (BuildContext context, RowData<Person> data) {
-            return InkWell(
-                child: const Icon(Icons.edit, size: 16),
-                onTap: () => _onEdit(data.row));
-          }),
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', width: 120, intValue: (row) => row.age)
+    _model = EasyTableModel<Person>(rows: rows, columns: [
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model);
+    return EasyTableTheme(
+        data: const EasyTableThemeData(
+            scrollbar: TableScrollbarThemeData(
+                horizontalOnlyWhenNeeded: false,
+                verticalOnlyWhenNeeded: false)),
+        child: EasyTable<Person>(_model));
   }
-
-  void _onEdit(Person person) {}
 }

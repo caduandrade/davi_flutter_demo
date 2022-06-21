@@ -41,8 +41,7 @@ class MainWidgetState extends State<MainWidget> {
       EasyTableColumn(
           name: 'Rate',
           width: 150,
-          cellBuilder: (context, row, visibleRowIndex) =>
-              StarsWidget(stars: row.stars))
+          cellBuilder: (context, data) => StarsWidget(stars: data.row.stars))
     ]);
   }
 
@@ -60,7 +59,9 @@ class StarsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> children = List.generate(
-        stars, (index) => const Icon(Icons.star, color: Colors.orange));
+        stars,
+        (index) =>
+            const Flexible(child: Icon(Icons.star, color: Colors.orange)));
     return Row(children: children);
   }
 }

@@ -36,8 +36,8 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', 43),
       Person('Delmar', 72)
     ], columns: [
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', width: 120, intValue: (row) => row.age)
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
