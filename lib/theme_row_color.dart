@@ -2,9 +2,9 @@ import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/material.dart';
 
-class RowColorExample extends Example {
+class ThemeRowColorExample extends Example {
   @override
-  Widget buildMainWidget(BuildContext context) => const ExampleWidget();
+  Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
 
 class Person {
@@ -14,14 +14,14 @@ class Person {
   final int age;
 }
 
-class ExampleWidget extends StatefulWidget {
-  const ExampleWidget({Key? key}) : super(key: key);
+class MainWidget extends StatefulWidget {
+  const MainWidget({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => ExampleWidgetState();
+  State<StatefulWidget> createState() => MainWidgetState();
 }
 
-class ExampleWidgetState extends State<ExampleWidget> {
+class MainWidgetState extends State<MainWidget> {
   EasyTableModel<Person>? _model;
 
   @override
@@ -45,15 +45,9 @@ class ExampleWidgetState extends State<ExampleWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model, rowColor: _rowColor);
-  }
-
-  Color? _rowColor(RowData<Person> data) {
-    if (data.row.age < 20) {
-      return Colors.green[50]!;
-    } else if (data.row.age > 30 && data.row.age < 50) {
-      return Colors.orange[50]!;
-    }
-    return null;
+    return EasyTableTheme(
+        data: EasyTableThemeData(
+            row: RowThemeData(color: (rowIndex) => Colors.green[50])),
+        child: EasyTable<Person>(_model));
   }
 }

@@ -5,6 +5,7 @@ import 'package:easy_table_demo/columns_fit.dart';
 import 'package:easy_table_demo/custom_cell_widget.dart';
 import 'package:easy_table_demo/get_started.dart';
 import 'package:easy_table_demo/row_color.dart';
+import 'package:easy_table_demo/theme_row_color.dart';
 import 'package:easy_table_demo/row_fill_height.dart';
 import 'package:easy_table_demo/row_hover_background.dart';
 import 'package:easy_table_demo/row_hover_foreground.dart';
@@ -37,43 +38,38 @@ void main() {
               codeFile: 'lib/get_started.dart',
               maxSize: maxSize,
               indentation: 1),
+          DemoMenuItem(name: 'Column', indentation: 1, italic: true),
           DemoMenuItem(
               name: 'Columns fit',
               builder: () => ColumnsFitExample(),
               codeFile: 'lib/columns_fit.dart',
               maxSize: maxSize,
-              indentation: 1),
+              indentation: 2),
           DemoMenuItem(
               name: 'Multiple sort',
               builder: () => MultiSortExample(),
               codeFile: 'lib/multi_sort.dart',
               maxSize: maxSize,
-              indentation: 1),
+              indentation: 2),
           DemoMenuItem(
               name: 'Column style',
               builder: () => ColumnStyleExample(),
               codeFile: 'lib/custom_cell_widget.dart',
               maxSize: maxSize,
-              indentation: 1),
-          DemoMenuItem(
-              name: 'Cell style',
-              builder: () => CellStyleExample(),
-              codeFile: 'lib/cell_style.dart',
-              maxSize: maxSize,
-              indentation: 1),
-          DemoMenuItem(
-              name: 'Custom cell widget',
-              builder: () => CustomCellWidgetExample(),
-              codeFile: 'lib/custom_cell_widget.dart',
-              maxSize: maxSize,
-              indentation: 1),
+              indentation: 2),
           DemoMenuItem(
               name: 'Pinned column',
               builder: () => PinnedColumnExample(),
               codeFile: 'lib/pinned_column.dart',
               maxSize: maxSize,
-              indentation: 1),
+              indentation: 2),
           DemoMenuItem(name: 'Row', indentation: 1, italic: true),
+          DemoMenuItem(
+              name: 'Row color',
+              builder: () => RowColorExample(),
+              codeFile: 'lib/row_color.dart',
+              maxSize: maxSize,
+              indentation: 2),
           DemoMenuItem(
               name: 'Row callbacks',
               builder: () => RowCallbacksExample(),
@@ -92,6 +88,19 @@ void main() {
               name: 'Infinite scroll',
               builder: () => InfiniteScrollExample(),
               codeFile: 'lib/infinite_scroll.dart',
+              maxSize: maxSize,
+              indentation: 2),
+          DemoMenuItem(name: 'Cell', indentation: 1, italic: true),
+          DemoMenuItem(
+              name: 'Cell style',
+              builder: () => CellStyleExample(),
+              codeFile: 'lib/cell_style.dart',
+              maxSize: maxSize,
+              indentation: 2),
+          DemoMenuItem(
+              name: 'Custom cell widget',
+              builder: () => CustomCellWidgetExample(),
+              codeFile: 'lib/custom_cell_widget.dart',
               maxSize: maxSize,
               indentation: 2),
           DemoMenuItem(name: 'Theme', indentation: 1, italic: true),
@@ -116,8 +125,8 @@ void main() {
           DemoMenuItem(name: 'Row', indentation: 2, italic: true),
           DemoMenuItem(
               name: 'Row color',
-              builder: () => RowColorExample(),
-              codeFile: 'lib/row_color.dart',
+              builder: () => ThemeRowColorExample(),
+              codeFile: 'lib/theme_row_color.dart',
               maxSize: maxSize,
               indentation: 3),
           DemoMenuItem(
