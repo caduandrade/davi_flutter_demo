@@ -36,7 +36,7 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', null),
       Person('Delmar', '+22 222-222-222')
     ], columns: [
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
       EasyTableColumn(
           name: 'Mobile', width: 150, stringValue: (row) => row.mobile)
     ]);
@@ -48,6 +48,6 @@ class MainWidgetState extends State<MainWidget> {
         child: EasyTable<Person>(_model),
         data: EasyTableThemeData(
             cell: CellThemeData(
-                nullValueColor: ((rowIndex) => Colors.grey[300]))));
+                nullValueColor: ((rowIndex, hovered) => Colors.grey[300]))));
   }
 }

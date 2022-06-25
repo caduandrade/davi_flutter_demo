@@ -47,8 +47,8 @@ class MainWidgetState extends State<MainWidget> {
                 child: const Icon(Icons.edit, size: 16),
                 onTap: () => _onEdit(data.row));
           }),
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', width: 120, intValue: (row) => row.age)
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 

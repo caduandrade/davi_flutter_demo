@@ -38,14 +38,14 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
       EasyTableColumn(
           name: 'Age',
-          width: 120,
           intValue: (row) => row.age,
-          cellStyleBuilder: (row) => row.age >= 30 && row.age < 40
+          cellStyleBuilder: (data) => data.row.age >= 30 && data.row.age < 40
               ? CellStyle(
                   background: Colors.blue[800],
+                  alignment: Alignment.center,
                   textStyle: const TextStyle(color: Colors.white))
               : null)
     ]);

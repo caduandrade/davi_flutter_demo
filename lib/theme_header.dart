@@ -39,7 +39,6 @@ class MainWidgetState extends State<MainWidget> {
 
     _model = EasyTableModel<Person>(rows: rows, columns: [
       EasyTableColumn(
-          name: '',
           pinStatus: PinStatus.left,
           width: 30,
           cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
@@ -53,12 +52,17 @@ class MainWidgetState extends State<MainWidget> {
     return EasyTableTheme(
         child: EasyTable<Person>(_model),
         data: EasyTableThemeData(
-            header: const HeaderThemeData(
-                bottomBorderHeight: 4, bottomBorderColor: Colors.blue),
+            header: HeaderThemeData(
+                color: Colors.green[50],
+                bottomBorderHeight: 4,
+                bottomBorderColor: Colors.blue),
             headerCell: HeaderCellThemeData(
                 height: 40,
                 alignment: Alignment.center,
-                textStyle: const TextStyle(fontStyle: FontStyle.italic),
+                textStyle: const TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue),
                 resizeAreaWidth: 10,
                 resizeAreaHoverColor: Colors.blue.withOpacity(.5),
                 sortIconColor: Colors.green,

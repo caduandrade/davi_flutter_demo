@@ -67,9 +67,9 @@ packages:
   easy_table:
     dependency: "direct main"
     description:
-      path: "../easy_table_flutter"
-      relative: true
-    source: path
+      name: easy_table
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "2.0.0"
   fake_async:
     dependency: transitive

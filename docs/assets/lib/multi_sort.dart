@@ -38,8 +38,8 @@ class MainWidgetState extends State<MainWidget> {
       Person('Catherine', 43, 25.3)
     ];
     _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', width: 120, intValue: (row) => row.age),
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age),
       EasyTableColumn(
           name: 'Weight', width: 120, doubleValue: (row) => row.weight)
     ]);
@@ -47,6 +47,6 @@ class MainWidgetState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable(_model, multiSortEnabled: true);
+    return EasyTable(_model, multiSort: true);
   }
 }

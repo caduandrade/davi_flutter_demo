@@ -47,6 +47,6 @@ class MainWidgetState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable(_model, multiSortEnabled: true);
+    return EasyTable(_model, multiSort: true);
   }
 }

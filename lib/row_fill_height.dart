@@ -30,11 +30,8 @@ class MainWidgetState extends State<MainWidget> {
 
     List<Person> rows = [
       Person('Landon', 19),
-      Person('Sari', 22),
-      Person('Julian', 37),
       Person('Carey', 39),
-      Person('Cadu', 43),
-      Person('Delmar', 72)
+      Person('Cadu', 43)
     ];
 
     _model = EasyTableModel<Person>(rows: rows, columns: [

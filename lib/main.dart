@@ -1,4 +1,5 @@
 import 'package:demoflu/demoflu.dart';
+import 'package:easy_table_demo/all_row_colors.dart';
 import 'package:easy_table_demo/cell_style.dart';
 import 'package:easy_table_demo/column_style.dart';
 import 'package:easy_table_demo/columns_fit.dart';
@@ -25,7 +26,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   Size? maxSize;
-  // maxSize = const Size(400, 200);
+  // maxSize = const Size(401, 191);
   runApp(DemoFluApp(
       title: 'EasyTable (2.0.0)',
       widgetBackground: Colors.white,
@@ -171,7 +172,15 @@ void main() {
               builder: () => NullCellColorExample(),
               codeFile: 'lib/null_cell_color.dart',
               maxSize: maxSize,
-              indentation: 3)
+              indentation: 3),
+          DemoMenuItem(
+              name: 'Combining settings', indentation: 1, italic: true),
+          DemoMenuItem(
+              name: 'Row colors',
+              builder: () => AllRowColorsExample(),
+              codeFile: 'lib/all_row_colors.dart',
+              maxSize: maxSize,
+              indentation: 2)
         ];
       }));
 }

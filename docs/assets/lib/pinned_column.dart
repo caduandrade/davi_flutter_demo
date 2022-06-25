@@ -40,15 +40,15 @@ class MainWidgetState extends State<MainWidget> {
 
     _model = EasyTableModel(rows: persons, columns: [
       EasyTableColumn(
-          pinned: true,
+          pinStatus: PinStatus.left,
           width: 30,
-          cellBuilder: (BuildContext context, Person row, int visibleRowIndex) {
+          cellBuilder: (BuildContext context, RowData<Person> data) {
             return InkWell(
                 child: const Icon(Icons.edit, size: 16),
-                onTap: () => _onEdit(row));
+                onTap: () => _onEdit(data.row));
           }),
-      EasyTableColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', width: 120, intValue: (row) => row.age)
+      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
