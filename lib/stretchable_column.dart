@@ -2,7 +2,7 @@ import 'package:demoflu/demoflu.dart';
 import 'package:easy_table/easy_table.dart';
 import 'package:flutter/widgets.dart';
 
-class ColumnsFitExample extends Example {
+class StretchableColumnExample extends Example {
   @override
   Widget buildMainWidget(BuildContext context) => const MainWidget();
 }
@@ -38,13 +38,13 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', grow: 5, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', grow: 1, intValue: (row) => row.age)
+      EasyTableColumn(name: 'Name', grow: 1, stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model, columnWidthBehavior: ColumnWidthBehavior.fit);
+    return EasyTable<Person>(_model);
   }
 }

@@ -38,13 +38,14 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', weight: 5, stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', weight: 1, intValue: (row) => row.age)
+      EasyTableColumn(name: 'Name', grow: 2, stringValue: (row) => row.name),
+      EasyTableColumn(name: 'Age', grow: 1, intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model, columnsFit: true);
+    return EasyTable<Person>(_model,
+        columnWidthBehavior: ColumnWidthBehavior.fit);
   }
 }
