@@ -8,16 +8,17 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
 "canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
-"main.dart.js": "b63487bb73de848738cf1f15353302ff",
-"version.json": "4f20b557be268279bdee513190dc2b3c",
+"main.dart.js": "7153ec1c1c7b3fa8b29702528a1a942e",
+"version.json": "61e2c25ad9643078ee29bc0a3944b2c6",
 "assets/lib/get_started.dart": "2f5940326b3e9258aa533764864d518b",
-"assets/lib/custom_cell_widget.dart": "0172ce04822bd9a4dc8db526ba076e53",
 "assets/lib/row_callbacks.dart": "76baaa04c29eb77f0cb09891ba809c5c",
+"assets/lib/custom_cell_widget.dart": "0172ce04822bd9a4dc8db526ba076e53",
 "assets/lib/row_color.dart": "2811befe30a7eb311bf598fdc99a0cfb",
 "assets/lib/null_cell_color.dart": "66f612fefd6a335fb95d5910721eabc6",
 "assets/lib/multi_sort.dart": "bfe9d643edacc1834e303aa862128a35",
-"assets/lib/columns_fit.dart": "7151224282cccfe4181f9caf84e5f5dc",
+"assets/lib/columns_fit.dart": "e08696ee2e2cf33d733840fa468e4c1b",
 "assets/lib/pinned_column.dart": "240ccfd3e2e553868d964dc8a1e5878d",
+"assets/lib/stretchable_column.dart": "b3fa04edce5c52812f8a8f791d3d1e31",
 "assets/lib/column_style.dart": "8465921fbdaac97cc9f721dc44b71834",
 "assets/lib/row_fill_height.dart": "3b671be49c58c5412735ce53f9794955",
 "assets/lib/cell_style.dart": "49f9a88af3f3479ae764ca2bd996b611",
@@ -37,7 +38,7 @@ const RESOURCES = {
 "assets/packages/flex_color_picker/assets/opacity.png": "49c4f3bcb1b25364bb4c255edcaaf5b2",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "assets/shaders/ink_sparkle.frag": "997815677e6351a3bb18f3c6da702e4c",
-"assets/AssetManifest.json": "81a8b8d22b0d7a6f0cc40d138ff073a3",
+"assets/AssetManifest.json": "6b85ff463f5ffb8906534d59a29701d9",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/NOTICES": "3b75e99af84b22211d6b5108ccd383e9",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
@@ -46,8 +47,8 @@ const RESOURCES = {
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "2750c5461e2a6d58fbfe67f67841ff18",
-"index.html": "738f846b6cdad183678733ce6739ac53",
-"/": "738f846b6cdad183678733ce6739ac53"
+"index.html": "4a0799370e4247e2284c2e828cb7ffac",
+"/": "4a0799370e4247e2284c2e828cb7ffac"
 };
 
 // The application shell files that are downloaded before a service worker can
