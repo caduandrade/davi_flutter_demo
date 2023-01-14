@@ -11,6 +11,7 @@ import 'package:easy_table_demo/null_cell_color.dart';
 import 'package:easy_table_demo/pinned_column.dart';
 import 'package:easy_table_demo/row_callbacks.dart';
 import 'package:easy_table_demo/row_color.dart';
+import 'package:easy_table_demo/row_cursor.dart';
 import 'package:easy_table_demo/row_fill_height.dart';
 import 'package:easy_table_demo/row_hover_background.dart';
 import 'package:easy_table_demo/row_hover_foreground.dart';
@@ -76,6 +77,12 @@ void main() {
               name: 'Row color',
               builder: () => RowColorExample(),
               codeFile: 'lib/row_color.dart',
+              maxSize: maxSize,
+              indentation: 2),
+          DemoMenuItem(
+              name: 'Row cursor',
+              builder: () => RowCursorExample(),
+              codeFile: 'lib/row_cursor.dart',
               maxSize: maxSize,
               indentation: 2),
           DemoMenuItem(
