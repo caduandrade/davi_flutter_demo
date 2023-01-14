@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:demoflu/demoflu.dart';
-import 'package:easy_table/easy_table.dart';
+import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
 class InfiniteScrollExample extends Example {

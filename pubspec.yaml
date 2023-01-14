@@ -1,5 +1,5 @@
-name: easy_table_demo
-description: A new Flutter project.
+name: davi_demo
+description: Davi Demo
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 2.4.0
+version: 2.6.0
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   demoflu: ^0.16.0
-  easy_table: ^2.4.0
+  davi: ^2.6.0
     #path: ../easy_table_flutter
 
   # The following adds the Cupertino Icons font to your application.

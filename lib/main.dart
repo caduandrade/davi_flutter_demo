@@ -1,37 +1,37 @@
 import 'package:demoflu/demoflu.dart';
-import 'package:easy_table_demo/all_row_colors.dart';
-import 'package:easy_table_demo/cell_edit.dart';
-import 'package:easy_table_demo/cell_style.dart';
-import 'package:easy_table_demo/column_style.dart';
-import 'package:easy_table_demo/columns_fit.dart';
-import 'package:easy_table_demo/custom_cell_widget.dart';
-import 'package:easy_table_demo/get_started.dart';
-import 'package:easy_table_demo/infinite_scroll.dart';
-import 'package:easy_table_demo/multi_sort.dart';
-import 'package:easy_table_demo/null_cell_color.dart';
-import 'package:easy_table_demo/pinned_column.dart';
-import 'package:easy_table_demo/row_callbacks.dart';
-import 'package:easy_table_demo/row_color.dart';
-import 'package:easy_table_demo/row_cursor.dart';
-import 'package:easy_table_demo/row_fill_height.dart';
-import 'package:easy_table_demo/row_hover_background.dart';
-import 'package:easy_table_demo/row_hover_foreground.dart';
-import 'package:easy_table_demo/row_hover_listener.dart';
-import 'package:easy_table_demo/row_zebra_color.dart';
-import 'package:easy_table_demo/scrollbar_always_visible.dart';
-import 'package:easy_table_demo/stretchable_column.dart';
-import 'package:easy_table_demo/theme_dividers.dart';
-import 'package:easy_table_demo/theme_header.dart';
-import 'package:easy_table_demo/theme_hidden_header.dart';
-import 'package:easy_table_demo/theme_row_color.dart';
-import 'package:easy_table_demo/theme_scrollbars.dart';
+import 'package:davi_demo/all_row_colors.dart';
+import 'package:davi_demo/cell_edit.dart';
+import 'package:davi_demo/cell_style.dart';
+import 'package:davi_demo/column_style.dart';
+import 'package:davi_demo/columns_fit.dart';
+import 'package:davi_demo/custom_cell_widget.dart';
+import 'package:davi_demo/get_started.dart';
+import 'package:davi_demo/infinite_scroll.dart';
+import 'package:davi_demo/multi_sort.dart';
+import 'package:davi_demo/null_cell_color.dart';
+import 'package:davi_demo/pinned_column.dart';
+import 'package:davi_demo/row_callbacks.dart';
+import 'package:davi_demo/row_color.dart';
+import 'package:davi_demo/row_cursor.dart';
+import 'package:davi_demo/row_fill_height.dart';
+import 'package:davi_demo/row_hover_background.dart';
+import 'package:davi_demo/row_hover_foreground.dart';
+import 'package:davi_demo/row_hover_listener.dart';
+import 'package:davi_demo/row_zebra_color.dart';
+import 'package:davi_demo/scrollbar_always_visible.dart';
+import 'package:davi_demo/stretchable_column.dart';
+import 'package:davi_demo/theme_dividers.dart';
+import 'package:davi_demo/theme_header.dart';
+import 'package:davi_demo/theme_hidden_header.dart';
+import 'package:davi_demo/theme_row_color.dart';
+import 'package:davi_demo/theme_scrollbars.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   Size? maxSize;
   // maxSize = const Size(401, 191);
   runApp(DemoFluApp(
-      title: 'EasyTable (2.3.0)',
+      title: 'Davi (2.6.0)',
       widgetBackground: Colors.white,
       resizable: true,
       appMenuBuilder: () {
