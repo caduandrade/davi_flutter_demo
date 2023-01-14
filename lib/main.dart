@@ -1,5 +1,6 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:easy_table_demo/all_row_colors.dart';
+import 'package:easy_table_demo/cell_edit.dart';
 import 'package:easy_table_demo/cell_style.dart';
 import 'package:easy_table_demo/column_style.dart';
 import 'package:easy_table_demo/columns_fit.dart';
@@ -116,6 +117,12 @@ void main() {
               name: 'Custom cell widget',
               builder: () => CustomCellWidgetExample(),
               codeFile: 'lib/custom_cell_widget.dart',
+              maxSize: maxSize,
+              indentation: 2),
+          DemoMenuItem(
+              name: 'Cell edit',
+              builder: () => CellEditExample(),
+              codeFile: 'lib/cell_edit.dart',
               maxSize: maxSize,
               indentation: 2),
           DemoMenuItem(name: 'Theme', indentation: 1, italic: true),

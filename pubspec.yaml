@@ -63,6 +63,7 @@ flutter:
   assets:
     - lib/get_started.dart
     - lib/custom_cell_widget.dart
+    - lib/cell_edit.dart
     - lib/row_callbacks.dart
     - lib/row_color.dart
     - lib/row_cursor.dart
@@ -84,7 +85,6 @@ flutter:
     - lib/row_hover_background.dart
     - lib/row_hover_foreground.dart
     - lib/all_row_colors.dart
-
     - lib/row_zebra_color.dart
     - lib/row_hover_listener.dart
 
