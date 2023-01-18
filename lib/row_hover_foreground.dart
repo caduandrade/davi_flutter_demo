@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 class RowHoverForegroundExample extends Example {
@@ -23,7 +23,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
@@ -38,20 +38,20 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 72, Colors.green[200]!)
     ];
 
-    _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', intValue: (row) => row.age),
-      EasyTableColumn(
-          name: 'Color', width: 66, cellBackground: (data) => data.row.color)
+    _model = DaviModel<Person>(rows: rows, columns: [
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Age', intValue: (row) => row.age),
+      DaviColumn(
+          name: 'Color', width: 66, cellBackground: (row) => row.data.color)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTableTheme(
-        data: EasyTableThemeData(
+    return DaviTheme(
+        data: DaviThemeData(
             row: RowThemeData(
                 hoverForeground: (rowIndex) => Colors.blue.withOpacity(.2))),
-        child: EasyTable<Person>(_model));
+        child: Davi<Person>(_model));
   }
 }

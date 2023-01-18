@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 class ThemeRowColorExample extends Example {
@@ -22,7 +22,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
@@ -37,17 +37,17 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 72)
     ];
 
-    _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
+    _model = DaviModel<Person>(rows: rows, columns: [
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTableTheme(
-        data: EasyTableThemeData(
+    return DaviTheme(
+        data: DaviThemeData(
             row: RowThemeData(color: (rowIndex) => Colors.green[50])),
-        child: EasyTable<Person>(_model));
+        child: Davi<Person>(_model));
   }
 }
