@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 class CellStyleExample extends Example {
@@ -22,7 +22,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
@@ -37,12 +37,12 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 72)
     ];
 
-    _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(
+    _model = DaviModel<Person>(rows: rows, columns: [
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(
           name: 'Age',
           intValue: (row) => row.age,
-          cellStyleBuilder: (data) => data.row.age >= 30 && data.row.age < 40
+          cellStyleBuilder: (row) => row.data.age >= 30 && row.data.age < 40
               ? CellStyle(
                   background: Colors.blue[800],
                   alignment: Alignment.center,
@@ -53,6 +53,6 @@ class MainWidgetState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model);
+    return Davi<Person>(_model);
   }
 }

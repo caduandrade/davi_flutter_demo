@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -23,7 +23,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
@@ -38,23 +38,23 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 72)
     ];
 
-    _model = EasyTableModel(rows: persons, columns: [
-      EasyTableColumn(
+    _model = DaviModel(rows: persons, columns: [
+      DaviColumn(
           pinStatus: PinStatus.left,
           width: 30,
-          cellBuilder: (BuildContext context, RowData<Person> data) {
+          cellBuilder: (BuildContext context, DaviRow<Person> row) {
             return InkWell(
                 child: const Icon(Icons.edit, size: 16),
-                onTap: () => _onEdit(data.row));
+                onTap: () => _onEdit(row.data));
           }),
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model);
+    return Davi<Person>(_model);
   }
 
   void _onEdit(Person person) {}
