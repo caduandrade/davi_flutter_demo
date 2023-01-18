@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 class RowCursorExample extends Example {
@@ -22,7 +22,7 @@ class ExampleWidget extends StatefulWidget {
 }
 
 class ExampleWidgetState extends State<ExampleWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
@@ -37,19 +37,19 @@ class ExampleWidgetState extends State<ExampleWidget> {
       Person('Delmar', 72)
     ];
 
-    _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
+    _model = DaviModel<Person>(rows: rows, columns: [
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTableTheme(
-        child: EasyTable<Person>(_model,
-            rowCursor: (data) =>
-                data.row.age < 20 ? SystemMouseCursors.forbidden : null),
-        data: const EasyTableThemeData(
+    return DaviTheme(
+        child: Davi<Person>(_model,
+            rowCursor: (row) =>
+                row.data.age < 20 ? SystemMouseCursors.forbidden : null),
+        data: const DaviThemeData(
             row: RowThemeData(cursorOnTapGesturesOnly: false)));
   }
 }

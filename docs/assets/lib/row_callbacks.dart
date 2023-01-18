@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/widgets.dart';
 
 class RowCallbacksExample extends Example {
@@ -22,13 +22,13 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
     super.initState();
 
-    _model = EasyTableModel<Person>(rows: [
+    _model = DaviModel<Person>(rows: [
       Person('Landon', 19),
       Person('Sari', 22),
       Person('Julian', 37),
@@ -36,14 +36,14 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', 43),
       Person('Delmar', 72)
     ], columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Person>(_model,
+    return Davi<Person>(_model,
         onRowTap: (person) => _onRowTap(context, person),
         onRowSecondaryTap: (person) => _onRowSecondaryTap(context, person),
         onRowDoubleTap: (person) => _onRowDoubleTap(context, person));

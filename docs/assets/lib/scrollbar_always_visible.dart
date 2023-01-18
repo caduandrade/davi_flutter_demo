@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -23,7 +23,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
@@ -33,19 +33,19 @@ class MainWidgetState extends State<MainWidget> {
       Person('Sari', 22),
       Person('Cadu', 43)
     ];
-    _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
+    _model = DaviModel<Person>(rows: rows, columns: [
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTableTheme(
-        data: const EasyTableThemeData(
+    return DaviTheme(
+        data: const DaviThemeData(
             scrollbar: TableScrollbarThemeData(
                 horizontalOnlyWhenNeeded: false,
                 verticalOnlyWhenNeeded: false)),
-        child: EasyTable<Person>(_model));
+        child: Davi<Person>(_model));
   }
 }

@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 class InfiniteScrollExample extends Example {
@@ -22,6 +22,7 @@ class Value {
     return Value._(index, random.nextInt(99999).toRadixString(16),
         random.nextInt(99999).toRadixString(16));
   }
+
   Value._(this.index, this.random1, this.random2);
 
   final int index;
@@ -30,23 +31,23 @@ class Value {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Value>? _model;
+  DaviModel<Value>? _model;
   bool _loading = false;
 
   @override
   void initState() {
     super.initState();
     List<Value> rows = List.generate(30, (index) => Value(index));
-    _model = EasyTableModel<Value>(rows: rows, columns: [
-      EasyTableColumn(name: 'Index', intValue: (row) => row.index),
-      EasyTableColumn(name: 'Random 1', stringValue: (row) => row.random1),
-      EasyTableColumn(name: 'Random 2', stringValue: (row) => row.random2)
+    _model = DaviModel<Value>(rows: rows, columns: [
+      DaviColumn(name: 'Index', intValue: (row) => row.index),
+      DaviColumn(name: 'Random 1', stringValue: (row) => row.random1),
+      DaviColumn(name: 'Random 2', stringValue: (row) => row.random2)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTable<Value>(_model,
+    return Davi<Value>(_model,
         lastRowWidget: const LoadingWidget(),
         onLastRowWidget: _onLastRowWidget);
   }

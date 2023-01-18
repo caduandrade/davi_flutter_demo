@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 class ThemeDividerExample extends Example {
@@ -22,7 +22,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
@@ -37,22 +37,22 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 72)
     ];
 
-    _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(
+    _model = DaviModel<Person>(rows: rows, columns: [
+      DaviColumn(
           name: '',
           pinStatus: PinStatus.left,
           width: 30,
           cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTableTheme(
-        child: EasyTable<Person>(_model),
-        data: const EasyTableThemeData(
+    return DaviTheme(
+        child: Davi<Person>(_model),
+        data: const DaviThemeData(
             columnDividerThickness: 4,
             columnDividerColor: Colors.blue,
             header: HeaderThemeData(columnDividerColor: Colors.purple),

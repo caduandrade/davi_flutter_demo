@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 class NullCellColorExample extends Example {
@@ -22,13 +22,13 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
     super.initState();
 
-    _model = EasyTableModel<Person>(rows: [
+    _model = DaviModel<Person>(rows: [
       Person('Landon', '+321 321-432-543'),
       Person('Sari', '+123 456-789-012'),
       Person('Julian', null),
@@ -36,17 +36,16 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', null),
       Person('Delmar', '+22 222-222-222')
     ], columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(
-          name: 'Mobile', width: 150, stringValue: (row) => row.mobile)
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Mobile', width: 150, stringValue: (row) => row.mobile)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTableTheme(
-        child: EasyTable<Person>(_model),
-        data: EasyTableThemeData(
+    return DaviTheme(
+        child: Davi<Person>(_model),
+        data: DaviThemeData(
             cell: CellThemeData(
                 nullValueColor: ((rowIndex, hovered) => Colors.grey[300]))));
   }

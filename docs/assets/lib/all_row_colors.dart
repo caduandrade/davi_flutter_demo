@@ -1,5 +1,5 @@
-import 'package:demoflu/demoflu.dart';
 import 'package:davi/davi.dart';
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 class AllRowColorsExample extends Example {
@@ -22,7 +22,7 @@ class ExampleWidget extends StatefulWidget {
 }
 
 class ExampleWidgetState extends State<ExampleWidget> {
-  EasyTableModel<Person>? _model;
+  DaviModel<Person>? _model;
 
   @override
   void initState() {
@@ -37,26 +37,26 @@ class ExampleWidgetState extends State<ExampleWidget> {
       Person('Delmar', 72)
     ];
 
-    _model = EasyTableModel<Person>(rows: rows, columns: [
-      EasyTableColumn(name: 'Name', stringValue: (row) => row.name),
-      EasyTableColumn(name: 'Age', intValue: (row) => row.age)
+    _model = DaviModel<Person>(rows: rows, columns: [
+      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Age', intValue: (row) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return EasyTableTheme(
-        data: EasyTableThemeData(
+    return DaviTheme(
+        data: DaviThemeData(
             row: RowThemeData(
                 color: RowThemeData.zebraColor(),
                 hoverBackground: (index) => Colors.blue[50])),
-        child: EasyTable<Person>(_model, rowColor: _rowColor));
+        child: Davi<Person>(_model, rowColor: _rowColor));
   }
 
-  Color? _rowColor(RowData<Person> data) {
-    if (data.row.age < 20) {
+  Color? _rowColor(DaviRow<Person> row) {
+    if (row.data.age < 20) {
       return Colors.green[50]!;
-    } else if (data.row.age > 30 && data.row.age < 50) {
+    } else if (row.data.age > 30 && row.data.age < 50) {
       return Colors.orange[50]!;
     }
     return null;
