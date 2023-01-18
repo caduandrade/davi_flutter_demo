@@ -31,7 +31,7 @@ void main() {
   Size? maxSize;
   // maxSize = const Size(401, 191);
   runApp(DemoFluApp(
-      title: 'Davi (2.6.0)',
+      title: 'Davi (3.0.0)',
       widgetBackground: Colors.white,
       resizable: true,
       appMenuBuilder: () {
