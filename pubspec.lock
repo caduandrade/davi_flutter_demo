@@ -53,9 +53,9 @@ packages:
   davi:
     dependency: "direct main"
     description:
-      name: davi
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../davi_flutter"
+      relative: true
+    source: path
     version: "3.0.0"
   demoflu:
     dependency: "direct main"
