@@ -1,11 +1,11 @@
 {
-    "name": "easy_table_flutter_demo",
-    "short_name": "easy_table_flutter_demo",
+    "name": "davi_flutter_demo",
+    "short_name": "davi_flutter_demo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Davi Demo",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
