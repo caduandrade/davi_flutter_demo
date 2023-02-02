@@ -53,13 +53,13 @@ class MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
-        child: Davi<Person>(_model),
         data: const DaviThemeData(
             columnDividerThickness: 4,
             columnDividerColor: Colors.blue,
             header: HeaderThemeData(columnDividerColor: Colors.purple),
             row: RowThemeData(dividerThickness: 4, dividerColor: Colors.green),
             scrollbar:
-                TableScrollbarThemeData(columnDividerColor: Colors.orange)));
+                TableScrollbarThemeData(columnDividerColor: Colors.orange)),
+        child: Davi<Person>(_model));
   }
 }

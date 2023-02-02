@@ -48,10 +48,10 @@ class ExampleWidgetState extends State<ExampleWidget> {
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
+        data: const DaviThemeData(
+            row: RowThemeData(cursorOnTapGesturesOnly: false)),
         child: Davi<Person>(_model,
             rowCursor: (row) =>
-                row.data.age < 20 ? SystemMouseCursors.forbidden : null),
-        data: const DaviThemeData(
-            row: RowThemeData(cursorOnTapGesturesOnly: false)));
+                row.data.age < 20 ? SystemMouseCursors.forbidden : null));
   }
 }

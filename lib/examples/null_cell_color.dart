@@ -46,9 +46,9 @@ class MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
-        child: Davi<Person>(_model),
         data: DaviThemeData(
             cell: CellThemeData(
-                nullValueColor: ((rowIndex, hovered) => Colors.grey[300]))));
+                nullValueColor: ((rowIndex, hovered) => Colors.grey[300]))),
+        child: Davi<Person>(_model));
   }
 }
