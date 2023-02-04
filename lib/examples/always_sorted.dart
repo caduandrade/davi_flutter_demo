@@ -1,14 +1,20 @@
 import 'package:davi/davi.dart';
+
+//@demoflu_ignore_start
 import 'package:demoflu/demoflu.dart';
+
+//@demoflu_ignore_end
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class MultiSortExample extends Example {
-  MultiSortExample()
+//@demoflu_ignore_start
+class AlwaysSortedExample extends Example {
+  AlwaysSortedExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/multi_sort.dart');
+            codeFile: 'lib/examples/always_sorted.dart');
 }
+//@demoflu_ignore_end
 
 class Person {
   Person(this.name, this.age, this.weight);
@@ -47,7 +53,7 @@ class MainWidgetState extends State<MainWidget> {
           DaviColumn(
               name: 'Weight', width: 120, doubleValue: (row) => row.weight)
         ],
-        multiSortEnabled: true);
+        alwaysSorted: true);
   }
 
   @override

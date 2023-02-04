@@ -1,4 +1,5 @@
 import 'package:davi_demo/examples/all_row_colors.dart';
+import 'package:davi_demo/examples/always_sorted.dart';
 import 'package:davi_demo/examples/cell_edit.dart';
 import 'package:davi_demo/examples/cell_style.dart';
 import 'package:davi_demo/examples/column_style.dart';
@@ -32,7 +33,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(DemoFluApp(
       // maxSize : const Size(401, 191),
-      title: 'Davi (3.1.0)',
+      title: 'Davi (3.2.0)',
       menuItems: _menuItems()));
 }
 
@@ -69,6 +70,7 @@ List<DemoMenuItem> _menuItems() {
     ..add('Multiple sort', example: MultiSortExample())
     ..add('On sort', example: OnSortExample())
     ..add('Server-side sorting', example: ServerSideSortingExample())
+    ..add('Always sorted', example: AlwaysSortedExample())
     ..indent(1)
     ..add('Theme')
     ..indent(2)

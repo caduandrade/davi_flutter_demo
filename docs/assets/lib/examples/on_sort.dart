@@ -56,18 +56,19 @@ class MainWidgetState extends State<MainWidget> {
       } else {
         final DaviColumn<Person> column = sortedColumns.first;
 
-        _sortedBy = 'sorted by ${column.name} / ${describeEnum(column.order!)}';
+        _sortedBy =
+            'sorted by ${column.name} / ${describeEnum(column.sortPriority!)}';
       }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
       Padding(
           padding: const EdgeInsets.all(8),
           child: Text(_sortedBy, textAlign: TextAlign.center)),
       Expanded(child: Davi(_model))
-    ], crossAxisAlignment: CrossAxisAlignment.stretch);
+    ]);
   }
 }

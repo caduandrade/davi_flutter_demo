@@ -1,6 +1,5 @@
 import 'package:davi/davi.dart';
 import 'package:demoflu/demoflu.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -38,11 +37,11 @@ class MainWidgetState extends State<MainWidget> {
       DaviColumn(
           id: ColumnId.name, name: 'Name', stringValue: (row) => row.name),
       DaviColumn(id: ColumnId.age, name: 'Age', intValue: (row) => row.age)
-    ], onSort: _onSort, ignoreSort: true);
+    ], onSort: _onSort, ignoreDataComparators: true);
     loadData();
   }
 
-  void loadData([DaviColumn<Person>? column]) {
+  void loadData([DaviSort? sort]) {
     Future<List<Person>>.delayed(const Duration(seconds: 1), () {
       List<Person> rows = [
         Person('Linda', 33),
@@ -52,16 +51,16 @@ class MainWidgetState extends State<MainWidget> {
         Person('Amanda', 43),
         Person('Cadu', 35)
       ];
-      if (column != null) {
-        final TableSortOrder order = column.order!;
+      if (sort != null) {
+        final DaviSortDirection direction = sort.direction;
         rows.sort((a, b) {
-          switch (column.id) {
+          switch (sort.columnId) {
             case ColumnId.name:
-              return order == TableSortOrder.ascending
+              return direction == DaviSortDirection.ascending
                   ? a.name.compareTo(b.name)
                   : b.name.compareTo(a.name);
             case ColumnId.age:
-              return order == TableSortOrder.ascending
+              return direction == DaviSortDirection.ascending
                   ? a.age.compareTo(b.age)
                   : b.age.compareTo(a.age);
           }
@@ -70,10 +69,12 @@ class MainWidgetState extends State<MainWidget> {
       }
       return rows;
     }).then((list) {
-      setState(() {
-        _loading = false;
-        _model.replaceRows(list);
-      });
+      if (mounted) {
+        setState(() {
+          _loading = false;
+          _model.replaceRows(list);
+        });
+      }
     });
   }
 
@@ -82,9 +83,7 @@ class MainWidgetState extends State<MainWidget> {
       _loading = true;
       _model.removeRows();
     });
-    final DaviColumn<Person>? column =
-        sortedColumns.isNotEmpty ? sortedColumns.first : null;
-    loadData(column);
+    loadData(sortedColumns.isNotEmpty ? sortedColumns.first.sort : null);
   }
 
   @override

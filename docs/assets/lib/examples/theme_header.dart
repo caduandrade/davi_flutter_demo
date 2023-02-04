@@ -52,7 +52,6 @@ class MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
-        child: Davi<Person>(_model),
         data: DaviThemeData(
             header: HeaderThemeData(
                 color: Colors.green[50],
@@ -67,7 +66,8 @@ class MainWidgetState extends State<MainWidget> {
                     color: Colors.blue),
                 resizeAreaWidth: 10,
                 resizeAreaHoverColor: Colors.blue.withOpacity(.5),
-                sortIconColor: Colors.green,
-                expandableName: false)));
+                sortIconColors: SortIconColors.all(Colors.green),
+                expandableName: false)),
+        child: Davi<Person>(_model));
   }
 }

@@ -53,7 +53,6 @@ class MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
-        child: Davi<Person>(_model),
         data: const DaviThemeData(
             scrollbar: TableScrollbarThemeData(
                 thickness: 16,
@@ -64,6 +63,7 @@ class MainWidgetState extends State<MainWidget> {
                 borderThickness: 8,
                 pinnedHorizontalBorderColor: Colors.orange,
                 unpinnedHorizontalBorderColor: Colors.purple,
-                verticalBorderColor: Colors.pink)));
+                verticalBorderColor: Colors.pink)),
+        child: Davi<Person>(_model));
   }
 }

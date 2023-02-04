@@ -53,7 +53,7 @@ class MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
-        child: Davi<Person>(_model),
-        data: const DaviThemeData(header: HeaderThemeData(visible: false)));
+        data: const DaviThemeData(header: HeaderThemeData(visible: false)),
+        child: Davi<Person>(_model));
   }
 }

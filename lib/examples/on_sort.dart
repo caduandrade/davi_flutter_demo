@@ -56,7 +56,8 @@ class MainWidgetState extends State<MainWidget> {
       } else {
         final DaviColumn<Person> column = sortedColumns.first;
 
-        _sortedBy = 'sorted by ${column.name} / ${describeEnum(column.sortPriority!)}';
+        _sortedBy =
+            'sorted by ${column.name} / ${describeEnum(column.sortPriority!)}';
       }
     });
   }
