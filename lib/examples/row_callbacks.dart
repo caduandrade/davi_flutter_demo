@@ -3,7 +3,7 @@ import 'package:demoflu/demoflu.dart';
 import 'package:flutter/widgets.dart';
 
 class RowCallbacksExample extends Example {
-  RowCallbacksExample() : super(widget: const MainWidget());
+  RowCallbacksExample() : super(consoleEnabled: true, codeFile: 'lib/examples/row_callbacks.dart', widget: const MainWidget());
 }
 
 class Person {

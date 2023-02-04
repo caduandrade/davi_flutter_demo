@@ -39,15 +39,19 @@ class MainWidgetState extends State<MainWidget> {
       Person('Cadu', 43, 27.2),
       Person('Catherine', 43, 25.3)
     ];
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
-      DaviColumn(name: 'Age', intValue: (row) => row.age),
-      DaviColumn(name: 'Weight', width: 120, doubleValue: (row) => row.weight)
-    ]);
+    _model = DaviModel<Person>(
+        rows: rows,
+        columns: [
+          DaviColumn(name: 'Name', stringValue: (row) => row.name),
+          DaviColumn(name: 'Age', intValue: (row) => row.age),
+          DaviColumn(
+              name: 'Weight', width: 120, doubleValue: (row) => row.weight)
+        ],
+        multiSortEnabled: true);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Davi(_model, multiSort: true);
+    return Davi(_model);
   }
 }
