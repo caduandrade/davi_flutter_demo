@@ -8,20 +8,30 @@ class ColumnsFitPage extends DemoFluPage {
   PageSections buildSections(BuildContext context) {
     PageSections sections = PageSections();
 
-    sections.text(text: "The functionality allows all columns to fill"
-        " the available space within the table, eliminating the need"
-        " for horizontal scrolling. Each column's share of the space"
-        " is determined by its `grow` attribute, which is a flexible factor.");
+    sections.text(
+        text: "The functionality allows all columns to fill"
+            " the available space within the table, eliminating the need"
+            " for horizontal scrolling. Each column's share of the"
+            " space is controlled by its flexible grow attribute.");
 
-    sections.code('lib/columns_fit/columns_fit_example.dart', mark: 'davi', loadMode: LoadMode.readOnlyMarked);
+    sections.text(
+        text: "First, define the grow factor for each column"
+            " to determine its share of the available space.");
 
+    sections.code('lib/columns_fit/columns_fit_example.dart',
+        mark: 'model', loadMode: LoadMode.readOnlyMarked);
+
+    sections.text(text: "Then, configure the widget to use the fit behavior.");
+
+    sections.code('lib/columns_fit/columns_fit_example.dart',
+        mark: 'davi', loadMode: LoadMode.readOnlyMarked);
 
     sections
         .widget((context) => const Example(), title: 'Example:')
         .runMacro(id: Macros.horizontalExample, context: context);
 
-
-    sections.code('lib/columns_fit/columns_fit_example.dart', discardMarks: true, title: 'Full code:');
+    sections.code('lib/columns_fit/columns_fit_example.dart',
+        discardMarks: true, title: 'Full code:');
 
     return sections;
   }
