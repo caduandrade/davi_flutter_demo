@@ -6,7 +6,7 @@ class GetStartedExample extends Example {
   GetStartedExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/get_started.dart');
+            codeFile: 'lib/examples/get_started_example.dart');
 }
 
 class Person {
