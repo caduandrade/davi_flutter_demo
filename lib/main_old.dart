@@ -3,7 +3,6 @@ import 'package:davi_demo/examples/always_sorted.dart';
 import 'package:davi_demo/examples/cell_edit.dart';
 import 'package:davi_demo/examples/cell_style.dart';
 import 'package:davi_demo/examples/column_style.dart';
-import 'package:davi_demo/examples/columns_fit.dart';
 import 'package:davi_demo/examples/custom_cell_widget.dart';
 import 'package:davi_demo/examples/infinite_scroll.dart';
 import 'package:davi_demo/examples/multi_sort.dart';
@@ -20,7 +19,6 @@ import 'package:davi_demo/examples/row_hover_listener.dart';
 import 'package:davi_demo/examples/row_zebra_color.dart';
 import 'package:davi_demo/examples/scrollbar_always_visible.dart';
 import 'package:davi_demo/examples/server_side_sorting.dart';
-import 'package:davi_demo/examples/stretchable_column.dart';
 import 'package:davi_demo/examples/theme_dividers.dart';
 import 'package:davi_demo/examples/theme_header.dart';
 import 'package:davi_demo/examples/theme_hidden_header.dart';
@@ -44,7 +42,6 @@ List<DemoMenuItem> _menuItems() {
     ..indent(2)
     ..add('Column')
     ..indent(3)
-    ..add('Stretchable column', example: StretchableColumnExample())
     ..add('Column style', example: ColumnStyleExample())
     ..add('Pinned column', example: PinnedColumnExample())
     ..indent(2)

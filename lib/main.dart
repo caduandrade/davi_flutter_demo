@@ -1,4 +1,4 @@
-import 'package:davi_demo/columns_fit/columns_fit_page.dart';
+import 'package:davi_demo/column_width/column_width_page.dart';
 import 'package:davi_demo/get_started/get_started_page.dart';
 import 'package:davi_demo/macros.dart';
 import 'package:demoflu/demoflu.dart';
@@ -16,7 +16,7 @@ void main() {
   });
   app.macro.widget(Macros.horizontalExample, (context, section) {
     section
-      ..maxHeight = 400
+      ..maxHeight = 350
       ..maxWidth = 600
       ..runMacro(id: Macros.styleExample, context: context);
   });
@@ -43,6 +43,6 @@ void main() {
 List<DemoMenuItem> get _rootMenus => [
   DemoMenuItem('Get started', page: () => GetStartedPage()),
   DemoMenuItem('Model', children: [DemoMenuItem('Column', children: [
-    DemoMenuItem('Columns fit', page:()=> ColumnsFitPage())
+    DemoMenuItem('Width', page: ()=>ColumnWidthPage())
   ])])
 ];

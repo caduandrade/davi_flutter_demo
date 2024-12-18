@@ -6,7 +6,7 @@ class StretchableColumnExample extends Example {
   StretchableColumnExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/stretchable_column.dart');
+            codeFile: 'lib/examples/column_width.dart');
 }
 
 class Person {
