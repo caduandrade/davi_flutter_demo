@@ -61,6 +61,7 @@ flutter:
   assets:
     - lib/get_started/
     - lib/column_width/
+    - lib/column_style/
 
   fonts:
     - family: code

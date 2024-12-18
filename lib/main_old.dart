@@ -2,7 +2,6 @@ import 'package:davi_demo/examples/all_row_colors.dart';
 import 'package:davi_demo/examples/always_sorted.dart';
 import 'package:davi_demo/examples/cell_edit.dart';
 import 'package:davi_demo/examples/cell_style.dart';
-import 'package:davi_demo/examples/column_style.dart';
 import 'package:davi_demo/examples/custom_cell_widget.dart';
 import 'package:davi_demo/examples/infinite_scroll.dart';
 import 'package:davi_demo/examples/multi_sort.dart';
@@ -42,7 +41,6 @@ List<DemoMenuItem> _menuItems() {
     ..indent(2)
     ..add('Column')
     ..indent(3)
-    ..add('Column style', example: ColumnStyleExample())
     ..add('Pinned column', example: PinnedColumnExample())
     ..indent(2)
     ..add('Row')

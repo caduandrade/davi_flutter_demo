@@ -1,3 +1,4 @@
+import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
 import 'package:davi_demo/get_started/get_started_page.dart';
 import 'package:davi_demo/macros.dart';
@@ -43,6 +44,7 @@ void main() {
 List<DemoMenuItem> get _rootMenus => [
   DemoMenuItem('Get started', page: () => GetStartedPage()),
   DemoMenuItem('Model', children: [DemoMenuItem('Column', children: [
-    DemoMenuItem('Width', page: ()=>ColumnWidthPage())
+    DemoMenuItem('Width', page: ()=>ColumnWidthPage()),
+    DemoMenuItem('Style', page: ()=>ColumnStylePage())
   ])])
 ];

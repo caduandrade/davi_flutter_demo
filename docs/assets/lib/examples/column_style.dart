@@ -6,7 +6,7 @@ class ColumnStyleExample extends Example {
   ColumnStyleExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/column_style.dart');
+            codeFile: 'lib/examples/column_style_example.dart');
 }
 
 class Person {

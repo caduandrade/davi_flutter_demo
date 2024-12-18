@@ -1,13 +1,5 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
-
-class ColumnStyleExample extends Example {
-  ColumnStyleExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/column_style.dart');
-}
 
 class Person {
   Person(this.name, this.age);
@@ -16,15 +8,15 @@ class Person {
   final int age;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class Example extends StatefulWidget {
+  const Example({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => ExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+class ExampleState extends State<Example> {
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -39,17 +31,19 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 72)
     ];
 
+    //@demoflu_start:model
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Name', cellValue: (person, index) => person.name),
       DaviColumn(
           name: 'Age',
-          intValue: (row) => row.age,
+          cellValue: (person, index) => person.age,
           headerTextStyle: TextStyle(color: Colors.blue[900]!),
           headerAlignment: Alignment.center,
           cellAlignment: Alignment.center,
           cellTextStyle: TextStyle(color: Colors.blue[700]!),
-          cellBackground: (data) => Colors.blue[50])
+          cellBackground: (person, index, hovered) => Colors.blue[50])
     ]);
+    //@demoflu_end:model
   }
 
   @override
