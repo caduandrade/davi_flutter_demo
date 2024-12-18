@@ -2,6 +2,7 @@ import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
 import 'package:davi_demo/get_started/get_started_page.dart';
 import 'package:davi_demo/macros.dart';
+import 'package:davi_demo/pinned_column/pinned_column_page.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
@@ -45,6 +46,7 @@ List<DemoMenuItem> get _rootMenus => [
   DemoMenuItem('Get started', page: () => GetStartedPage()),
   DemoMenuItem('Model', children: [DemoMenuItem('Column', children: [
     DemoMenuItem('Width', page: ()=>ColumnWidthPage()),
-    DemoMenuItem('Style', page: ()=>ColumnStylePage())
+    DemoMenuItem('Style', page: ()=>ColumnStylePage()),
+    DemoMenuItem('Pin',page: ()=>PinnedColumnPage())
   ])])
 ];

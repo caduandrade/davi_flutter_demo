@@ -7,7 +7,7 @@ class PinnedColumnExample extends Example {
   PinnedColumnExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/pinned_column.dart');
+            codeFile: 'lib/examples/pinned_column_example.dart');
 }
 
 class Person {

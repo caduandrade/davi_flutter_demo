@@ -62,6 +62,7 @@ flutter:
     - lib/get_started/
     - lib/column_width/
     - lib/column_style/
+    - lib/pinned_column/
 
   fonts:
     - family: code

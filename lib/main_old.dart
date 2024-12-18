@@ -7,7 +7,6 @@ import 'package:davi_demo/examples/infinite_scroll.dart';
 import 'package:davi_demo/examples/multi_sort.dart';
 import 'package:davi_demo/examples/null_cell_color.dart';
 import 'package:davi_demo/examples/on_sort.dart';
-import 'package:davi_demo/examples/pinned_column.dart';
 import 'package:davi_demo/examples/row_callbacks.dart';
 import 'package:davi_demo/examples/row_color.dart';
 import 'package:davi_demo/examples/row_cursor.dart';
@@ -38,10 +37,6 @@ List<DemoMenuItem> _menuItems() {
   builder
     ..indent(1)
     ..add('Model')
-    ..indent(2)
-    ..add('Column')
-    ..indent(3)
-    ..add('Pinned column', example: PinnedColumnExample())
     ..indent(2)
     ..add('Row')
     ..indent(3)
