@@ -6,7 +6,7 @@ class RowHoverListenerExample extends Example {
   RowHoverListenerExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/row_hover_listener.dart');
+            codeFile: 'lib/examples/row_hover_listener_example.dart');
 }
 
 class Person {

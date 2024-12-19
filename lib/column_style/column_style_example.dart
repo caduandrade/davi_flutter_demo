@@ -8,14 +8,14 @@ class Person {
   final int age;
 }
 
-class Example extends StatefulWidget {
-  const Example({Key? key}) : super(key: key);
+class ColumnStyleExample extends StatefulWidget {
+  const ColumnStyleExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => ExampleState();
+  State<StatefulWidget> createState() => ColumnStyleExampleState();
 }
 
-class ExampleState extends State<Example> {
+class ColumnStyleExampleState extends State<ColumnStyleExample> {
   late DaviModel<Person> _model;
 
   @override

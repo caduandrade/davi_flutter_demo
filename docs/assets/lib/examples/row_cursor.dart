@@ -6,7 +6,7 @@ class RowCursorExample extends Example {
   RowCursorExample()
       : super(
             widget: const ExampleWidget(),
-            codeFile: 'lib/examples/row_cursor.dart');
+            codeFile: 'lib/examples/row_cursor_example.dart');
 }
 
 class Person {

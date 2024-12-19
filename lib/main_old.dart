@@ -7,13 +7,10 @@ import 'package:davi_demo/examples/infinite_scroll.dart';
 import 'package:davi_demo/examples/multi_sort.dart';
 import 'package:davi_demo/examples/null_cell_color.dart';
 import 'package:davi_demo/examples/on_sort.dart';
-import 'package:davi_demo/examples/row_callbacks.dart';
-import 'package:davi_demo/examples/row_color.dart';
-import 'package:davi_demo/examples/row_cursor.dart';
 import 'package:davi_demo/examples/row_fill_height.dart';
 import 'package:davi_demo/examples/row_hover_background.dart';
 import 'package:davi_demo/examples/row_hover_foreground.dart';
-import 'package:davi_demo/examples/row_hover_listener.dart';
+import 'package:davi_demo/row_hover_listener/row_hover_listener_example.dart';
 import 'package:davi_demo/examples/row_zebra_color.dart';
 import 'package:davi_demo/examples/scrollbar_always_visible.dart';
 import 'package:davi_demo/examples/server_side_sorting.dart';
@@ -40,10 +37,6 @@ List<DemoMenuItem> _menuItems() {
     ..indent(2)
     ..add('Row')
     ..indent(3)
-    ..add('Row color', example: RowColorExample())
-    ..add('Row cursor', example: RowCursorExample())
-    ..add('Row callbacks', example: RowCallbacksExample())
-    ..add('Row hover listener', example: RowHoverListenerExample())
     ..add('Infinite scroll', example: InfiniteScrollExample())
     ..indent(2)
     ..add('Cell')

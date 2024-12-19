@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 
 class GetStartedPage extends DemoFluPage {
   @override
-  PageSections buildSections(BuildContext context) {
-    PageSections sections = PageSections();
+  void buildSections(BuildContext context,PageSections sections) {
 
     sections.text(text: 'First, you need to create a class to represent'
         ' your business logic or data structure.');
@@ -24,12 +23,11 @@ class GetStartedPage extends DemoFluPage {
     sections.code('lib/get_started/get_started_example.dart', mark: 'davi', loadMode: LoadMode.readOnlyMarked);
 
     sections
-        .widget((context) => const Example(), title: 'Example:')
+        .widget((context) => const GetStartedExample(), title: 'Example:')
         .runMacro(id: Macros.horizontalExample, context: context);
 
 
     sections.code('lib/get_started/get_started_example.dart', discardMarks: true, title: 'Full code:');
 
-    return sections;
   }
 }

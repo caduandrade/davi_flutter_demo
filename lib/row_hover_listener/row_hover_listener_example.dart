@@ -2,12 +2,6 @@ import 'package:davi/davi.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class RowHoverListenerExample extends Example {
-  RowHoverListenerExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/row_hover_listener.dart');
-}
 
 class Person {
   Person(this.name, this.age);
@@ -16,15 +10,15 @@ class Person {
   final int age;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class RowHoverListenerExample extends StatefulWidget {
+  const RowHoverListenerExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => RowHoverListenerExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+class RowHoverListenerExampleState extends State<RowHoverListenerExample> {
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -40,17 +34,19 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      DaviColumn(name: 'Age', width: 120, intValue: (row) => row.age)
+      DaviColumn(name: 'Name', cellValue: (person, index) => person.name),
+      DaviColumn(name: 'Age', cellValue: (person, index) => person.age)
     ]);
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
     return Davi<Person>(_model, onHover: _onHover);
   }
 
   void _onHover(int? rowIndex) {
-    DemoFlu.printOnConsole(context, '$rowIndex');
+    print(rowIndex);
   }
+  //@demoflu_end:code
 }

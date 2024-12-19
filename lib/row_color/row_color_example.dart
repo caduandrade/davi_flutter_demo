@@ -8,14 +8,14 @@ class Person {
   final int age;
 }
 
-class PinnedColumnExample extends StatefulWidget {
-  const PinnedColumnExample({Key? key}) : super(key: key);
+class RowColorExample extends StatefulWidget {
+  const RowColorExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => PinnedColumnExampleState();
+  State<StatefulWidget> createState() => RowColorExampleState();
 }
 
-class PinnedColumnExampleState extends State<PinnedColumnExample> {
+class RowColorExampleState extends State<RowColorExample> {
   late DaviModel<Person> _model;
 
   @override
@@ -31,20 +31,25 @@ class PinnedColumnExampleState extends State<PinnedColumnExample> {
       Person('Delmar', 72)
     ];
 
-    //@demoflu_start:model
-    _model = DaviModel(rows: rows, columns: [
-      DaviColumn(
-          pinStatus: PinStatus.left,
-          width: 30,
-          cellIcon: (person, index) => CellIcon(Icons.edit, size: 16)),
+    _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(name: 'Name', cellValue: (person, index) => person.name),
       DaviColumn(name: 'Age', cellValue: (person, index) => person.age)
     ]);
-    //@demoflu_end:model
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model);
+    return Davi<Person>(_model, rowColor: _rowColor);
   }
+
+  Color? _rowColor(Person person, int index, bool hovered) {
+    if (person.age < 20) {
+      return Colors.green[50]!;
+    } else if (person.age > 30 && person.age < 50) {
+      return Colors.orange[50]!;
+    }
+    return null;
+  }
+  //@demoflu_end:code
 }

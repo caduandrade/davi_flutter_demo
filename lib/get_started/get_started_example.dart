@@ -10,15 +10,14 @@ class Person {
 }
 //@demoflu_end:logic
 
-class Example extends StatefulWidget {
-  const Example({Key? key}) : super(key: key);
+class GetStartedExample extends StatefulWidget {
+  const GetStartedExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => ExampleState();
+  State<StatefulWidget> createState() => GetStartedExampleState();
 }
 
-class ExampleState extends State<Example> {
-
+class GetStartedExampleState extends State<GetStartedExample> {
   //@demoflu_start:model
   late DaviModel<Person> _model;
 
@@ -26,14 +25,16 @@ class ExampleState extends State<Example> {
   void initState() {
     super.initState();
 
-    _model = DaviModel<Person>(rows: [
+    List<Person> rows = [
       Person('Landon', 19),
       Person('Sari', 22),
       Person('Julian', 37),
       Person('Carey', 39),
       Person('Cadu', 43),
       Person('Delmar', 72)
-    ], columns: [
+    ];
+
+    _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(name: 'Name', cellValue: (person, index) => person.name),
       DaviColumn(name: 'Age', cellValue: (person, index) => person.age)
     ]);

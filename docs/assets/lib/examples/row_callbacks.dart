@@ -6,7 +6,7 @@ class RowCallbacksExample extends Example {
   RowCallbacksExample()
       : super(
             consoleEnabled: true,
-            codeFile: 'lib/examples/row_callbacks.dart',
+            codeFile: 'lib/examples/row_callbacks_example.dart',
             widget: const MainWidget());
 }
 

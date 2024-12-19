@@ -6,7 +6,7 @@ class RowColorExample extends Example {
   RowColorExample()
       : super(
             widget: const ExampleWidget(),
-            codeFile: 'lib/examples/row_color.dart');
+            codeFile: 'lib/examples/row_color_example.dart');
 }
 
 class Person {

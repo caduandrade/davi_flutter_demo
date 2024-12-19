@@ -63,15 +63,9 @@ flutter:
     - lib/column_width/
     - lib/column_style/
     - lib/pinned_column/
+    - lib/row_color/
+    - lib/row_cursor/
+    - lib/row_callbacks/
+    - lib/row_hover_listener/
 
-  fonts:
-    - family: code
-      fonts:
-        - asset: fonts/RobotoMono-Regular.ttf
-        - asset: fonts/RobotoMono-Bold.ttf
-          weight: 700
-        - asset: fonts/RobotoMono-Italic.ttf
-          style: italic
-        - asset: fonts/RobotoMono-BoldItalic.ttf
-          weight: 700
-          style: italic
+

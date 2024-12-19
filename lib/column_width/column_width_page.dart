@@ -5,8 +5,7 @@ import 'package:flutter/widgets.dart';
 
 class ColumnWidthPage extends DemoFluPage {
   @override
-  PageSections buildSections(BuildContext context) {
-    PageSections sections = PageSections();
+  void buildSections(BuildContext context,PageSections sections) {
 
     sections.text()
       ..add('The columns can be configured to either fit the available')
@@ -65,6 +64,5 @@ class ColumnWidthPage extends DemoFluPage {
         .widget((context) => const FitExample(), title: 'Example:')
         .runMacro(id: Macros.horizontalExample, context: context);
 
-    return sections;
   }
 }

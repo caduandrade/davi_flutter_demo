@@ -8,14 +8,14 @@ class Person {
   final int age;
 }
 
-class PinnedColumnExample extends StatefulWidget {
-  const PinnedColumnExample({Key? key}) : super(key: key);
+class RowCursorExample extends StatefulWidget {
+  const RowCursorExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => PinnedColumnExampleState();
+  State<StatefulWidget> createState() => RowCursorExampleState();
 }
 
-class PinnedColumnExampleState extends State<PinnedColumnExample> {
+class RowCursorExampleState extends State<RowCursorExample> {
   late DaviModel<Person> _model;
 
   @override
@@ -31,20 +31,19 @@ class PinnedColumnExampleState extends State<PinnedColumnExample> {
       Person('Delmar', 72)
     ];
 
-    //@demoflu_start:model
-    _model = DaviModel(rows: rows, columns: [
-      DaviColumn(
-          pinStatus: PinStatus.left,
-          width: 30,
-          cellIcon: (person, index) => CellIcon(Icons.edit, size: 16)),
+    _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(name: 'Name', cellValue: (person, index) => person.name),
       DaviColumn(name: 'Age', cellValue: (person, index) => person.age)
     ]);
-    //@demoflu_end:model
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model);
+    return Davi<Person>(_model, rowCursor: _rowCursor);
   }
+
+  MouseCursor? _rowCursor(Person person, int index, bool hovered) =>
+      person.age < 20 ? SystemMouseCursors.forbidden : null;
+  //@demoflu_end:code
 }
