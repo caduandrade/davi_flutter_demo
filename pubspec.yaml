@@ -67,5 +67,24 @@ flutter:
     - lib/row_cursor/
     - lib/row_callbacks/
     - lib/row_hover_listener/
+    - lib/row_zebra_color/
+    - lib/theme_scrollbars/
+    - lib/theme_dividers/
+    - lib/theme_header/
+    - lib/theme_hidden_header/
+    - lib/theme_row_color/
+    - lib/on_sort/
+    - lib/all_row_colors/
+    - lib/always_sorted/
+    - lib/cell_edit/
+    - lib/cell_style/
+    - lib/custom_cell_widget/
+    - lib/infinite_scroll/
+    - lib/multi_sort/
+    - lib/null_cell_color/
+    - lib/row_fill_height/
+    - lib/row_hover_color/
+    - lib/scrollbar_always_visible/
+    - lib/server_side_sorting/
 
 
