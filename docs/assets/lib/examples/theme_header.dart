@@ -6,7 +6,7 @@ class ThemeHeaderExample extends Example {
   ThemeHeaderExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_header.dart');
+            codeFile: 'lib/examples/theme_header_example.dart');
 }
 
 class Person {

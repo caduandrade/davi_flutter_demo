@@ -6,7 +6,7 @@ class CellEditExample extends Example {
   CellEditExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/cell_edit.dart');
+            codeFile: 'lib/examples/cell_edit_example.dart');
 }
 
 class Person {
@@ -37,7 +37,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -51,8 +51,8 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 2)
     ];
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
-      DaviColumn(name: 'Value', intValue: (row) => row.value),
+      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(name: 'Value', cellValue: (row,index) => row.value),
       DaviColumn(
           name: 'Editable',
           cellBuilder: _buildField,

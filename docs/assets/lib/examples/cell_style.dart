@@ -6,7 +6,7 @@ class CellStyleExample extends Example {
   CellStyleExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/cell_style.dart');
+            codeFile: 'lib/examples/cell_style_example.dart');
 }
 
 class Person {

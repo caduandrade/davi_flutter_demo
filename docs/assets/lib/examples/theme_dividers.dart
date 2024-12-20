@@ -6,7 +6,7 @@ class ThemeDividerExample extends Example {
   ThemeDividerExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_dividers.dart');
+            codeFile: 'lib/examples/theme_dividers_example.dart');
 }
 
 class Person {

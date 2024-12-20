@@ -1,6 +1,7 @@
 import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
 import 'package:davi_demo/get_started/get_started_page.dart';
+import 'package:davi_demo/infinite_scroll/infinite_scroll_page.dart';
 import 'package:davi_demo/macros.dart';
 import 'package:davi_demo/pinned_column/pinned_column_page.dart';
 import 'package:davi_demo/row_callbacks/row_callbacks_page.dart';
@@ -16,7 +17,7 @@ void main() {
     section
       ..padding = const EdgeInsets.all(10)
       ..background = Colors.white
-      ..solidBorder(color: Colors.grey[200]);
+      ..solidBorder(color: Colors.grey[300]);
   });
   app.macro.widget(Macros.horizontalExample, (context, section) {
     section
@@ -44,7 +45,7 @@ void main() {
   app.run();
 }
 
-List<DemoMenuItem> get _rootMenus => [_getStarted, _columns,_rows];
+List<DemoMenuItem> get _rootMenus => [_getStarted, _columns,_rows,_cells];
 
 DemoMenuItem get _getStarted =>
     DemoMenuItem('Get started', page: () => GetStartedPage());
@@ -63,7 +64,7 @@ DemoMenuItem get _pinnedColumn =>
     DemoMenuItem('Pinned column', page: () => PinnedColumnPage());
 
 DemoMenuItem _rows = DemoMenuItem('Rows',
-    children: [_rowColor,_rowCursor,_rowCallbacks,_rowHoverListener]);
+    children: [_rowColor,_rowCursor,_rowCallbacks,_rowHoverListener,_infiniteScroll]);
 
 DemoMenuItem get _rowColor => DemoMenuItem('Row color', page:()=>RowColorPage());
 
@@ -73,6 +74,10 @@ DemoMenuItem get _rowCallbacks => DemoMenuItem('Row callbacks', page:()=>RowCall
 
 DemoMenuItem get _rowHoverListener => DemoMenuItem('Row hover listener', page:()=>RowHoverListenerPage());
 
+DemoMenuItem get _infiniteScroll => DemoMenuItem('Infinite scroll', page:()=>InfiniteScrollPage());
+
+DemoMenuItem _cells = DemoMenuItem('Cells',
+    children: []);
 
 
 

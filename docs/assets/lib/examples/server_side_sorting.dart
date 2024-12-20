@@ -7,7 +7,7 @@ class ServerSideSortingExample extends Example {
   ServerSideSortingExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/server_side_sorting.dart');
+            codeFile: 'lib/examples/server_side_sorting_example.dart');
 }
 
 class Person {

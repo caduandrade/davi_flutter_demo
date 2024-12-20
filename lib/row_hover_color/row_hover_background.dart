@@ -25,7 +25,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -41,8 +41,8 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
-      DaviColumn(name: 'Age', intValue: (row) => row.age),
+      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row,index) => row.age),
       DaviColumn(
           name: 'Color', width: 66, cellBackground: (row) => row.data.color)
     ]);

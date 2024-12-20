@@ -12,7 +12,7 @@ class AlwaysSortedExample extends Example {
   AlwaysSortedExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/always_sorted.dart');
+            codeFile: 'lib/examples/always_sorted_example.dart');
 }
 //@demoflu_ignore_end
 

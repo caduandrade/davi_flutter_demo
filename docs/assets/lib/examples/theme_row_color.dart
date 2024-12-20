@@ -6,7 +6,7 @@ class ThemeRowColorExample extends Example {
   ThemeRowColorExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_row_color.dart');
+            codeFile: 'lib/examples/theme_row_color_example.dart');
 }
 
 class Person {

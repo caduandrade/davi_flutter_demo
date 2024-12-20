@@ -33,10 +33,10 @@ class ColumnStyleExampleState extends State<ColumnStyleExample> {
 
     //@demoflu_start:model
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (person, index) => person.name),
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
       DaviColumn(
           name: 'Age',
-          cellValue: (person, index) => person.age,
+          cellValue: (row, index) => row.age,
           headerTextStyle: TextStyle(color: Colors.blue[900]!),
           headerAlignment: Alignment.center,
           cellAlignment: Alignment.center,

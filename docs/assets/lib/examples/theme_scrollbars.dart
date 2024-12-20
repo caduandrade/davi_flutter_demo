@@ -6,7 +6,7 @@ class ThemeScrollbarsExample extends Example {
   ThemeScrollbarsExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_scrollbars.dart');
+            codeFile: 'lib/examples/theme_scrollbars_example.dart');
 }
 
 class Person {

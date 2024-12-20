@@ -6,7 +6,7 @@ class RowZebraColorExample extends Example {
   RowZebraColorExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/row_zebra_color.dart');
+            codeFile: 'lib/examples/row_zebra_color_example.dart');
 }
 
 class Person {

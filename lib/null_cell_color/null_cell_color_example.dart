@@ -6,7 +6,7 @@ class NullCellColorExample extends Example {
   NullCellColorExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/null_cell_color.dart');
+            codeFile: 'lib/examples/null_cell_color_example.dart');
 }
 
 class Person {
@@ -24,22 +24,24 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
     super.initState();
 
-    _model = DaviModel<Person>(rows: [
+    List<Person> rows =[
       Person('Landon', '+321 321-432-543'),
       Person('Sari', '+123 456-789-012'),
       Person('Julian', null),
       Person('Carey', '+111 222-333-444'),
       Person('Cadu', null),
       Person('Delmar', '+22 222-222-222')
-    ], columns: [
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
-      DaviColumn(name: 'Mobile', width: 150, stringValue: (row) => row.mobile)
+    ];
+
+    _model = DaviModel<Person>(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(name: 'Mobile', width: 150, cellValue: (row,index) => row.mobile)
     ]);
   }
 

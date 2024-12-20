@@ -8,7 +8,7 @@ class InfiniteScrollExample extends Example {
   InfiniteScrollExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/infinite_scroll.dart');
+            codeFile: 'lib/examples/infinite_scroll_example.dart');
 }
 
 class MainWidget extends StatefulWidget {

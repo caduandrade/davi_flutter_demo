@@ -7,7 +7,7 @@ class CustomCellWidgetExample extends Example {
   CustomCellWidgetExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/custom_cell_widget.dart');
+            codeFile: 'lib/examples/custom_cell_widget_example.dart');
 }
 
 class Person {

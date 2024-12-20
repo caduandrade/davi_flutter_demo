@@ -7,7 +7,7 @@ class CustomCellWidgetExample extends Example {
   CustomCellWidgetExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/custom_cell_widget.dart');
+            codeFile: 'lib/examples/custom_cell_widget_example.dart');
 }
 
 class Person {
@@ -25,7 +25,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -39,7 +39,7 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 2)
     ];
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
+      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
       DaviColumn(
           name: 'Rate',
           width: 150,

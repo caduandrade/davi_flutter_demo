@@ -6,7 +6,7 @@ class NullCellColorExample extends Example {
   NullCellColorExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/null_cell_color.dart');
+            codeFile: 'lib/examples/null_cell_color_example.dart');
 }
 
 class Person {

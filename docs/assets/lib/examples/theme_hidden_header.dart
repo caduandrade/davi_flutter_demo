@@ -6,7 +6,7 @@ class ThemeHiddenHeaderExample extends Example {
   ThemeHiddenHeaderExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_hidden_header.dart');
+            codeFile: 'lib/examples/theme_hidden_header_example.dart');
 }
 
 class Person {

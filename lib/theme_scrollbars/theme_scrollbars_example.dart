@@ -2,11 +2,11 @@ import 'package:davi/davi.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class ThemeDividerExample extends Example {
-  ThemeDividerExample()
+class ThemeScrollbarsExample extends Example {
+  ThemeScrollbarsExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_dividers.dart');
+            codeFile: 'lib/examples/theme_scrollbars_example.dart');
 }
 
 class Person {
@@ -24,7 +24,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -45,8 +45,8 @@ class MainWidgetState extends State<MainWidget> {
           pinStatus: PinStatus.left,
           width: 30,
           cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
-      DaviColumn(name: 'Age', intValue: (row) => row.age)
+      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
     ]);
   }
 
@@ -54,12 +54,16 @@ class MainWidgetState extends State<MainWidget> {
   Widget build(BuildContext context) {
     return DaviTheme(
         data: const DaviThemeData(
-            columnDividerThickness: 4,
-            columnDividerColor: Colors.blue,
-            header: HeaderThemeData(columnDividerColor: Colors.purple),
-            row: RowThemeData(dividerThickness: 4, dividerColor: Colors.green),
-            scrollbar:
-                TableScrollbarThemeData(columnDividerColor: Colors.orange)),
+            scrollbar: TableScrollbarThemeData(
+                thickness: 16,
+                thumbColor: Colors.black,
+                pinnedHorizontalColor: Colors.yellow,
+                unpinnedHorizontalColor: Colors.green,
+                verticalColor: Colors.blue,
+                borderThickness: 8,
+                pinnedHorizontalBorderColor: Colors.orange,
+                unpinnedHorizontalBorderColor: Colors.purple,
+                verticalBorderColor: Colors.pink)),
         child: Davi<Person>(_model));
   }
 }

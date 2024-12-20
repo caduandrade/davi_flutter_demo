@@ -2,11 +2,11 @@ import 'package:davi/davi.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class ThemeHeaderExample extends Example {
-  ThemeHeaderExample()
+class ThemeDividerExample extends Example {
+  ThemeDividerExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_header.dart');
+            codeFile: 'lib/examples/theme_dividers_example.dart');
 }
 
 class Person {
@@ -24,7 +24,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -41,33 +41,25 @@ class MainWidgetState extends State<MainWidget> {
 
     _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(
+          name: '',
           pinStatus: PinStatus.left,
           width: 30,
           cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
-      DaviColumn(name: 'Age', intValue: (row) => row.age)
+      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
-        data: DaviThemeData(
-            header: HeaderThemeData(
-                color: Colors.green[50],
-                bottomBorderHeight: 4,
-                bottomBorderColor: Colors.blue),
-            headerCell: HeaderCellThemeData(
-                height: 40,
-                alignment: Alignment.center,
-                textStyle: const TextStyle(
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue),
-                resizeAreaWidth: 10,
-                resizeAreaHoverColor: Colors.blue.withOpacity(.5),
-                sortIconColors: SortIconColors.all(Colors.green),
-                expandableName: false)),
+        data: const DaviThemeData(
+            columnDividerThickness: 4,
+            columnDividerColor: Colors.blue,
+            header: HeaderThemeData(columnDividerColor: Colors.purple),
+            row: RowThemeData(dividerThickness: 4, dividerColor: Colors.green),
+            scrollbar:
+                TableScrollbarThemeData(columnDividerColor: Colors.orange)),
         child: Davi<Person>(_model));
   }
 }

@@ -6,7 +6,7 @@ class CellEditExample extends Example {
   CellEditExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/cell_edit.dart');
+            codeFile: 'lib/examples/cell_edit_example.dart');
 }
 
 class Person {

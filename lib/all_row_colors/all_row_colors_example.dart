@@ -6,7 +6,7 @@ class AllRowColorsExample extends Example {
   AllRowColorsExample()
       : super(
             widget: const ExampleWidget(),
-            codeFile: 'lib/examples/all_row_colors.dart');
+            codeFile: 'lib/examples/all_row_colors_example.dart');
 }
 
 class Person {
@@ -24,7 +24,7 @@ class ExampleWidget extends StatefulWidget {
 }
 
 class ExampleWidgetState extends State<ExampleWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -40,8 +40,8 @@ class ExampleWidgetState extends State<ExampleWidget> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', stringValue: (row) => row.name),
-      DaviColumn(name: 'Age', intValue: (row) => row.age)
+      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
     ]);
   }
 

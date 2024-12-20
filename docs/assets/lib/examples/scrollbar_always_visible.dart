@@ -7,7 +7,7 @@ class ScrollbarAlwaysVisibleExample extends Example {
   ScrollbarAlwaysVisibleExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/scrollbar_always_visible.dart');
+            codeFile: 'lib/examples/scrollbar_always_visible_example.dart');
 }
 
 class Person {

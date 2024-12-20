@@ -7,7 +7,7 @@ class MultiSortExample extends Example {
   MultiSortExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/multi_sort.dart');
+            codeFile: 'lib/examples/multi_sort_example.dart');
 }
 
 class Person {

@@ -35,8 +35,8 @@ class GetStartedExampleState extends State<GetStartedExample> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (person, index) => person.name),
-      DaviColumn(name: 'Age', cellValue: (person, index) => person.age)
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
     ]);
   }
   //@demoflu_end:model

@@ -34,8 +34,8 @@ class FitExampleState extends State<FitExample> {
     //@demoflu_start:fit-model
     _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(
-          name: 'Name', grow: 2, cellValue: (person, index) => person.name),
-      DaviColumn(name: 'Age', cellValue: (person, index) => person.age)
+          name: 'Name', grow: 2, cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
     ]);
     //@demoflu_end:fit-model
   }
@@ -74,8 +74,8 @@ class ScrollableExampleState extends State<ScrollableExample> {
     //@demoflu_start:scrollable-model
     _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(
-          name: 'Name', grow: 2, cellValue: (person, index) => person.name),
-      DaviColumn(name: 'Age', cellValue: (person, index) => person.age)
+          name: 'Name', grow: 2, cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
     ]);
     //@demoflu_end:scrollable-model
   }

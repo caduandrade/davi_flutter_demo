@@ -2,11 +2,11 @@ import 'package:davi/davi.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class RowZebraColorExample extends Example {
-  RowZebraColorExample()
+class ThemeHiddenHeaderExample extends Example {
+  ThemeHiddenHeaderExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/row_zebra_color.dart');
+            codeFile: 'lib/examples/theme_hidden_header_example.dart');
 }
 
 class Person {
@@ -24,7 +24,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -40,16 +40,20 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', width: 120, stringValue: (row) => row.name),
-      DaviColumn(name: 'Age', width: 120, intValue: (row) => row.age)
+      DaviColumn(
+          name: '',
+          pinStatus: PinStatus.left,
+          width: 30,
+          cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
+      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
-        data:
-            DaviThemeData(row: RowThemeData(color: RowThemeData.zebraColor())),
+        data: const DaviThemeData(header: HeaderThemeData(visible: false)),
         child: Davi<Person>(_model));
   }
 }

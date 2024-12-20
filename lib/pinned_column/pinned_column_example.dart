@@ -37,8 +37,8 @@ class PinnedColumnExampleState extends State<PinnedColumnExample> {
           pinStatus: PinStatus.left,
           width: 30,
           cellIcon: (person, index) => CellIcon(Icons.edit, size: 16)),
-      DaviColumn(name: 'Name', cellValue: (person, index) => person.name),
-      DaviColumn(name: 'Age', cellValue: (person, index) => person.age)
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
     ]);
     //@demoflu_end:model
   }

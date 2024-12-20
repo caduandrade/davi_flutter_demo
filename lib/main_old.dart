@@ -1,24 +1,23 @@
-import 'package:davi_demo/all_row_colors/all_row_colors.dart';
-import 'package:davi_demo/always_sorted/always_sorted.dart';
-import 'package:davi_demo/cell_edit/cell_edit.dart';
-import 'package:davi_demo/cell_style/cell_style.dart';
-import 'package:davi_demo/custom_cell_widget/custom_cell_widget.dart';
-import 'package:davi_demo/infinite_scroll/infinite_scroll.dart';
-import 'package:davi_demo/multi_sort/multi_sort.dart';
-import 'package:davi_demo/null_cell_color/null_cell_color.dart';
-import 'package:davi_demo/on_sort/on_sort.dart';
-import 'package:davi_demo/row_fill_height/row_fill_height.dart';
+import 'package:davi_demo/all_row_colors/all_row_colors_example.dart';
+import 'package:davi_demo/always_sorted/always_sorted_example.dart';
+import 'package:davi_demo/cell_edit/cell_edit_example.dart';
+import 'package:davi_demo/cell_style/cell_style_example.dart';
+import 'package:davi_demo/custom_cell_widget/custom_cell_widget_example.dart';
+import 'package:davi_demo/infinite_scroll/infinite_scroll_example.dart';
+import 'package:davi_demo/multi_sort/multi_sort_example.dart';
+import 'package:davi_demo/null_cell_color/null_cell_color_example.dart';
+import 'package:davi_demo/on_sort/on_sort_example.dart';
+import 'package:davi_demo/row_fill_height/row_fill_height_example.dart';
 import 'package:davi_demo/row_hover_color/row_hover_background.dart';
 import 'package:davi_demo/examples/row_hover_foreground.dart';
-import 'package:davi_demo/row_hover_listener/row_hover_listener_example.dart';
-import 'package:davi_demo/row_zebra_color/row_zebra_color.dart';
-import 'package:davi_demo/scrollbar_always_visible/scrollbar_always_visible.dart';
-import 'package:davi_demo/examples/server_side_sorting.dart';
-import 'package:davi_demo/theme_dividers/theme_dividers.dart';
-import 'package:davi_demo/theme_header/theme_header.dart';
-import 'package:davi_demo/theme_hidden_header/theme_hidden_header.dart';
-import 'package:davi_demo/theme_row_color/theme_row_color.dart';
-import 'package:davi_demo/theme_scrollbars/theme_scrollbars.dart';
+import 'package:davi_demo/row_zebra_color/row_zebra_color_example.dart';
+import 'package:davi_demo/scrollbar_always_visible/scrollbar_always_visible_example.dart';
+import 'package:davi_demo/examples/server_side_sorting_example.dart';
+import 'package:davi_demo/theme_dividers/theme_dividers_example.dart';
+import 'package:davi_demo/theme_header/theme_header_example.dart';
+import 'package:davi_demo/theme_hidden_header/theme_hidden_header_example.dart';
+import 'package:davi_demo/theme_row_color/theme_row_color_example.dart';
+import 'package:davi_demo/theme_scrollbars/theme_scrollbars_example.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
@@ -34,10 +33,6 @@ List<DemoMenuItem> _menuItems() {
   builder
     ..indent(1)
     ..add('Model')
-    ..indent(2)
-    ..add('Row')
-    ..indent(3)
-    ..add('Infinite scroll', example: InfiniteScrollExample())
     ..indent(2)
     ..add('Cell')
     ..indent(3)

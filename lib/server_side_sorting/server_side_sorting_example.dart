@@ -7,7 +7,7 @@ class ServerSideSortingExample extends Example {
   ServerSideSortingExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/server_side_sorting.dart');
+            codeFile: 'lib/examples/server_side_sorting_example.dart');
 }
 
 class Person {
@@ -35,8 +35,8 @@ class MainWidgetState extends State<MainWidget> {
     super.initState();
     _model = DaviModel<Person>(columns: [
       DaviColumn(
-          id: ColumnId.name, name: 'Name', stringValue: (row) => row.name),
-      DaviColumn(id: ColumnId.age, name: 'Age', intValue: (row) => row.age)
+          id: ColumnId.name, name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(id: ColumnId.age, name: 'Age', cellValue: (row,index) => row.age)
     ], onSort: _onSort, ignoreDataComparators: true);
     loadData();
   }

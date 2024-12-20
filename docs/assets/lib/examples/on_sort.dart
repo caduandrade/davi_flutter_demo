@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 class OnSortExample extends Example {
   OnSortExample()
       : super(
-            widget: const MainWidget(), codeFile: 'lib/examples/on_sort.dart');
+            widget: const MainWidget(), codeFile: 'lib/examples/on_sort_example.dart');
 }
 
 class Person {

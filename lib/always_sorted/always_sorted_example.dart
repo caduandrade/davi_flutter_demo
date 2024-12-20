@@ -1,14 +1,20 @@
 import 'package:davi/davi.dart';
+
+//@demoflu_ignore_start
 import 'package:demoflu/demoflu.dart';
+
+//@demoflu_ignore_end
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class MultiSortExample extends Example {
-  MultiSortExample()
+//@demoflu_ignore_start
+class AlwaysSortedExample extends Example {
+  AlwaysSortedExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/multi_sort.dart');
+            codeFile: 'lib/examples/always_sorted_example.dart');
 }
+//@demoflu_ignore_end
 
 class Person {
   Person(this.name, this.age, this.weight);
@@ -26,7 +32,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class MainWidgetState extends State<MainWidget> {
-  DaviModel<Person>? _model;
+  late DaviModel<Person> _model;
 
   @override
   void initState() {
@@ -42,12 +48,12 @@ class MainWidgetState extends State<MainWidget> {
     _model = DaviModel<Person>(
         rows: rows,
         columns: [
-          DaviColumn(name: 'Name', stringValue: (row) => row.name),
-          DaviColumn(name: 'Age', intValue: (row) => row.age),
+          DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+          DaviColumn(name: 'Age', cellValue: (row,index) => row.age),
           DaviColumn(
-              name: 'Weight', width: 120, doubleValue: (row) => row.weight)
+              name: 'Weight', width: 120, cellValue: (row,index) => row.weight)
         ],
-        multiSortEnabled: true);
+        alwaysSorted: true);
   }
 
   @override

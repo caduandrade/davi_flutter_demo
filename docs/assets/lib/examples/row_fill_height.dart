@@ -6,7 +6,7 @@ class RowFillHeightExample extends Example {
   RowFillHeightExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/row_fill_height.dart');
+            codeFile: 'lib/examples/row_fill_height_example.dart');
 }
 
 class Person {
