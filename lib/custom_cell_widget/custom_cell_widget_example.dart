@@ -1,14 +1,6 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class CustomCellWidgetExample extends Example {
-  CustomCellWidgetExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/custom_cell_widget_example.dart');
-}
 
 class Person {
   Person(this.name, this.stars);
@@ -17,14 +9,14 @@ class Person {
   final int stars;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class CustomCellWidgetExample extends StatefulWidget {
+  const CustomCellWidgetExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => CustomCellWidgetExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class CustomCellWidgetExampleState extends State<CustomCellWidgetExample> {
   late DaviModel<Person> _model;
 
   @override

@@ -1,13 +1,7 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class ThemeHeaderExample extends Example {
-  ThemeHeaderExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_header_example.dart');
-}
+
 
 class Person {
   Person(this.name, this.age);
@@ -16,14 +10,14 @@ class Person {
   final int age;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class ThemeHeaderExample extends StatefulWidget {
+  const ThemeHeaderExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => ThemeHeaderExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class ThemeHeaderExampleState extends State<ThemeHeaderExample> {
   late DaviModel<Person> _model;
 
   @override
@@ -40,22 +34,19 @@ class MainWidgetState extends State<MainWidget> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(
-          pinStatus: PinStatus.left,
-          width: 30,
-          cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
       DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
       DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
     ]);
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
         data: DaviThemeData(
             header: HeaderThemeData(
                 color: Colors.green[50],
-                bottomBorderHeight: 4,
+                bottomBorderThickness: 4,
                 bottomBorderColor: Colors.blue),
             headerCell: HeaderCellThemeData(
                 height: 40,
@@ -70,4 +61,5 @@ class MainWidgetState extends State<MainWidget> {
                 expandableName: false)),
         child: Davi<Person>(_model));
   }
+  //@demoflu_end:code
 }

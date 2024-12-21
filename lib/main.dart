@@ -8,6 +8,10 @@ import 'package:davi_demo/row_callbacks/row_callbacks_page.dart';
 import 'package:davi_demo/row_color/row_color_page.dart';
 import 'package:davi_demo/row_cursor/row_cursor_page.dart';
 import 'package:davi_demo/row_hover_listener/row_hover_listener_page.dart';
+import 'package:davi_demo/theme_dividers/theme_dividers_page.dart';
+import 'package:davi_demo/theme_header/theme_header_page.dart';
+import 'package:davi_demo/theme_hidden_header/theme_hidden_header_page.dart';
+import 'package:davi_demo/theme_row_color/theme_row_color_page.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
@@ -45,41 +49,62 @@ void main() {
   app.run();
 }
 
-List<DemoMenuItem> get _rootMenus => [_getStarted, _columns,_rows,_cells];
+List<DemoMenuItem> get _rootMenus => [_getStarted, _columns, _rows, _theme, _style];
 
 DemoMenuItem get _getStarted =>
     DemoMenuItem('Get started', page: () => GetStartedPage());
 
+// COLUMNS
 
-DemoMenuItem _columns = DemoMenuItem('Columns',
-    children: [_columnWidth, _columnStyle, _pinnedColumn]);
+DemoMenuItem get _columns =>
+    DemoMenuItem('Columns', children: [_columnWidth, _pinnedColumn]);
 
 DemoMenuItem get _columnWidth =>
     DemoMenuItem('Column width', page: () => ColumnWidthPage());
 
-DemoMenuItem get _columnStyle =>
-    DemoMenuItem('Column style', page: () => ColumnStylePage());
-
 DemoMenuItem get _pinnedColumn =>
     DemoMenuItem('Pinned column', page: () => PinnedColumnPage());
 
-DemoMenuItem _rows = DemoMenuItem('Rows',
-    children: [_rowColor,_rowCursor,_rowCallbacks,_rowHoverListener,_infiniteScroll]);
+// ROWS
 
-DemoMenuItem get _rowColor => DemoMenuItem('Row color', page:()=>RowColorPage());
+DemoMenuItem get _rows => DemoMenuItem('Rows',
+    children: [_rowCallbacks, _rowHoverListener, _infiniteScroll]);
 
-DemoMenuItem get _rowCursor => DemoMenuItem('Row cursor', page:()=>RowCursorPage());
+DemoMenuItem get _rowCallbacks =>
+    DemoMenuItem('Row callbacks', page: () => RowCallbacksPage());
 
-DemoMenuItem get _rowCallbacks => DemoMenuItem('Row callbacks', page:()=>RowCallbacksPage());
+DemoMenuItem get _rowHoverListener =>
+    DemoMenuItem('Row hover listener', page: () => RowHoverListenerPage());
 
-DemoMenuItem get _rowHoverListener => DemoMenuItem('Row hover listener', page:()=>RowHoverListenerPage());
+DemoMenuItem get _infiniteScroll =>
+    DemoMenuItem('Infinite scroll', page: () => InfiniteScrollPage());
 
-DemoMenuItem get _infiniteScroll => DemoMenuItem('Infinite scroll', page:()=>InfiniteScrollPage());
+// THEME
 
-DemoMenuItem _cells = DemoMenuItem('Cells',
-    children: []);
+DemoMenuItem get _theme =>
+    DemoMenuItem('Theme', children: [_themeDividers,_themeHeader, _themeRow]);
+
+DemoMenuItem get _themeDividers => DemoMenuItem('Dividers thickness and color', page:()=>ThemeDividersPage());
+
+DemoMenuItem get _themeHeader => DemoMenuItem('Header', page:()=>ThemeHeaderPage(), children: [_themeHiddenHeader]);
+
+DemoMenuItem get _themeHiddenHeader => DemoMenuItem('Hidden header', page:()=>ThemeHiddenHeaderPage());
+
+DemoMenuItem get _themeRow => DemoMenuItem('Row',  children: [_themeRowColor]);
+
+DemoMenuItem get _themeRowColor => DemoMenuItem('Row color', page:()=>ThemeRowColorPage());
 
 
+// STYLE
 
+DemoMenuItem get _style =>
+    DemoMenuItem('Style', children: [_rowColor, _rowCursor, _columnStyle]);
 
+DemoMenuItem get _columnStyle =>
+    DemoMenuItem('Column/Cell style', page: () => ColumnStylePage());
 
+DemoMenuItem get _rowColor =>
+    DemoMenuItem('Row color', page: () => RowColorPage());
+
+DemoMenuItem get _rowCursor =>
+    DemoMenuItem('Row cursor', page: () => RowCursorPage());

@@ -1,13 +1,6 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class ThemeRowColorExample extends Example {
-  ThemeRowColorExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_row_color_example.dart');
-}
 
 class Person {
   Person(this.name, this.age);
@@ -16,14 +9,14 @@ class Person {
   final int age;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class ThemeRowColorExample extends StatefulWidget {
+  const ThemeRowColorExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => ThemeRowColorExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class ThemeRowColorExampleState extends State<ThemeRowColorExample> {
   late DaviModel<Person> _model;
 
   @override
@@ -45,6 +38,7 @@ class MainWidgetState extends State<MainWidget> {
     ]);
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
@@ -52,4 +46,5 @@ class MainWidgetState extends State<MainWidget> {
             row: RowThemeData(color: (rowIndex) => Colors.green[50])),
         child: Davi<Person>(_model));
   }
+  //@demoflu_end:code
 }

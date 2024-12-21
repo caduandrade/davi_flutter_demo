@@ -50,6 +50,7 @@ class MainWidgetState extends State<MainWidget> {
     ]);
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
@@ -66,4 +67,5 @@ class MainWidgetState extends State<MainWidget> {
                 verticalBorderColor: Colors.pink)),
         child: Davi<Person>(_model));
   }
+  //@demoflu_end:code
 }

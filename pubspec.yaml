@@ -77,7 +77,6 @@ flutter:
     - lib/all_row_colors/
     - lib/always_sorted/
     - lib/cell_edit/
-    - lib/cell_style/
     - lib/custom_cell_widget/
     - lib/infinite_scroll/
     - lib/multi_sort/

@@ -2,12 +2,6 @@ import 'package:davi/davi.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class NullCellColorExample extends Example {
-  NullCellColorExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/null_cell_color_example.dart');
-}
 
 class Person {
   Person(this.name, this.mobile);

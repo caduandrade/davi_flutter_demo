@@ -40,8 +40,8 @@ class ColumnStyleExampleState extends State<ColumnStyleExample> {
           headerTextStyle: TextStyle(color: Colors.blue[900]!),
           headerAlignment: Alignment.center,
           cellAlignment: Alignment.center,
-          cellTextStyle: TextStyle(color: Colors.blue[700]!),
-          cellBackground: (person, index, hovered) => Colors.blue[50])
+          cellTextStyle: (row, index, hovered) => TextStyle(color: Colors.blue[700]!),
+          cellBackground: (row, index, hovered) => Colors.blue[50])
     ]);
     //@demoflu_end:model
   }

@@ -1,13 +1,6 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class ThemeDividerExample extends Example {
-  ThemeDividerExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_dividers_example.dart');
-}
 
 class Person {
   Person(this.name, this.age);
@@ -16,14 +9,14 @@ class Person {
   final int age;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class ThemeDividerExample extends StatefulWidget {
+  const ThemeDividerExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => ThemeDividerExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class ThemeDividerExampleState extends State<ThemeDividerExample> {
   late DaviModel<Person> _model;
 
   @override
@@ -44,12 +37,13 @@ class MainWidgetState extends State<MainWidget> {
           name: '',
           pinStatus: PinStatus.left,
           width: 30,
-          cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
+          cellWidget: (context, row,index) => const Icon(Icons.edit, size: 16)),
       DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
       DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
     ]);
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
@@ -62,4 +56,5 @@ class MainWidgetState extends State<MainWidget> {
                 TableScrollbarThemeData(columnDividerColor: Colors.orange)),
         child: Davi<Person>(_model));
   }
+  //@demoflu_end:code
 }
