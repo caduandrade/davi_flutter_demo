@@ -1,4 +1,5 @@
 import 'package:davi_demo/always_sorted/always_sorted_page.dart';
+import 'package:davi_demo/cell_edit/cell_edit_page.dart';
 import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
 import 'package:davi_demo/custom_cell_widget/custom_cell_page.dart';
@@ -60,7 +61,8 @@ void main() {
   app.run();
 }
 
-List<DemoMenuItem> get _rootMenus => [_getStarted, _columns, _rows,_cells,_sort, _theme, _style];
+List<DemoMenuItem> get _rootMenus =>
+    [_getStarted, _columns, _rows, _cells, _sort, _theme, _style];
 
 DemoMenuItem get _getStarted =>
     DemoMenuItem('Get started', page: () => GetStartedPage());
@@ -92,17 +94,19 @@ DemoMenuItem get _infiniteScroll =>
 
 // CELLS
 
-DemoMenuItem get _cells => DemoMenuItem('Cells',
-    children: [_customCellWidget]);
+DemoMenuItem get _cells =>
+    DemoMenuItem('Cells', children: [_customCellWidget, _cellEdit]);
 
 DemoMenuItem get _customCellWidget =>
     DemoMenuItem('Custom cell widget', page: () => CustomCellWidgetPage());
 
+DemoMenuItem get _cellEdit =>
+    DemoMenuItem('Cell edit', page: () => CellEditPage());
 
 // SORT
 
 DemoMenuItem get _sort => DemoMenuItem('Sort',
-    children: [_alwaysSorted,_multiSort,_onSort,_serverSideSort]);
+    children: [_alwaysSorted, _multiSort, _onSort, _serverSideSort]);
 
 DemoMenuItem get _alwaysSorted =>
     DemoMenuItem('Always sorted', page: () => AlwaysSortedPage());
@@ -110,49 +114,66 @@ DemoMenuItem get _alwaysSorted =>
 DemoMenuItem get _multiSort =>
     DemoMenuItem('Multi sort', page: () => MultiSortPage());
 
-DemoMenuItem get _onSort =>
-    DemoMenuItem('On sort', page: () => OnSortPage());
+DemoMenuItem get _onSort => DemoMenuItem('On sort', page: () => OnSortPage());
 
 DemoMenuItem get _serverSideSort =>
     DemoMenuItem('Server side sort', page: () => ServerSideSortingPage());
 
-
-
-
-
 // THEME
 
-DemoMenuItem get _theme =>
-    DemoMenuItem('Theme', children: [_themeDividers,_themeHeader, _themeRow,_themeScrollbar,_themeCell]);
+DemoMenuItem get _theme => DemoMenuItem('Theme', children: [
+      _themeDividers,
+      _themeHeader,
+      _themeRow,
+      _themeScrollbar,
+      _themeCell
+    ]);
 
-DemoMenuItem get _themeDividers => DemoMenuItem('Dividers thickness and color', page:()=>ThemeDividersPage());
+DemoMenuItem get _themeDividers => DemoMenuItem('Dividers thickness and color',
+    page: () => ThemeDividersPage());
 
-DemoMenuItem get _themeHeader => DemoMenuItem('Header', page:()=>ThemeHeaderPage(), children: [_themeHiddenHeader]);
+DemoMenuItem get _themeHeader => DemoMenuItem('Header',
+    page: () => ThemeHeaderPage(), children: [_themeHiddenHeader]);
 
-DemoMenuItem get _themeHiddenHeader => DemoMenuItem('Hidden header', page:()=>ThemeHiddenHeaderPage());
+DemoMenuItem get _themeHiddenHeader =>
+    DemoMenuItem('Hidden header', page: () => ThemeHiddenHeaderPage());
 
-DemoMenuItem get _themeRow => DemoMenuItem('Row',  children: [_themeRowColor,_themeRowZebraColor,_themeRowHoverColor,
-  _themeRowFillHeight]);
+DemoMenuItem get _themeRow => DemoMenuItem('Row', children: [
+      _themeRowColor,
+      _themeRowZebraColor,
+      _themeRowHoverColor,
+      _themeRowFillHeight
+    ]);
 
-DemoMenuItem get _themeRowColor => DemoMenuItem('Row color', page:()=>ThemeRowColorPage());
+DemoMenuItem get _themeRowColor =>
+    DemoMenuItem('Row color', page: () => ThemeRowColorPage());
 
-DemoMenuItem get _themeRowZebraColor => DemoMenuItem('Row zebra color', page:()=>RowZebraColorPage());
+DemoMenuItem get _themeRowZebraColor =>
+    DemoMenuItem('Row zebra color', page: () => RowZebraColorPage());
 
-DemoMenuItem get _themeRowHoverColor => DemoMenuItem('Row hover color', page:()=>RowHoverColorPage());
-DemoMenuItem get _themeRowFillHeight => DemoMenuItem('Row fill height', page:()=>RowFillHeightPage());
+DemoMenuItem get _themeRowHoverColor =>
+    DemoMenuItem('Row hover color', page: () => RowHoverColorPage());
+DemoMenuItem get _themeRowFillHeight =>
+    DemoMenuItem('Row fill height', page: () => RowFillHeightPage());
 
-DemoMenuItem get _themeScrollbar => DemoMenuItem('Scrollbar',  page: ()=>ThemeScrollbarsPage(), children: [_themeScrollbarAlwaysVisible]);
+DemoMenuItem get _themeScrollbar => DemoMenuItem('Scrollbar',
+    page: () => ThemeScrollbarsPage(),
+    children: [_themeScrollbarAlwaysVisible]);
 
-DemoMenuItem get _themeScrollbarAlwaysVisible => DemoMenuItem('Scrollbar always visible', page:()=>ScrollbarAlwaysVisiblePage());
+DemoMenuItem get _themeScrollbarAlwaysVisible =>
+    DemoMenuItem('Scrollbar always visible',
+        page: () => ScrollbarAlwaysVisiblePage());
 
-DemoMenuItem get _themeCell => DemoMenuItem('Cell',   children: [_themeNullCellColor]);
+DemoMenuItem get _themeCell =>
+    DemoMenuItem('Cell', children: [_themeNullCellColor]);
 
-DemoMenuItem get _themeNullCellColor => DemoMenuItem('Null cell color', page:()=>NullCellColorPage());
+DemoMenuItem get _themeNullCellColor =>
+    DemoMenuItem('Null cell color', page: () => NullCellColorPage());
 
 // DATA-DRIVEN STYLE
 
-DemoMenuItem get _style =>
-    DemoMenuItem('Data-driven style', children: [_rowColor, _rowCursor, _columnStyle]);
+DemoMenuItem get _style => DemoMenuItem('Data-driven style',
+    children: [_rowColor, _rowCursor, _columnStyle]);
 
 DemoMenuItem get _columnStyle =>
     DemoMenuItem('Column/Cell style', page: () => ColumnStylePage());

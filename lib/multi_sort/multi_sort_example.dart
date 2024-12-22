@@ -2,7 +2,6 @@ import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-
 class Person {
   Person(this.name, this.age, this.weight);
 

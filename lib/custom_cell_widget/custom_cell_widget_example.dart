@@ -1,7 +1,6 @@
 import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
-
 class Person {
   Person(this.name, this.stars);
 
@@ -31,7 +30,7 @@ class CustomCellWidgetExampleState extends State<CustomCellWidgetExample> {
       Person('Delmar', 2)
     ];
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
       DaviColumn(
           name: 'Rate',
           width: 150,

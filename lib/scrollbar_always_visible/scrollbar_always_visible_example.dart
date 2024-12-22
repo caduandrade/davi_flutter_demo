@@ -5,7 +5,6 @@ import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-
 class Person {
   Person(this.name, this.age);
 
@@ -20,15 +19,21 @@ class ScrollbarAlwaysVisibleExample extends StatefulWidget {
   State<StatefulWidget> createState() => ScrollbarAlwaysVisibleExampleState();
 }
 
-class ScrollbarAlwaysVisibleExampleState extends State<ScrollbarAlwaysVisibleExample> {
+class ScrollbarAlwaysVisibleExampleState
+    extends State<ScrollbarAlwaysVisibleExample> {
   late DaviModel<int> _model;
 
   @override
   void initState() {
     super.initState();
     Random random = Random();
-    List<int> rows = List.generate(5, (index)=>random.nextInt(999));
-    _model = DaviModel<int>(rows: rows, columns: List.generate(3, (index)=>DaviColumn(name: 'C$index', cellValue: (row,rowIndex)=>row+index)));
+    List<int> rows = List.generate(5, (index) => random.nextInt(999));
+    _model = DaviModel<int>(
+        rows: rows,
+        columns: List.generate(
+            3,
+            (index) => DaviColumn(
+                name: 'C$index', cellValue: (row, rowIndex) => row + index)));
   }
 
   //@demoflu_start:code

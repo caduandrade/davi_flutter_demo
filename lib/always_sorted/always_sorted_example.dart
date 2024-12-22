@@ -35,10 +35,10 @@ class AlwaysSortedExampleState extends State<AlwaysSortedExample> {
     _model = DaviModel<Person>(
         rows: rows,
         columns: [
-          DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
-          DaviColumn(name: 'Age', cellValue: (row,index) => row.age),
+          DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+          DaviColumn(name: 'Age', cellValue: (row, index) => row.age),
           DaviColumn(
-              name: 'Weight', width: 120, cellValue: (row,index) => row.weight)
+              name: 'Weight', width: 120, cellValue: (row, index) => row.weight)
         ],
         alwaysSorted: true);
   }

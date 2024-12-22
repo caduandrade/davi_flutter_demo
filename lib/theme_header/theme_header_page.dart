@@ -3,20 +3,16 @@ import 'package:davi_demo/theme_header/theme_header_example.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/widgets.dart';
 
-class ThemeHeaderPage extends DemoFluPage{
-
+class ThemeHeaderPage extends DemoFluPage {
   @override
-  void buildSections(BuildContext context,PageSections sections) {
+  void buildSections(BuildContext context, PageSections sections) {
     final String source = 'lib/theme_header/theme_header_example.dart';
-    sections.code(source,
-        mark: 'code', loadMode: LoadMode.readOnlyMarked);
+    sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
     sections
         .widget((context) => const ThemeHeaderExample(), title: 'Example:')
         .runMacro(id: Macros.horizontalExample, context: context);
 
-    sections.code(source,
-        discardMarks: true, title: 'Full code:');
+    sections.code(source, discardMarks: true, title: 'Full code:');
   }
-
 }

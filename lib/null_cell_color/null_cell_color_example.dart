@@ -2,7 +2,6 @@ import 'package:davi/davi.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-
 class Person {
   Person(this.name, this.mobile);
 
@@ -24,7 +23,7 @@ class NullCellColorExampleState extends State<NullCellColorExample> {
   void initState() {
     super.initState();
 
-    List<Person> rows =[
+    List<Person> rows = [
       Person('Landon', '+321 321-432-543'),
       Person('Sari', '+123 456-789-012'),
       Person('Julian', null),
@@ -34,8 +33,9 @@ class NullCellColorExampleState extends State<NullCellColorExample> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
-      DaviColumn(name: 'Mobile', width: 150, cellValue: (row,index) => row.mobile)
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      DaviColumn(
+          name: 'Mobile', width: 150, cellValue: (row, index) => row.mobile)
     ]);
   }
 

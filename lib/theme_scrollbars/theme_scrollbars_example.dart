@@ -3,9 +3,6 @@ import 'dart:math';
 import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
-
-
-
 class ThemeScrollbarsExample extends StatefulWidget {
   const ThemeScrollbarsExample({Key? key}) : super(key: key);
 
@@ -21,8 +18,13 @@ class ThemeScrollbarsExampleState extends State<ThemeScrollbarsExample> {
     super.initState();
 
     Random random = Random();
-    List<int> rows = List.generate(100, (index)=>random.nextInt(999));
-    _model = DaviModel<int>(rows: rows, columns: List.generate(10, (index)=>DaviColumn(name: 'C$index', cellValue: (row,rowIndex)=>row+index)));
+    List<int> rows = List.generate(100, (index) => random.nextInt(999));
+    _model = DaviModel<int>(
+        rows: rows,
+        columns: List.generate(
+            10,
+            (index) => DaviColumn(
+                name: 'C$index', cellValue: (row, rowIndex) => row + index)));
   }
 
   //@demoflu_start:code

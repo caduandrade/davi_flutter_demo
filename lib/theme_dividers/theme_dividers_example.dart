@@ -1,7 +1,6 @@
 import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
-
 class Person {
   Person(this.name, this.age);
 
@@ -37,9 +36,10 @@ class ThemeDividerExampleState extends State<ThemeDividerExample> {
           name: '',
           pinStatus: PinStatus.left,
           width: 30,
-          cellWidget: (context, row,index) => const Icon(Icons.edit, size: 16)),
-      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
+          cellWidget: (context, row, index) =>
+              const Icon(Icons.edit, size: 16)),
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
     ]);
   }
 

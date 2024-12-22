@@ -2,7 +2,6 @@ import 'package:davi/davi.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-
 class Person {
   Person(this.name, this.age);
 

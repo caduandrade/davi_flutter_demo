@@ -5,8 +5,7 @@ import 'package:flutter/widgets.dart';
 
 class ColumnStylePage extends DemoFluPage {
   @override
-  void buildSections(BuildContext context,PageSections sections) {
-
+  void buildSections(BuildContext context, PageSections sections) {
     sections.code('lib/column_style/column_style_example.dart',
         mark: 'model', loadMode: LoadMode.readOnlyMarked, title: 'Model:');
 
@@ -16,6 +15,5 @@ class ColumnStylePage extends DemoFluPage {
 
     sections.code('lib/column_style/column_style_example.dart',
         discardMarks: true, title: 'Full code:');
-
   }
 }

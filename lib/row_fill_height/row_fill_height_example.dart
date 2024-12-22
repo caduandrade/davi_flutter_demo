@@ -1,7 +1,6 @@
 import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
-
 class Person {
   Person(this.name, this.age);
 
@@ -30,8 +29,8 @@ class RowFillHeightExampleState extends State<RowFillHeightExample> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
     ]);
   }
 

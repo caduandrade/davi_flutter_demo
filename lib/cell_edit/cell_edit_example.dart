@@ -1,13 +1,5 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
-
-class CellEditExample extends Example {
-  CellEditExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/cell_edit_example.dart');
-}
 
 class Person {
   Person(this.name, this.value);
@@ -29,14 +21,14 @@ class Person {
   }
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class CellEditExample extends StatefulWidget {
+  const CellEditExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => CellEditExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class CellEditExampleState extends State<CellEditExample> {
   late DaviModel<Person> _model;
 
   @override
@@ -51,20 +43,21 @@ class MainWidgetState extends State<MainWidget> {
       Person('Delmar', 2)
     ];
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
-      DaviColumn(name: 'Value', cellValue: (row,index) => row.value),
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Value', cellValue: (row, index) => row.value),
       DaviColumn(
           name: 'Editable',
-          cellBuilder: _buildField,
-          cellBackground: (row) => row.data.valid ? null : Colors.red[800])
+          cellWidget: _buildField,
+          cellBackground: (row, rowIndex, hovered) =>
+              row.valid ? null : Colors.red[800])
     ]);
   }
 
-  Widget _buildField(BuildContext context, DaviRow<Person> row) {
+  Widget _buildField(BuildContext context, Person person, int rowIndex) {
     return TextFormField(
-        initialValue: row.data.editable,
-        style: TextStyle(color: row.data.valid ? Colors.black : Colors.white),
-        onChanged: (value) => _onFieldChange(value, row.data));
+        initialValue: person.editable,
+        style: TextStyle(color: person.valid ? Colors.black : Colors.white),
+        onChanged: (value) => _onFieldChange(value, person));
   }
 
   void _onFieldChange(String value, Person person) {

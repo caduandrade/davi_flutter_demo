@@ -69,7 +69,10 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
-      SizedBox(width: 16, height: 16, child: CircularProgressIndicator(color: Colors.black54)),
+      SizedBox(
+          width: 16,
+          height: 16,
+          child: CircularProgressIndicator(color: Colors.black54)),
       SizedBox(width: 8),
       Text('Loading...',
           textAlign: TextAlign.center,

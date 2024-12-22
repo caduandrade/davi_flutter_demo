@@ -3,18 +3,16 @@ import 'package:davi_demo/macros.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/widgets.dart';
 
-class CustomCellWidgetPage extends DemoFluPage{
-
+class CustomCellWidgetPage extends DemoFluPage {
   @override
-  void buildSections(BuildContext context,PageSections sections) {
-    final String source = 'lib/custom_cell_widget/custom_cell_widget_example.dart';
+  void buildSections(BuildContext context, PageSections sections) {
+    final String source =
+        'lib/custom_cell_widget/custom_cell_widget_example.dart';
 
     sections
         .widget((context) => const CustomCellWidgetExample(), title: 'Example:')
         .runMacro(id: Macros.horizontalExample, context: context);
 
-    sections.code(source,
-        discardMarks: true, title: 'Full code:');
+    sections.code(source, discardMarks: true, title: 'Full code:');
   }
-
 }

@@ -1,16 +1,16 @@
-import 'package:davi_demo/infinite_scroll/infinite_scroll_example.dart';
+import 'package:davi_demo/cell_edit/cell_edit_example.dart';
 import 'package:davi_demo/macros.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/widgets.dart';
 
-class InfiniteScrollPage extends DemoFluPage {
+class CellEditPage extends DemoFluPage {
   @override
   void buildSections(BuildContext context, PageSections sections) {
     sections
-        .widget((context) => const InfiniteScrollExample(), title: 'Example:')
+        .widget((context) => const CellEditExample(), title: 'Example:')
         .runMacro(id: Macros.horizontalExample, context: context);
 
-    sections.code('lib/infinite_scroll/infinite_scroll_example.dart',
+    sections.code('lib/cell_edit/cell_edit_example.dart',
         discardMarks: true, title: 'Full code:');
   }
 }

@@ -1,7 +1,6 @@
 import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
-
 class Person {
   Person(this.name, this.age, this.color);
 
@@ -34,10 +33,12 @@ class RowHoverBackgroundExampleState extends State<RowHoverBackgroundExample> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row,index) => row.age),
+      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, index) => row.age),
       DaviColumn(
-          name: 'Color', width: 66, cellBackground: (row, index, hovered) => row.color)
+          name: 'Color',
+          width: 66,
+          cellBackground: (row, index, hovered) => row.color)
     ]);
   }
 

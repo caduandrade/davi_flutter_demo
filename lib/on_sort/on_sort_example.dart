@@ -2,7 +2,6 @@ import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-
 class Person {
   Person(this.name, this.age);
 
@@ -36,8 +35,8 @@ class OnSortExampleState extends State<OnSortExample> {
     _model = DaviModel<Person>(
         rows: rows,
         columns: [
-          DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
-          DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
+          DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+          DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
         ],
         onSort: _onSort);
   }
@@ -49,9 +48,7 @@ class OnSortExampleState extends State<OnSortExample> {
       } else {
         final DaviColumn<Person> column = sortedColumns.first;
 
-
-        _sortedBy =
-            'sorted by ${column.name} / ${column.sort!.direction.name}';
+        _sortedBy = 'sorted by ${column.name} / ${column.sort!.direction.name}';
       }
     });
   }

@@ -1,7 +1,6 @@
 import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
-
 class Person {
   Person(this.name, this.age);
 
@@ -33,8 +32,8 @@ class RowZebraColorExampleState extends State<RowZebraColorExample> {
     ];
 
     _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', width: 120, cellValue: (row,index) => row.name),
-      DaviColumn(name: 'Age', width: 120, cellValue: (row,index) => row.age)
+      DaviColumn(name: 'Name', width: 120, cellValue: (row, index) => row.name),
+      DaviColumn(name: 'Age', width: 120, cellValue: (row, index) => row.age)
     ]);
   }
 

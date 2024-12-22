@@ -2,7 +2,6 @@ import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-
 class Person {
   Person(this.name, this.age);
 
@@ -28,8 +27,9 @@ class ServerSideSortingExampleState extends State<ServerSideSortingExample> {
     super.initState();
     _model = DaviModel<Person>(columns: [
       DaviColumn(
-          id: ColumnId.name, name: 'Name', cellValue: (row,index) => row.name),
-      DaviColumn(id: ColumnId.age, name: 'Age', cellValue: (row,index) => row.age)
+          id: ColumnId.name, name: 'Name', cellValue: (row, index) => row.name),
+      DaviColumn(
+          id: ColumnId.age, name: 'Age', cellValue: (row, index) => row.age)
     ], onSort: _onSort, ignoreDataComparators: true);
     loadData();
   }

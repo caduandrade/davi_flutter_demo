@@ -3,9 +3,9 @@ import 'package:davi_demo/row_hover_listener/row_hover_listener_example.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/widgets.dart';
 
-class RowHoverListenerPage extends DemoFluPage{
+class RowHoverListenerPage extends DemoFluPage {
   @override
-  void buildSections(BuildContext context,PageSections sections) {
+  void buildSections(BuildContext context, PageSections sections) {
     sections.code('lib/row_hover_listener/row_hover_listener_example.dart',
         mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
@@ -18,5 +18,4 @@ class RowHoverListenerPage extends DemoFluPage{
     sections.code('lib/row_hover_listener/row_hover_listener_example.dart',
         discardMarks: true, title: 'Full code:');
   }
-
 }
