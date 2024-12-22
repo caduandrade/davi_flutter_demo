@@ -1,14 +1,7 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class OnSortExample extends Example {
-  OnSortExample()
-      : super(
-            widget: const MainWidget(), codeFile: 'lib/examples/on_sort_example.dart');
-}
 
 class Person {
   Person(this.name, this.age);
@@ -17,14 +10,14 @@ class Person {
   final int age;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class OnSortExample extends StatefulWidget {
+  const OnSortExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => OnSortExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class OnSortExampleState extends State<OnSortExample> {
   late DaviModel<Person> _model;
 
   String _sortedBy = 'natural ordering';
@@ -56,8 +49,9 @@ class MainWidgetState extends State<MainWidget> {
       } else {
         final DaviColumn<Person> column = sortedColumns.first;
 
+
         _sortedBy =
-            'sorted by ${column.name} / ${describeEnum(column.sortPriority!)}';
+            'sorted by ${column.name} / ${column.sort!.direction.name}';
       }
     });
   }

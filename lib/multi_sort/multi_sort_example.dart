@@ -1,14 +1,7 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class MultiSortExample extends Example {
-  MultiSortExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/multi_sort_example.dart');
-}
 
 class Person {
   Person(this.name, this.age, this.weight);
@@ -18,14 +11,14 @@ class Person {
   final double weight;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class MultiSortExample extends StatefulWidget {
+  const MultiSortExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => MultiSortExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class MultiSortExampleState extends State<MultiSortExample> {
   late DaviModel<Person> _model;
 
   @override

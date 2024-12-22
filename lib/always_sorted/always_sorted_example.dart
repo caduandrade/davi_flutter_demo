@@ -1,20 +1,7 @@
 import 'package:davi/davi.dart';
 
-//@demoflu_ignore_start
-import 'package:demoflu/demoflu.dart';
-
-//@demoflu_ignore_end
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
-//@demoflu_ignore_start
-class AlwaysSortedExample extends Example {
-  AlwaysSortedExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/always_sorted_example.dart');
-}
-//@demoflu_ignore_end
 
 class Person {
   Person(this.name, this.age, this.weight);
@@ -24,14 +11,14 @@ class Person {
   final double weight;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class AlwaysSortedExample extends StatefulWidget {
+  const AlwaysSortedExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => AlwaysSortedExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class AlwaysSortedExampleState extends State<AlwaysSortedExample> {
   late DaviModel<Person> _model;
 
   @override

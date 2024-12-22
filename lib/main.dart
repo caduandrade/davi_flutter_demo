@@ -1,9 +1,13 @@
+import 'package:davi_demo/always_sorted/always_sorted_page.dart';
 import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
+import 'package:davi_demo/custom_cell_widget/custom_cell_page.dart';
 import 'package:davi_demo/get_started/get_started_page.dart';
 import 'package:davi_demo/infinite_scroll/infinite_scroll_page.dart';
 import 'package:davi_demo/macros.dart';
+import 'package:davi_demo/multi_sort/multi_sort_page.dart';
 import 'package:davi_demo/null_cell_color/null_cell_color_page.dart';
+import 'package:davi_demo/on_sort/on_sort_page.dart';
 import 'package:davi_demo/pinned_column/pinned_column_page.dart';
 import 'package:davi_demo/row_callbacks/row_callbacks_page.dart';
 import 'package:davi_demo/row_color/row_color_page.dart';
@@ -13,6 +17,7 @@ import 'package:davi_demo/row_hover_color/row_hover_color_page.dart';
 import 'package:davi_demo/row_hover_listener/row_hover_listener_page.dart';
 import 'package:davi_demo/row_zebra_color/row_zebra_color_page.dart';
 import 'package:davi_demo/scrollbar_always_visible/scrollbar_always_visible_page.dart';
+import 'package:davi_demo/server_side_sorting/server_side_sorting_page.dart';
 import 'package:davi_demo/theme_dividers/theme_dividers_page.dart';
 import 'package:davi_demo/theme_header/theme_header_page.dart';
 import 'package:davi_demo/theme_hidden_header/theme_hidden_header_page.dart';
@@ -55,7 +60,7 @@ void main() {
   app.run();
 }
 
-List<DemoMenuItem> get _rootMenus => [_getStarted, _columns, _rows, _theme, _style];
+List<DemoMenuItem> get _rootMenus => [_getStarted, _columns, _rows,_cells,_sort, _theme, _style];
 
 DemoMenuItem get _getStarted =>
     DemoMenuItem('Get started', page: () => GetStartedPage());
@@ -84,6 +89,36 @@ DemoMenuItem get _rowHoverListener =>
 
 DemoMenuItem get _infiniteScroll =>
     DemoMenuItem('Infinite scroll', page: () => InfiniteScrollPage());
+
+// CELLS
+
+DemoMenuItem get _cells => DemoMenuItem('Cells',
+    children: [_customCellWidget]);
+
+DemoMenuItem get _customCellWidget =>
+    DemoMenuItem('Custom cell widget', page: () => CustomCellWidgetPage());
+
+
+// SORT
+
+DemoMenuItem get _sort => DemoMenuItem('Sort',
+    children: [_alwaysSorted,_multiSort,_onSort,_serverSideSort]);
+
+DemoMenuItem get _alwaysSorted =>
+    DemoMenuItem('Always sorted', page: () => AlwaysSortedPage());
+
+DemoMenuItem get _multiSort =>
+    DemoMenuItem('Multi sort', page: () => MultiSortPage());
+
+DemoMenuItem get _onSort =>
+    DemoMenuItem('On sort', page: () => OnSortPage());
+
+DemoMenuItem get _serverSideSort =>
+    DemoMenuItem('Server side sort', page: () => ServerSideSortingPage());
+
+
+
+
 
 // THEME
 
@@ -114,11 +149,10 @@ DemoMenuItem get _themeCell => DemoMenuItem('Cell',   children: [_themeNullCellC
 
 DemoMenuItem get _themeNullCellColor => DemoMenuItem('Null cell color', page:()=>NullCellColorPage());
 
-
-// STYLE
+// DATA-DRIVEN STYLE
 
 DemoMenuItem get _style =>
-    DemoMenuItem('Style', children: [_rowColor, _rowCursor, _columnStyle]);
+    DemoMenuItem('Data-driven style', children: [_rowColor, _rowCursor, _columnStyle]);
 
 DemoMenuItem get _columnStyle =>
     DemoMenuItem('Column/Cell style', page: () => ColumnStylePage());

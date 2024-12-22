@@ -74,7 +74,6 @@ flutter:
     - lib/theme_hidden_header/
     - lib/theme_row_color/
     - lib/on_sort/
-    - lib/all_row_colors/
     - lib/always_sorted/
     - lib/cell_edit/
     - lib/custom_cell_widget/

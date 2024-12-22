@@ -35,7 +35,7 @@ class CustomCellWidgetExampleState extends State<CustomCellWidgetExample> {
       DaviColumn(
           name: 'Rate',
           width: 150,
-          cellBuilder: (context, row) => StarsWidget(stars: row.data.stars))
+          cellWidget: (context, row, rowIndex) => StarsWidget(stars: row.stars))
     ]);
   }
 

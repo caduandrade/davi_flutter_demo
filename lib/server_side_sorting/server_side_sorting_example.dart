@@ -1,14 +1,7 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class ServerSideSortingExample extends Example {
-  ServerSideSortingExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/server_side_sorting_example.dart');
-}
 
 class Person {
   Person(this.name, this.age);
@@ -17,16 +10,16 @@ class Person {
   final int age;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class ServerSideSortingExample extends StatefulWidget {
+  const ServerSideSortingExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => ServerSideSortingExampleState();
 }
 
 enum ColumnId { name, age }
 
-class MainWidgetState extends State<MainWidget> {
+class ServerSideSortingExampleState extends State<ServerSideSortingExample> {
   late DaviModel<Person> _model;
   bool _loading = true;
 
@@ -41,6 +34,7 @@ class MainWidgetState extends State<MainWidget> {
     loadData();
   }
 
+  /// Simulates data being loaded from the server
   void loadData([DaviSort? sort]) {
     Future<List<Person>>.delayed(const Duration(seconds: 1), () {
       List<Person> rows = [
@@ -90,7 +84,7 @@ class MainWidgetState extends State<MainWidget> {
   Widget build(BuildContext context) {
     return Davi(_model,
         tapToSortEnabled: !_loading,
-        lastRowWidget:
+        trailingWidget:
             _loading ? const Center(child: Text('Loading...')) : null);
   }
 }
