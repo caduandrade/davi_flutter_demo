@@ -10,14 +10,14 @@ class Person {
   final String? mobile;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class NullCellColorExample extends StatefulWidget {
+  const NullCellColorExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => NullCellColorExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class NullCellColorExampleState extends State<NullCellColorExample> {
   late DaviModel<Person> _model;
 
   @override
@@ -39,6 +39,7 @@ class MainWidgetState extends State<MainWidget> {
     ]);
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
@@ -47,4 +48,5 @@ class MainWidgetState extends State<MainWidget> {
                 nullValueColor: ((rowIndex, hovered) => Colors.grey[300]))),
         child: Davi<Person>(_model));
   }
+  //@demoflu_end:code
 }

@@ -1,13 +1,6 @@
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class RowHoverForegroundExample extends Example {
-  RowHoverForegroundExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/row_hover_foreground.dart');
-}
 
 class Person {
   Person(this.name, this.age, this.color);
@@ -17,14 +10,14 @@ class Person {
   final Color color;
 }
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class RowHoverForegroundExample extends StatefulWidget {
+  const RowHoverForegroundExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => RowHoverForegroundExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
+class RowHoverForegroundExampleState extends State<RowHoverForegroundExample> {
   late DaviModel<Person> _model;
 
   @override
@@ -44,10 +37,11 @@ class MainWidgetState extends State<MainWidget> {
       DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
       DaviColumn(name: 'Age', cellValue: (row,index) => row.age),
       DaviColumn(
-          name: 'Color', width: 66, cellBackground: (row) => row.data.color)
+          name: 'Color', width: 66, cellBackground: (row, index, hovered) => row.color)
     ]);
   }
 
+  //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
     return DaviTheme(
@@ -56,4 +50,5 @@ class MainWidgetState extends State<MainWidget> {
                 hoverForeground: (rowIndex) => Colors.blue.withOpacity(.2))),
         child: Davi<Person>(_model));
   }
+  //@demoflu_end:code
 }

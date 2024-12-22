@@ -1,53 +1,28 @@
+import 'dart:math';
+
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-class ThemeScrollbarsExample extends Example {
-  ThemeScrollbarsExample()
-      : super(
-            widget: const MainWidget(),
-            codeFile: 'lib/examples/theme_scrollbars_example.dart');
-}
 
-class Person {
-  Person(this.name, this.age);
 
-  final String name;
-  final int age;
-}
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class ThemeScrollbarsExample extends StatefulWidget {
+  const ThemeScrollbarsExample({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => MainWidgetState();
+  State<StatefulWidget> createState() => ThemeScrollbarsExampleState();
 }
 
-class MainWidgetState extends State<MainWidget> {
-  late DaviModel<Person> _model;
+class ThemeScrollbarsExampleState extends State<ThemeScrollbarsExample> {
+  late DaviModel<int> _model;
 
   @override
   void initState() {
     super.initState();
 
-    List<Person> rows = [
-      Person('Landon', 19),
-      Person('Sari', 22),
-      Person('Julian', 37),
-      Person('Carey', 39),
-      Person('Cadu', 43),
-      Person('Delmar', 72)
-    ];
-
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(
-          name: '',
-          pinStatus: PinStatus.left,
-          width: 30,
-          cellBuilder: (context, data) => const Icon(Icons.edit, size: 16)),
-      DaviColumn(name: 'Name', cellValue: (row,index) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row,index) => row.age)
-    ]);
+    Random random = Random();
+    List<int> rows = List.generate(100, (index)=>random.nextInt(999));
+    _model = DaviModel<int>(rows: rows, columns: List.generate(10, (index)=>DaviColumn(name: 'C$index', cellValue: (row,rowIndex)=>row+index)));
   }
 
   //@demoflu_start:code
@@ -65,7 +40,7 @@ class MainWidgetState extends State<MainWidget> {
                 pinnedHorizontalBorderColor: Colors.orange,
                 unpinnedHorizontalBorderColor: Colors.purple,
                 verticalBorderColor: Colors.pink)),
-        child: Davi<Person>(_model));
+        child: Davi<int>(_model));
   }
   //@demoflu_end:code
 }

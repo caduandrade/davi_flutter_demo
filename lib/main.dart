@@ -3,15 +3,21 @@ import 'package:davi_demo/column_width/column_width_page.dart';
 import 'package:davi_demo/get_started/get_started_page.dart';
 import 'package:davi_demo/infinite_scroll/infinite_scroll_page.dart';
 import 'package:davi_demo/macros.dart';
+import 'package:davi_demo/null_cell_color/null_cell_color_page.dart';
 import 'package:davi_demo/pinned_column/pinned_column_page.dart';
 import 'package:davi_demo/row_callbacks/row_callbacks_page.dart';
 import 'package:davi_demo/row_color/row_color_page.dart';
 import 'package:davi_demo/row_cursor/row_cursor_page.dart';
+import 'package:davi_demo/row_fill_height/row_fill_height_page.dart';
+import 'package:davi_demo/row_hover_color/row_hover_color_page.dart';
 import 'package:davi_demo/row_hover_listener/row_hover_listener_page.dart';
+import 'package:davi_demo/row_zebra_color/row_zebra_color_page.dart';
+import 'package:davi_demo/scrollbar_always_visible/scrollbar_always_visible_page.dart';
 import 'package:davi_demo/theme_dividers/theme_dividers_page.dart';
 import 'package:davi_demo/theme_header/theme_header_page.dart';
 import 'package:davi_demo/theme_hidden_header/theme_hidden_header_page.dart';
 import 'package:davi_demo/theme_row_color/theme_row_color_page.dart';
+import 'package:davi_demo/theme_scrollbars/theme_scrollbars_page.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
@@ -82,7 +88,7 @@ DemoMenuItem get _infiniteScroll =>
 // THEME
 
 DemoMenuItem get _theme =>
-    DemoMenuItem('Theme', children: [_themeDividers,_themeHeader, _themeRow]);
+    DemoMenuItem('Theme', children: [_themeDividers,_themeHeader, _themeRow,_themeScrollbar,_themeCell]);
 
 DemoMenuItem get _themeDividers => DemoMenuItem('Dividers thickness and color', page:()=>ThemeDividersPage());
 
@@ -90,9 +96,23 @@ DemoMenuItem get _themeHeader => DemoMenuItem('Header', page:()=>ThemeHeaderPage
 
 DemoMenuItem get _themeHiddenHeader => DemoMenuItem('Hidden header', page:()=>ThemeHiddenHeaderPage());
 
-DemoMenuItem get _themeRow => DemoMenuItem('Row',  children: [_themeRowColor]);
+DemoMenuItem get _themeRow => DemoMenuItem('Row',  children: [_themeRowColor,_themeRowZebraColor,_themeRowHoverColor,
+  _themeRowFillHeight]);
 
 DemoMenuItem get _themeRowColor => DemoMenuItem('Row color', page:()=>ThemeRowColorPage());
+
+DemoMenuItem get _themeRowZebraColor => DemoMenuItem('Row zebra color', page:()=>RowZebraColorPage());
+
+DemoMenuItem get _themeRowHoverColor => DemoMenuItem('Row hover color', page:()=>RowHoverColorPage());
+DemoMenuItem get _themeRowFillHeight => DemoMenuItem('Row fill height', page:()=>RowFillHeightPage());
+
+DemoMenuItem get _themeScrollbar => DemoMenuItem('Scrollbar',  page: ()=>ThemeScrollbarsPage(), children: [_themeScrollbarAlwaysVisible]);
+
+DemoMenuItem get _themeScrollbarAlwaysVisible => DemoMenuItem('Scrollbar always visible', page:()=>ScrollbarAlwaysVisiblePage());
+
+DemoMenuItem get _themeCell => DemoMenuItem('Cell',   children: [_themeNullCellColor]);
+
+DemoMenuItem get _themeNullCellColor => DemoMenuItem('Null cell color', page:()=>NullCellColorPage());
 
 
 // STYLE

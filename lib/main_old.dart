@@ -21,12 +21,7 @@ import 'package:davi_demo/theme_scrollbars/theme_scrollbars_example.dart';
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(DemoFluApp(
-    // maxSize : const Size(401, 191),
-      title: 'Davi (3.2.0)',
-      menuItems: _menuItems()));
-}
+
 
 List<DemoMenuItem> _menuItems() {
   var builder = DemoMenuItem.builder();
@@ -48,17 +43,6 @@ List<DemoMenuItem> _menuItems() {
     ..add('Always sorted', example: AlwaysSortedExample())
     ..indent(1)
     ..add('Theme')
-    ..indent(2)
-    ..add('Row')
-    ..indent(3)
-    ..add('Row zebra color', example: RowZebraColorExample())
-    ..add('Row hover background', example: RowHoverBackgroundExample())
-    ..add('Row hover foreground', example: RowHoverForegroundExample())
-    ..add('Row fill height', example: RowFillHeightExample())
-    ..indent(2)
-    ..add('Scrollbar', example: ThemeScrollbarsExample())
-    ..indent(3)
-    ..add('Scrollbar always visible', example: ScrollbarAlwaysVisibleExample())
     ..indent(2)
     ..add('Cell')
     ..indent(3)
