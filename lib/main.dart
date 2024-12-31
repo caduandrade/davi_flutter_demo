@@ -1,4 +1,5 @@
 import 'package:davi_demo/always_sorted/always_sorted_page.dart';
+import 'package:davi_demo/cell_bar/cell_bar_page.dart';
 import 'package:davi_demo/cell_edit/cell_edit_page.dart';
 import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
@@ -95,13 +96,16 @@ DemoMenuItem get _infiniteScroll =>
 // CELLS
 
 DemoMenuItem get _cells =>
-    DemoMenuItem('Cells', children: [_customCellWidget, _cellEdit]);
+    DemoMenuItem('Cells', children: [_customCellWidget, _cellEdit, _cellBar]);
 
 DemoMenuItem get _customCellWidget =>
     DemoMenuItem('Custom cell widget', page: () => CustomCellWidgetPage());
 
 DemoMenuItem get _cellEdit =>
     DemoMenuItem('Cell edit', page: () => CellEditPage());
+
+DemoMenuItem get _cellBar =>
+    DemoMenuItem('Percentage bar', page: () => CellBarPage());
 
 // SORT
 

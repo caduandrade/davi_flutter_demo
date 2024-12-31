@@ -7,7 +7,7 @@ class CustomCellWidgetExample extends Example {
   CustomCellWidgetExample()
       : super(
             widget: const MainWidget(),
-            codeFile: 'lib/examples/custom_cell_widget_example.dart');
+            codeFile: 'lib/examples/cell_bar_example.dart');
 }
 
 class Person {
@@ -43,7 +43,7 @@ class MainWidgetState extends State<MainWidget> {
       DaviColumn(
           name: 'Rate',
           width: 150,
-          cellBuilder: (context, row) => StarsWidget(stars: row.data.stars))
+          cellBuilder: (context, row) => StarsWidget(stars: row.data.value))
     ]);
   }
 
