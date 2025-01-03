@@ -10,11 +10,9 @@ class ThemeHiddenHeaderPage extends DemoFluPage {
         'lib/theme_hidden_header/theme_hidden_header_example.dart';
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections
-        .widget((context) => const ThemeHiddenHeaderExample(),
-            title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(source, discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const ThemeHiddenHeaderExample(),
+        title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

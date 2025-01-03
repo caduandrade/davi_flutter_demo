@@ -9,11 +9,9 @@ class ServerSideSortingPage extends DemoFluPage {
     final String source =
         'lib/server_side_sorting/server_side_sorting_example.dart';
 
-    sections
-        .widget((context) => const ServerSideSortingExample(),
-            title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(source, discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const ServerSideSortingExample(),
+        title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

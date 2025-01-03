@@ -9,10 +9,8 @@ class ThemeHeaderPage extends DemoFluPage {
     final String source = 'lib/theme_header/theme_header_example.dart';
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections
-        .widget((context) => const ThemeHeaderExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(source, discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const ThemeHeaderExample(), title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

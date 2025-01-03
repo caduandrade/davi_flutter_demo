@@ -30,9 +30,9 @@ class CellPainterExampleState extends State<CellPainterExample> {
       Person('Delmar', 0.3)
     ];
 
-    //@demoflu_start:code
     _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      //@demoflu_start:code
       DaviColumn(
           cellPadding: EdgeInsets.all(4),
           name: 'Value',
@@ -44,8 +44,8 @@ class CellPainterExampleState extends State<CellPainterExample> {
               paint,
             );
           })
+      //@demoflu_end:code
     ]);
-    //@demoflu_end:code
   }
 
   @override

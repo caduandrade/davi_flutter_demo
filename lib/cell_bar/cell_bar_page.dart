@@ -11,21 +11,18 @@ class CellBarPage extends DemoFluPage {
 
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections
-        .widget((context) => const CellBarExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(source, discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const CellBarExample(), title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
 
     sections.heading("Customization");
     source = 'lib/cell_bar/custom_cell_bar_example.dart';
 
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections
-        .widget((context) => const CustomCellBarExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(source, discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const CustomCellBarExample(),
+        title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

@@ -31,9 +31,9 @@ class ColumnStyleExampleState extends State<ColumnStyleExample> {
       Person('Delmar', 72)
     ];
 
-    //@demoflu_start:model
     _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      //@demoflu_start:model
       DaviColumn(
           name: 'Age',
           cellValue: (row, index) => row.age,
@@ -43,8 +43,8 @@ class ColumnStyleExampleState extends State<ColumnStyleExample> {
           cellTextStyle: (row, index, hovered) =>
               TextStyle(color: Colors.blue[700]!),
           cellBackground: (row, index, hovered) => Colors.blue[50])
+      //@demoflu_end:model
     ]);
-    //@demoflu_end:model
   }
 
   @override

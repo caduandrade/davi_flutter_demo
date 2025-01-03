@@ -31,10 +31,12 @@ class CustomCellWidgetExampleState extends State<CustomCellWidgetExample> {
     ];
     _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      //@demoflu_start:code
       DaviColumn(
           name: 'Rate',
           width: 150,
           cellWidget: (context, row, rowIndex) => StarsWidget(stars: row.stars))
+      //@demoflu_end:code
     ]);
   }
 

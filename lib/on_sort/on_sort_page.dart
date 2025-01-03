@@ -8,10 +8,8 @@ class OnSortPage extends DemoFluPage {
   void buildSections(BuildContext context, PageSections sections) {
     final String source = 'lib/on_sort/on_sort_example.dart';
 
-    sections
-        .widget((context) => const OnSortExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(source, discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const OnSortExample(), title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

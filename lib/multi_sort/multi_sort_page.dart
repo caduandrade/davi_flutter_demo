@@ -8,10 +8,8 @@ class MultiSortPage extends DemoFluPage {
   void buildSections(BuildContext context, PageSections sections) {
     final String source = 'lib/multi_sort/multi_sort_example.dart';
 
-    sections
-        .widget((context) => const MultiSortExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(source, discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const MultiSortExample(), title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

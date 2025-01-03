@@ -6,16 +6,15 @@ import 'package:flutter/widgets.dart';
 class RowHoverListenerPage extends DemoFluPage {
   @override
   void buildSections(BuildContext context, PageSections sections) {
-    sections.code('lib/row_hover_listener/row_hover_listener_example.dart',
-        mark: 'code', loadMode: LoadMode.readOnlyMarked);
+    final String source =
+        'lib/row_hover_listener/row_hover_listener_example.dart';
+    sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections
-        .widget((context) => const RowHoverListenerExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
+    sections.widget((context) => const RowHoverListenerExample(),
+        title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
 
     sections.console();
-
-    sections.code('lib/row_hover_listener/row_hover_listener_example.dart',
-        discardMarks: true, title: 'Full code:');
   }
 }

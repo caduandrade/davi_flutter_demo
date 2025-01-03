@@ -6,18 +6,16 @@ import 'package:flutter/widgets.dart';
 class PinnedColumnPage extends DemoFluPage {
   @override
   void buildSections(BuildContext context, PageSections sections) {
+    final String source = 'lib/pinned_column/pinned_column_example.dart';
     sections.text()
       ..add('A column with the pin status will remain always visible,')
       ..add(' regardless of horizontal scrolling.');
 
-    sections.code('lib/pinned_column/pinned_column_example.dart',
+    sections.code(source,
         mark: 'model', loadMode: LoadMode.readOnlyMarked, title: 'Model:');
 
-    sections
-        .widget((context) => const PinnedColumnExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code('lib/pinned_column/pinned_column_example.dart',
-        discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const PinnedColumnExample(), title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

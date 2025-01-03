@@ -8,7 +8,7 @@ class ColumnWidthPage extends DemoFluPage {
   void buildSections(BuildContext context, PageSections sections) {
     sections.text()
       ..add('The columns can be configured to either fit the available')
-      ..add(' space or be resizable, depending on the value of the enum.');
+      ..addStyled(text: ' space or be resizable, depending on the `ColumnWidthBehavior` enum.', boldDelimiter: '`');
 
     sections.infoBanner().addStyled(
         text:
@@ -28,7 +28,7 @@ class ColumnWidthPage extends DemoFluPage {
       ..add(' a column is laid out.');
 
     sections.text()
-      ..add(' For newly added columns, this behavior will apply during')
+      ..add('For newly added columns, this behavior will apply during')
       ..add(' their initial layout.')
       ..add(' Afterward, columns can be resized manually')
       ..add(' like any other.');

@@ -30,16 +30,16 @@ class CellBarExampleState extends State<CellBarExample> {
       Person('Delmar', 0.3)
     ];
 
-    //@demoflu_start:code
     _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      //@demoflu_start:code
       DaviColumn(
           cellPadding: EdgeInsets.all(4),
           name: 'Achievement',
           width: 150,
           cellBarValue: (row, rowIndex) => row.achievement)
+      //@demoflu_end:code
     ]);
-    //@demoflu_end:code
   }
 
   @override

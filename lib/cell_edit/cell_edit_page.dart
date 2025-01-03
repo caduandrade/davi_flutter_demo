@@ -6,11 +6,8 @@ import 'package:flutter/widgets.dart';
 class CellEditPage extends DemoFluPage {
   @override
   void buildSections(BuildContext context, PageSections sections) {
-    sections
-        .widget((context) => const CellEditExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code('lib/cell_edit/cell_edit_example.dart',
-        discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const CellEditExample(), title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: 'lib/cell_edit/cell_edit_example.dart');
   }
 }

@@ -9,10 +9,11 @@ class CustomCellWidgetPage extends DemoFluPage {
     final String source =
         'lib/custom_cell_widget/custom_cell_widget_example.dart';
 
-    sections
-        .widget((context) => const CustomCellWidgetExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
+    sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections.code(source, discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const CustomCellWidgetExample(),
+        title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

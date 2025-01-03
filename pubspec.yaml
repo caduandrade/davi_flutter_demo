@@ -86,5 +86,6 @@ flutter:
     - lib/server_side_sorting/
     - lib/cell_bar/
     - lib/cell_painter/
+    - lib/summary/
 
 

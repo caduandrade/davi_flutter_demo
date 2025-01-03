@@ -21,6 +21,7 @@ import 'package:davi_demo/row_hover_listener/row_hover_listener_page.dart';
 import 'package:davi_demo/row_zebra_color/row_zebra_color_page.dart';
 import 'package:davi_demo/scrollbar_always_visible/scrollbar_always_visible_page.dart';
 import 'package:davi_demo/server_side_sorting/server_side_sorting_page.dart';
+import 'package:davi_demo/summary/summary_page.dart';
 import 'package:davi_demo/theme_dividers/theme_dividers_page.dart';
 import 'package:davi_demo/theme_header/theme_header_page.dart';
 import 'package:davi_demo/theme_hidden_header/theme_hidden_header_page.dart';
@@ -64,7 +65,7 @@ void main() {
 }
 
 List<DemoMenuItem> get _rootMenus =>
-    [_getStarted, _columns, _rows, _cells, _sort, _theme, _style];
+    [_getStarted, _columns, _rows, _summary, _cells, _sort, _theme, _style];
 
 DemoMenuItem get _getStarted =>
     DemoMenuItem('Get started', page: () => GetStartedPage());
@@ -93,6 +94,10 @@ DemoMenuItem get _rowHoverListener =>
 
 DemoMenuItem get _infiniteScroll =>
     DemoMenuItem('Infinite scroll', page: () => InfiniteScrollPage());
+
+// SUMMARY
+
+DemoMenuItem get _summary => DemoMenuItem('Summary', page: () => SummaryPage());
 
 // CELLS
 

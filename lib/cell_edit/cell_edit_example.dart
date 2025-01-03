@@ -47,13 +47,13 @@ class CellEditExampleState extends State<CellEditExample> {
       DaviColumn(name: 'Value', cellValue: (row, index) => row.value),
       DaviColumn(
           name: 'Editable',
-          cellWidget: _buildField,
+          cellWidget: _fieldBuilder,
           cellBackground: (row, rowIndex, hovered) =>
               row.valid ? null : Colors.red[800])
     ]);
   }
 
-  Widget _buildField(BuildContext context, Person person, int rowIndex) {
+  Widget _fieldBuilder(BuildContext context, Person person, int rowIndex) {
     return TextFormField(
         initialValue: person.editable,
         style: TextStyle(color: person.valid ? Colors.black : Colors.white),

@@ -6,14 +6,11 @@ import 'package:flutter/widgets.dart';
 class RowColorPage extends DemoFluPage {
   @override
   void buildSections(BuildContext context, PageSections sections) {
-    sections.code('lib/row_color/row_color_example.dart',
-        mark: 'code', loadMode: LoadMode.readOnlyMarked);
+    final String source = 'lib/row_color/row_color_example.dart';
+    sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections
-        .widget((context) => const RowColorExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code('lib/row_color/row_color_example.dart',
-        discardMarks: true, title: 'Full code:');
+    sections.widget((context) => const RowColorExample(), title: 'Example:')
+      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..linkToSource(file: source);
   }
 }

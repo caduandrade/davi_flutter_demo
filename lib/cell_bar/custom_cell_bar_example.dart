@@ -30,9 +30,9 @@ class CustomCellBarExampleState extends State<CustomCellBarExample> {
       Person('Delmar', 0.3)
     ];
 
-    //@demoflu_start:code
     _model = DaviModel<Person>(rows: rows, columns: [
       DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+      //@demoflu_start:code
       DaviColumn(
           cellPadding: EdgeInsets.all(4),
           name: 'Achievement',
@@ -44,8 +44,8 @@ class CustomCellBarExampleState extends State<CustomCellBarExample> {
                 value = value.clamp(0.0, 1.0);
                 return Color.lerp(Colors.grey, Colors.green, value)!;
               }))
+      //@demoflu_end:code
     ]);
-    //@demoflu_end:code
   }
 
   @override
