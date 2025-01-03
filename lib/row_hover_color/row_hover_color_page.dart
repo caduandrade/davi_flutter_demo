@@ -17,9 +17,7 @@ class RowHoverColorPage extends DemoFluPage {
     sections
         .widget((context) => const RowHoverBackgroundExample(),
             title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(backgroundSource, discardMarks: true, title: 'Full code:');
+        ..runMacro(id: Macros.horizontalExample, context: context)..linkToSource(file: backgroundSource);
 
     sections.heading('Foreground');
 
@@ -31,8 +29,6 @@ class RowHoverColorPage extends DemoFluPage {
     sections
         .widget((context) => const RowHoverForegroundExample(),
             title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(foregroundSource, discardMarks: true, title: 'Full code:');
+        ..runMacro(id: Macros.horizontalExample, context: context)..linkToSource(file: foregroundSource);
   }
 }

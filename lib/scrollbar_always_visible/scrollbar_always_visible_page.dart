@@ -13,8 +13,6 @@ class ScrollbarAlwaysVisiblePage extends DemoFluPage {
     sections
         .widget((context) => const ScrollbarAlwaysVisibleExample(),
             title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
-
-    sections.code(source, discardMarks: true, title: 'Full code:');
+        ..runMacro(id: Macros.horizontalExample, context: context)..linkToSource(file: source);
   }
 }
