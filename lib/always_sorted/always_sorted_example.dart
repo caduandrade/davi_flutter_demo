@@ -32,19 +32,21 @@ class AlwaysSortedExampleState extends State<AlwaysSortedExample> {
       Person('Cadu', 43, 27.2),
       Person('Catherine', 43, 25.3)
     ];
-    _model = DaviModel<Person>(
+    _model = DaviModel(
         rows: rows,
         columns: [
-          DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
-          DaviColumn(name: 'Age', cellValue: (row, index) => row.age),
+          DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+          DaviColumn(name: 'Age', cellValue: (row, rowIndex) => row.age),
           DaviColumn(
-              name: 'Weight', width: 120, cellValue: (row, index) => row.weight)
+              name: 'Weight',
+              width: 120,
+              cellValue: (row, rowIndex) => row.weight)
         ],
-        alwaysSorted: true);
+        sortingMode: SortingMode.alwaysSorted);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Davi(_model);
+    return Davi(_model, visibleRowsCount: 6);
   }
 }

@@ -31,18 +31,18 @@ class ColumnStyleExampleState extends State<ColumnStyleExample> {
       Person('Delmar', 72)
     ];
 
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
       //@demoflu_start:model
       DaviColumn(
           name: 'Age',
-          cellValue: (row, index) => row.age,
+          cellValue: (row, rowIndex) => row.age,
           headerTextStyle: TextStyle(color: Colors.blue[900]!),
           headerAlignment: Alignment.center,
           cellAlignment: Alignment.center,
-          cellTextStyle: (row, index, hovered) =>
+          cellTextStyle: (row, rowIndex, hovered) =>
               TextStyle(color: Colors.blue[700]!),
-          cellBackground: (row, index, hovered) => Colors.blue[50])
+          cellBackground: (row, rowIndex, hovered) => Colors.blue[50])
       //@demoflu_end:model
     ]);
   }

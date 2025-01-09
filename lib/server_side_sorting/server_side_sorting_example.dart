@@ -25,11 +25,13 @@ class ServerSideSortingExampleState extends State<ServerSideSortingExample> {
   @override
   void initState() {
     super.initState();
-    _model = DaviModel<Person>(columns: [
+    _model = DaviModel(columns: [
       DaviColumn(
-          id: ColumnId.name, name: 'Name', cellValue: (row, index) => row.name),
+          id: ColumnId.name,
+          name: 'Name',
+          cellValue: (row, rowIndex) => row.name),
       DaviColumn(
-          id: ColumnId.age, name: 'Age', cellValue: (row, index) => row.age)
+          id: ColumnId.age, name: 'Age', cellValue: (row, rowIndex) => row.age)
     ], onSort: _onSort, ignoreDataComparators: true);
     loadData();
   }
@@ -75,16 +77,19 @@ class ServerSideSortingExampleState extends State<ServerSideSortingExample> {
   void _onSort(List<DaviColumn<Person>> sortedColumns) {
     setState(() {
       _loading = true;
-      _model.removeRows();
     });
-    loadData(sortedColumns.isNotEmpty ? sortedColumns.first.sort : null);
+    if (sortedColumns.isNotEmpty) {
+      loadData(
+          DaviSort(sortedColumns.first.id, sortedColumns.first.sortDirection!));
+    } else {
+      loadData();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Davi(_model,
-        tapToSortEnabled: !_loading,
-        trailingWidget:
+        placeholderWidget:
             _loading ? const Center(child: Text('Loading...')) : null);
   }
 }

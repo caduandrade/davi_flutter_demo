@@ -11,7 +11,7 @@ class CellPainterPage extends DemoFluPage {
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
     sections.widget((context) => const CellPainterExample(), title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.noHeightExample, context: context)
       ..linkToSource(file: source);
   }
 }

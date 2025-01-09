@@ -12,10 +12,10 @@ class PinnedColumnPage extends DemoFluPage {
       ..add(' regardless of horizontal scrolling.');
 
     sections.code(source,
-        mark: 'model', loadMode: LoadMode.readOnlyMarked, title: 'Model:');
+        mark: '1', loadMode: LoadMode.readOnlyMarked, title: 'Example:');
 
     sections.widget((context) => const PinnedColumnExample(), title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.noHeightExample, context: context)
       ..linkToSource(file: source);
   }
 }

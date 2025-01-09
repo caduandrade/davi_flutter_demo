@@ -31,8 +31,8 @@ class SummaryExampleState extends State<SummaryExample> {
     ];
 
     //@demoflu_start:1
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
       DaviColumn(
           cellPadding: EdgeInsets.all(4),
           name: 'Value',
@@ -48,6 +48,6 @@ class SummaryExampleState extends State<SummaryExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model);
+    return Davi<Person>(_model, visibleRowsCount: 6);
   }
 }

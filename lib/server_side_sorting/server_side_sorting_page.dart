@@ -11,7 +11,7 @@ class ServerSideSortingPage extends DemoFluPage {
 
     sections.widget((context) => const ServerSideSortingExample(),
         title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.example, context: context)
       ..linkToSource(file: source);
   }
 }

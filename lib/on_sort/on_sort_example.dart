@@ -32,11 +32,11 @@ class OnSortExampleState extends State<OnSortExample> {
       Person('Cadu', 43),
       Person('Catherine', 43)
     ];
-    _model = DaviModel<Person>(
+    _model = DaviModel(
         rows: rows,
         columns: [
-          DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
-          DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
+          DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+          DaviColumn(name: 'Age', cellValue: (row, rowIndex) => row.age)
         ],
         onSort: _onSort);
   }
@@ -48,7 +48,7 @@ class OnSortExampleState extends State<OnSortExample> {
       } else {
         final DaviColumn<Person> column = sortedColumns.first;
 
-        _sortedBy = 'sorted by ${column.name} / ${column.sort!.direction.name}';
+        _sortedBy = 'sorted by ${column.name} / ${column.sortDirection!.name}';
       }
     });
   }

@@ -31,9 +31,9 @@ class RowZebraColorExampleState extends State<RowZebraColorExample> {
       Person('Delmar', 72)
     ];
 
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', width: 120, cellValue: (row, index) => row.name),
-      DaviColumn(name: 'Age', width: 120, cellValue: (row, index) => row.age)
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', width: 120, cellValue: (row, rowIndex) => row.name),
+      DaviColumn(name: 'Age', width: 120, cellValue: (row, rowIndex) => row.age)
     ]);
   }
 

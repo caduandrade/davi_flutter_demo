@@ -8,7 +8,10 @@ class ColumnWidthPage extends DemoFluPage {
   void buildSections(BuildContext context, PageSections sections) {
     sections.text()
       ..add('The columns can be configured to either fit the available')
-      ..addStyled(text: ' space or be resizable, depending on the `ColumnWidthBehavior` enum.', boldDelimiter: '`');
+      ..addStyled(
+          text:
+              ' space or be resizable, depending on the `ColumnWidthBehavior` enum.',
+          boldDelimiter: '`');
 
     sections.infoBanner().addStyled(
         text:
@@ -45,7 +48,7 @@ class ColumnWidthPage extends DemoFluPage {
 
     sections
         .widget((context) => const ScrollableExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
+        .runMacro(id: Macros.example, context: context);
 
     sections.heading('ColumnWidthBehavior.fit');
 
@@ -61,6 +64,6 @@ class ColumnWidthPage extends DemoFluPage {
 
     sections
         .widget((context) => const FitExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
+        .runMacro(id: Macros.example, context: context);
   }
 }

@@ -32,13 +32,13 @@ class RowHoverBackgroundExampleState extends State<RowHoverBackgroundExample> {
       Person('Delmar', 72, Colors.green[200]!)
     ];
 
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row, index) => row.age),
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, rowIndex) => row.age),
       DaviColumn(
           name: 'Color',
           width: 66,
-          cellBackground: (row, index, hovered) => row.color)
+          cellBackground: (row, rowIndex, hovered) => row.color)
     ]);
   }
 

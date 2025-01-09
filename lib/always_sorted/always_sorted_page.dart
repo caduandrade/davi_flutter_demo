@@ -8,7 +8,7 @@ class AlwaysSortedPage extends DemoFluPage {
   void buildSections(BuildContext context, PageSections sections) {
     final String source = 'lib/always_sorted/always_sorted_example.dart';
     sections.widget((context) => const AlwaysSortedExample(), title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.noHeightExample, context: context)
       ..linkToSource(file: source);
   }
 }

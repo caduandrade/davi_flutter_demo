@@ -1,6 +1,7 @@
 import 'package:davi_demo/always_sorted/always_sorted_page.dart';
 import 'package:davi_demo/cell_bar/cell_bar_page.dart';
 import 'package:davi_demo/cell_edit/cell_edit_page.dart';
+import 'package:davi_demo/cell_merge/cell_merge_page.dart';
 import 'package:davi_demo/cell_painter/cell_painter_page.dart';
 import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
@@ -38,11 +39,15 @@ void main() {
       ..background = Colors.white
       ..solidBorder(color: Colors.grey[300]);
   });
-  app.macro.widget(Macros.horizontalExample, (context, section) {
+  app.macro.widget(Macros.noHeightExample, (context, section) {
     section
-      ..maxHeight = 350
       ..maxWidth = 600
       ..runMacro(id: Macros.styleExample, context: context);
+  });
+  app.macro.widget(Macros.example, (context, section) {
+    section
+      ..maxHeight = 350
+      ..runMacro(id: Macros.noHeightExample, context: context);
   });
   app.macro.group(Macros.tryOut, (context, section) {
     section
@@ -101,8 +106,13 @@ DemoMenuItem get _summary => DemoMenuItem('Summary', page: () => SummaryPage());
 
 // CELLS
 
-DemoMenuItem get _cells => DemoMenuItem('Cells',
-    children: [_customCellWidget, _cellEdit, _cellBar, _cellPainter]);
+DemoMenuItem get _cells => DemoMenuItem('Cells', children: [
+      _customCellWidget,
+      _cellEdit,
+      _cellBar,
+      _cellPainter,
+      _cellMerge
+    ]);
 
 DemoMenuItem get _customCellWidget =>
     DemoMenuItem('Custom cell widget', page: () => CustomCellWidgetPage());
@@ -115,6 +125,9 @@ DemoMenuItem get _cellBar =>
 
 DemoMenuItem get _cellPainter =>
     DemoMenuItem('Cell painter', page: () => CellPainterPage());
+
+DemoMenuItem get _cellMerge =>
+    DemoMenuItem('Cell merge', page: () => CellMergePage());
 
 // SORT
 

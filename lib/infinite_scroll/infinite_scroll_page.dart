@@ -8,7 +8,7 @@ class InfiniteScrollPage extends DemoFluPage {
   void buildSections(BuildContext context, PageSections sections) {
     sections.widget((context) => const InfiniteScrollExample(),
         title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.example, context: context)
       ..linkToSource(file: 'lib/infinite_scroll/infinite_scroll_example.dart');
   }
 }

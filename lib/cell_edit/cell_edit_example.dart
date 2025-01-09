@@ -42,9 +42,9 @@ class CellEditExampleState extends State<CellEditExample> {
       Person('Cadu', 5),
       Person('Delmar', 2)
     ];
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
-      DaviColumn(name: 'Value', cellValue: (row, index) => row.value),
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+      DaviColumn(name: 'Value', cellValue: (row, rowIndex) => row.value),
       DaviColumn(
           name: 'Editable',
           cellWidget: _fieldBuilder,
@@ -72,6 +72,6 @@ class CellEditExampleState extends State<CellEditExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model);
+    return Davi<Person>(_model,visibleRowsCount: 6);
   }
 }

@@ -87,5 +87,6 @@ flutter:
     - lib/cell_bar/
     - lib/cell_painter/
     - lib/summary/
+    - lib/cell_merge/
 
 

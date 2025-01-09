@@ -1,13 +1,6 @@
 import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
-class Person {
-  Person(this.name, this.age);
-
-  final String name;
-  final int age;
-}
-
 class PinnedColumnExample extends StatefulWidget {
   const PinnedColumnExample({Key? key}) : super(key: key);
 
@@ -16,35 +9,31 @@ class PinnedColumnExample extends StatefulWidget {
 }
 
 class PinnedColumnExampleState extends State<PinnedColumnExample> {
-  late DaviModel<Person> _model;
+  late DaviModel<String> _model;
 
   @override
   void initState() {
     super.initState();
 
-    List<Person> rows = [
-      Person('Landon', 19),
-      Person('Sari', 22),
-      Person('Julian', 37),
-      Person('Carey', 39),
-      Person('Cadu', 43),
-      Person('Delmar', 72)
-    ];
+    List<String> rows = ['Landon', 'Sari', 'Julian', 'Carey', 'Cadu', 'Delmar'];
 
-    //@demoflu_start:model
-    _model = DaviModel(rows: rows, columns: [
-      DaviColumn(
-          pinStatus: PinStatus.left,
-          width: 30,
-          cellIcon: (person, index) => CellIcon(Icons.edit, size: 16)),
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
-    ]);
-    //@demoflu_end:model
+    List<DaviColumn<String>> columns = [];
+    //@demoflu_start:1
+    columns.add(DaviColumn(
+        pinStatus: PinStatus.left,
+        width: 30,
+        cellIcon: (person, index) => CellIcon(Icons.edit, size: 16)));
+    //@demoflu_end:1
+    columns.add(DaviColumn(name: 'Name', cellValue: (row, rowIndex)=>row));
+    for (int i = 1; i < 10; i++) {
+      columns.add(DaviColumn(
+          name: 'Column $i', cellValue: (row, rowIndex) => row.hashCode+i));
+    }
+    _model = DaviModel(rows: rows, columns: columns);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model);
+    return Davi<String>(_model, visibleRowsCount: 6,);
   }
 }

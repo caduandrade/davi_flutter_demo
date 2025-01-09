@@ -10,9 +10,9 @@ class ScrollbarAlwaysVisiblePage extends DemoFluPage {
         'lib/scrollbar_always_visible/scrollbar_always_visible_example.dart';
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections
-        .widget((context) => const ScrollbarAlwaysVisibleExample(),
-            title: 'Example:')
-        ..runMacro(id: Macros.horizontalExample, context: context)..linkToSource(file: source);
+    sections.widget((context) => const ScrollbarAlwaysVisibleExample(),
+        title: 'Example:')
+      ..runMacro(id: Macros.example, context: context)
+      ..linkToSource(file: source);
   }
 }

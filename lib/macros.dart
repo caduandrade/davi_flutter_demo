@@ -1,1 +1,1 @@
-enum Macros { tryOut, horizontalExample, styleExample, textAfter }
+enum Macros { tryOut, example, noHeightExample, styleExample, textAfter }

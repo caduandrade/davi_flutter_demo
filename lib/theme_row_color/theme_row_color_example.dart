@@ -31,9 +31,9 @@ class ThemeRowColorExampleState extends State<ThemeRowColorExample> {
       Person('Delmar', 72)
     ];
 
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row, index) => row.age)
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+      DaviColumn(name: 'Age', cellValue: (row, rowIndex) => row.age)
     ]);
   }
 

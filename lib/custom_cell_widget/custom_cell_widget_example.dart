@@ -29,8 +29,8 @@ class CustomCellWidgetExampleState extends State<CustomCellWidgetExample> {
       Person('Cadu', 5),
       Person('Delmar', 2)
     ];
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
       //@demoflu_start:code
       DaviColumn(
           name: 'Rate',
@@ -42,7 +42,7 @@ class CustomCellWidgetExampleState extends State<CustomCellWidgetExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model);
+    return Davi<Person>(_model,visibleRowsCount: 6);
   }
 }
 

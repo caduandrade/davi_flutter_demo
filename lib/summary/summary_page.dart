@@ -12,7 +12,7 @@ class SummaryPage extends DemoFluPage {
     sections.code(source, mark: '2', loadMode: LoadMode.readOnlyMarked);
 
     sections.widget((context) => const SummaryExample(), title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.noHeightExample, context: context)
       ..linkToSource(file: source);
   }
 }

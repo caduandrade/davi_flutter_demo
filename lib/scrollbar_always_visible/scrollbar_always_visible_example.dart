@@ -28,7 +28,7 @@ class ScrollbarAlwaysVisibleExampleState
     super.initState();
     Random random = Random();
     List<int> rows = List.generate(5, (index) => random.nextInt(999));
-    _model = DaviModel<int>(
+    _model = DaviModel(
         rows: rows,
         columns: List.generate(
             3,

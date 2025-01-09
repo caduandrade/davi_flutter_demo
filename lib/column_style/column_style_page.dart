@@ -11,7 +11,7 @@ class ColumnStylePage extends DemoFluPage {
         mark: 'model', loadMode: LoadMode.readOnlyMarked, title: 'Model:');
 
     sections.widget((context) => const ColumnStyleExample(), title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.example, context: context)
       ..linkToSource(file: source);
   }
 }

@@ -10,7 +10,7 @@ class ThemeHeaderPage extends DemoFluPage {
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
     sections.widget((context) => const ThemeHeaderExample(), title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.example, context: context)
       ..linkToSource(file: source);
   }
 }

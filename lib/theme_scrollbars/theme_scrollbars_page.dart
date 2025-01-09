@@ -11,7 +11,7 @@ class ThemeScrollbarsPage extends DemoFluPage {
 
     sections
         .widget((context) => const ThemeScrollbarsExample(), title: 'Example:')
-        .runMacro(id: Macros.horizontalExample, context: context);
+        .runMacro(id: Macros.example, context: context);
 
     sections.code(source, discardMarks: true, title: 'Full code:');
   }

@@ -30,8 +30,8 @@ class CellPainterExampleState extends State<CellPainterExample> {
       Person('Delmar', 0.3)
     ];
 
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
       //@demoflu_start:code
       DaviColumn(
           cellPadding: EdgeInsets.all(4),
@@ -50,6 +50,6 @@ class CellPainterExampleState extends State<CellPainterExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model);
+    return Davi<Person>(_model,visibleRowsCount: 6);
   }
 }

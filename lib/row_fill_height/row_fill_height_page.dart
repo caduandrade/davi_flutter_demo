@@ -9,8 +9,9 @@ class RowFillHeightPage extends DemoFluPage {
     final String source = 'lib/row_fill_height/row_fill_height_example.dart';
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
-    sections
-        .widget((context) => const RowFillHeightExample(), title: 'Example:')
-        ..runMacro(id: Macros.horizontalExample, context: context)..linkToSource(file: source);
+    sections.widget((context) => const RowFillHeightExample(),
+        title: 'Example:')
+      ..runMacro(id: Macros.example, context: context)
+      ..linkToSource(file: source);
   }
 }

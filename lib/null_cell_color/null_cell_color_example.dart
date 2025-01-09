@@ -32,10 +32,10 @@ class NullCellColorExampleState extends State<NullCellColorExample> {
       Person('Delmar', '+22 222-222-222')
     ];
 
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
       DaviColumn(
-          name: 'Mobile', width: 150, cellValue: (row, index) => row.mobile)
+          name: 'Mobile', width: 150, cellValue: (row, rowIndex) => row.mobile)
     ]);
   }
 

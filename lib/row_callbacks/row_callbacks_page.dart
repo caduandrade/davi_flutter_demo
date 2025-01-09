@@ -10,7 +10,7 @@ class RowCallbacksPage extends DemoFluPage {
     sections.code(source, mark: 'code', loadMode: LoadMode.readOnlyMarked);
 
     sections.widget((context) => const RowCallbacksExample(), title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.example, context: context)
       ..linkToSource(file: source);
 
     sections.console();

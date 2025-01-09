@@ -14,7 +14,7 @@ class CellBarPage extends DemoFluPage {
     sections.infoBanner(text: 'The value must be a double between 0 and 1.');
 
     sections.widget((context) => const CellBarExample(), title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.noHeightExample, context: context)
       ..linkToSource(file: source);
 
     sections.heading("Customization");
@@ -24,7 +24,7 @@ class CellBarPage extends DemoFluPage {
 
     sections.widget((context) => const CustomCellBarExample(),
         title: 'Example:')
-      ..runMacro(id: Macros.horizontalExample, context: context)
+      ..runMacro(id: Macros.noHeightExample, context: context)
       ..linkToSource(file: source);
   }
 }

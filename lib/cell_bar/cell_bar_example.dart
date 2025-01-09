@@ -30,8 +30,8 @@ class CellBarExampleState extends State<CellBarExample> {
       Person('Delmar', 0.3)
     ];
 
-    _model = DaviModel<Person>(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, index) => row.name),
+    _model = DaviModel(rows: rows, columns: [
+      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
       //@demoflu_start:code
       DaviColumn(
           cellPadding: EdgeInsets.all(4),
@@ -44,6 +44,6 @@ class CellBarExampleState extends State<CellBarExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model);
+    return Davi<Person>(_model,visibleRowsCount: 6);
   }
 }
