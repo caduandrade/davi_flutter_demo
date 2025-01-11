@@ -42,21 +42,9 @@ class RowCallbacksExampleState extends State<RowCallbacksExample> {
   @override
   Widget build(BuildContext context) {
     return Davi<Person>(_model,
-        onRowTap: (person) => _onRowTap(person),
-        onRowSecondaryTap: (person) => _onRowSecondaryTap(person),
-        onRowDoubleTap: (person) => _onRowDoubleTap(person));
-  }
-
-  void _onRowTap(Person person) {
-    print('Tap on ${person.name}!');
-  }
-
-  void _onRowSecondaryTap(Person person) {
-    print('Secondary tap on ${person.name}!');
-  }
-
-  void _onRowDoubleTap(Person person) {
-    print('Double tap on ${person.name}!');
+        onRowTap: (person) => print('Tap on ${person.name}'),
+        onRowSecondaryTap: (person) => print('Secondary tap on ${person.name}'),
+        onRowDoubleTap: (person) => print('Double tap on ${person.name}'));
   }
   //@demoflu_end:code
 }

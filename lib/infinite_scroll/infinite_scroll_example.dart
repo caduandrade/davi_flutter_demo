@@ -13,8 +13,10 @@ class InfiniteScrollExample extends StatefulWidget {
 class Data {
   factory Data(int index) {
     Random random = Random();
-    return Data._(index, random.nextInt(99999).toRadixString(16),
-        random.nextInt(99999).toRadixString(16));
+    return Data._(
+        index,
+        random.nextInt(0xFFFFFF).toRadixString(16).toUpperCase(),
+        random.nextInt(0xFFFFFF).toRadixString(16).toUpperCase());
   }
 
   Data._(this.index, this.random1, this.random2);
