@@ -43,21 +43,22 @@ class CellEditExampleState extends State<CellEditExample> {
       Person('Delmar', 2)
     ];
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
-      DaviColumn(name: 'Value', cellValue: (row, rowIndex) => row.value),
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
+      DaviColumn(name: 'Value', cellValue: (params) => params.data.value),
       DaviColumn(
           name: 'Editable',
           cellWidget: _fieldBuilder,
-          cellBackground: (row, rowIndex, hovered) =>
-              row.valid ? null : Colors.red[800])
+          cellBackground: (params) =>
+              params.data.valid ? null : Colors.red[800])
     ]);
   }
 
-  Widget _fieldBuilder(BuildContext context, Person person, int rowIndex) {
+  Widget _fieldBuilder(WidgetBuilderParams<Person> params) {
     return TextFormField(
-        initialValue: person.editable,
-        style: TextStyle(color: person.valid ? Colors.black : Colors.white),
-        onChanged: (value) => _onFieldChange(value, person));
+        initialValue: params.data.editable,
+        style:
+            TextStyle(color: params.data.valid ? Colors.black : Colors.white),
+        onChanged: (value) => _onFieldChange(value, params.data));
   }
 
   void _onFieldChange(String value, Person person) {
@@ -72,6 +73,6 @@ class CellEditExampleState extends State<CellEditExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model,visibleRowsCount: 6);
+    return Davi<Person>(_model, visibleRowsCount: 6);
   }
 }

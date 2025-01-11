@@ -104,30 +104,30 @@ class CellMergeExampleState extends State<CellMergeExample> {
     _model = DaviModel(
         rows: rows,
         columns: [
-          DaviColumn(name: 'Time', cellValue: (row, rowIndex) => row.period),
+          DaviColumn(name: 'Time', cellValue: (params) => params.data.period),
           //@demoflu_start:1
           DaviColumn(
               name: 'Monday',
-              cellValue: (row, rowIndex) => row.mondayClass,
-              rowSpan: (row, rowIndex) => row.mondayDuration,
-              columnSpan: (row, rowIndex) => row.allWeek ? 5 : 1),
+              cellValue: (params) => params.data.mondayClass,
+              rowSpan: (params) => params.data.mondayDuration,
+              columnSpan: (params) => params.data.allWeek ? 5 : 1),
           //@demoflu_end:1
           DaviColumn(
               name: 'Tuesday',
-              cellValue: (row, rowIndex) => row.tuesdayClass,
-              rowSpan: (row, rowIndex) => row.thursdayDuration),
+              cellValue: (params) => params.data.tuesdayClass,
+              rowSpan: (params) => params.data.thursdayDuration),
           DaviColumn(
               name: 'Wednesday',
-              cellValue: (row, rowIndex) => row.wednesdayClass,
-              rowSpan: (row, rowIndex) => row.wednesdayDuration),
+              cellValue: (params) => params.data.wednesdayClass,
+              rowSpan: (params) => params.data.wednesdayDuration),
           DaviColumn(
               name: 'Thursday',
-              cellValue: (row, rowIndex) => row.thursdayClass,
-              rowSpan: (row, rowIndex) => row.thursdayDuration),
+              cellValue: (params) => params.data.thursdayClass,
+              rowSpan: (params) => params.data.thursdayDuration),
           DaviColumn(
               name: 'Friday',
-              cellValue: (row, rowIndex) => row.fridayClass,
-              rowSpan: (row, rowIndex) => row.fridayDuration)
+              cellValue: (params) => params.data.fridayClass,
+              rowSpan: (params) => params.data.fridayDuration)
           //@demoflu_end:model
         ],
         sortingMode: SortingMode.disabled);

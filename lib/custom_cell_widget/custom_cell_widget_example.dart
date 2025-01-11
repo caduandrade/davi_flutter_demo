@@ -30,19 +30,19 @@ class CustomCellWidgetExampleState extends State<CustomCellWidgetExample> {
       Person('Delmar', 2)
     ];
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
       //@demoflu_start:code
       DaviColumn(
           name: 'Rate',
           width: 150,
-          cellWidget: (context, row, rowIndex) => StarsWidget(stars: row.stars))
+          cellWidget: (params) => StarsWidget(stars: params.data.stars))
       //@demoflu_end:code
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model,visibleRowsCount: 6);
+    return Davi<Person>(_model, visibleRowsCount: 6);
   }
 }
 

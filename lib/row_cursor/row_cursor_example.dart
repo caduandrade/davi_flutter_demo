@@ -32,18 +32,17 @@ class RowCursorExampleState extends State<RowCursorExample> {
     ];
 
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row, rowIndex) => row.age)
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
+      DaviColumn(name: 'Age', cellValue: (params) => params.data.age)
     ]);
   }
 
   //@demoflu_start:code
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model, rowCursor: _rowCursor);
+    return Davi<Person>(_model,
+        rowCursor: (params) =>
+            params.data.age < 20 ? SystemMouseCursors.forbidden : null);
   }
-
-  MouseCursor? _rowCursor(Person person, int index, bool hovered) =>
-      person.age < 20 ? SystemMouseCursors.forbidden : null;
   //@demoflu_end:code
 }

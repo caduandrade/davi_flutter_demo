@@ -41,11 +41,11 @@ class CellMergeOverflowExampleState extends State<CellMergeOverflowExample> {
         columns: [
           DaviColumn(
               name: 'Value',
-              cellWidget: (context, row, rowIndex) => CustomPaint(
-                    painter: LinesPainter(color: row.color),
-                    child: Center(child: Text(row.name)),
+              cellWidget: (params) => CustomPaint(
+                    painter: LinesPainter(color: params.data.color),
+                    child: Center(child: Text(params.data.name)),
                   ),
-              rowSpan: (row, rowIndex) => row.rowSpan,
+              rowSpan: (params) => params.data.rowSpan,
               sortDirection: DaviSortDirection.descending,
               dataComparator: (valueA, valueB, rowA, rowB) =>
                   rowA.name.compareTo(rowB.name))

@@ -36,10 +36,9 @@ class ThemeDividerExampleState extends State<ThemeDividerExample> {
           name: '',
           pinStatus: PinStatus.left,
           width: 30,
-          cellWidget: (context, row, rowIndex) =>
-              const Icon(Icons.edit, size: 16)),
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row, rowIndex) => row.age)
+          cellWidget: (params) => const Icon(Icons.edit, size: 16)),
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
+      DaviColumn(name: 'Age', cellValue: (params) => params.data.age)
     ]);
   }
 

@@ -31,19 +31,19 @@ class CellBarExampleState extends State<CellBarExample> {
     ];
 
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
       //@demoflu_start:code
       DaviColumn(
           cellPadding: EdgeInsets.all(4),
           name: 'Achievement',
           width: 150,
-          cellBarValue: (row, rowIndex) => row.achievement)
+          cellBarValue: (params) => params.data.achievement)
       //@demoflu_end:code
     ]);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model,visibleRowsCount: 6);
+    return Davi<Person>(_model, visibleRowsCount: 6);
   }
 }

@@ -32,17 +32,16 @@ class ColumnStyleExampleState extends State<ColumnStyleExample> {
     ];
 
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
       //@demoflu_start:model
       DaviColumn(
           name: 'Age',
-          cellValue: (row, rowIndex) => row.age,
+          cellValue: (params) => params.data.age,
           headerTextStyle: TextStyle(color: Colors.blue[900]!),
           headerAlignment: Alignment.center,
           cellAlignment: Alignment.center,
-          cellTextStyle: (row, rowIndex, hovered) =>
-              TextStyle(color: Colors.blue[700]!),
-          cellBackground: (row, rowIndex, hovered) => Colors.blue[50])
+          cellTextStyle: (params) => TextStyle(color: Colors.blue[700]!),
+          cellBackground: (params) => Colors.blue[50])
       //@demoflu_end:model
     ]);
   }

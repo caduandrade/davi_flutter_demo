@@ -29,9 +29,9 @@ class ServerSideSortingExampleState extends State<ServerSideSortingExample> {
       DaviColumn(
           id: ColumnId.name,
           name: 'Name',
-          cellValue: (row, rowIndex) => row.name),
+          cellValue: (params) => params.data.name),
       DaviColumn(
-          id: ColumnId.age, name: 'Age', cellValue: (row, rowIndex) => row.age)
+          id: ColumnId.age, name: 'Age', cellValue: (params) => params.data.age)
     ], onSort: _onSort, ignoreDataComparators: true);
     loadData();
   }

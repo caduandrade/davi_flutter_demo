@@ -33,8 +33,8 @@ class RowCallbacksExampleState extends State<RowCallbacksExample> {
     ];
 
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row, rowIndex) => row.age)
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
+      DaviColumn(name: 'Age', cellValue: (params) => params.data.age)
     ]);
   }
 

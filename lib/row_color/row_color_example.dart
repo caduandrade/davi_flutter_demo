@@ -32,8 +32,8 @@ class RowColorExampleState extends State<RowColorExample> {
     ];
 
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
-      DaviColumn(name: 'Age', cellValue: (row, rowIndex) => row.age)
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
+      DaviColumn(name: 'Age', cellValue: (params) => params.data.age)
     ]);
   }
 
@@ -43,10 +43,10 @@ class RowColorExampleState extends State<RowColorExample> {
     return Davi<Person>(_model, rowColor: _rowColor);
   }
 
-  Color? _rowColor(Person person, int index, bool hovered) {
-    if (person.age < 20) {
+  Color? _rowColor(RowColorParams<Person> params) {
+    if (params.data.age < 20) {
       return Colors.green[50]!;
-    } else if (person.age > 30 && person.age < 50) {
+    } else if (params.data.age > 30 && params.data.age < 50) {
       return Colors.orange[50]!;
     }
     return null;

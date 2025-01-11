@@ -24,7 +24,7 @@ class ThemeScrollbarsExampleState extends State<ThemeScrollbarsExample> {
         columns: List.generate(
             10,
             (index) => DaviColumn(
-                name: 'C$index', cellValue: (row, rowIndex) => row + index)));
+                name: 'C$index', cellValue: (params) => params.data + index)));
   }
 
   //@demoflu_start:code

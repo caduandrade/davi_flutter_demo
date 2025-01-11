@@ -22,18 +22,21 @@ class PinnedColumnExampleState extends State<PinnedColumnExample> {
     columns.add(DaviColumn(
         pinStatus: PinStatus.left,
         width: 30,
-        cellIcon: (person, index) => CellIcon(Icons.edit, size: 16)));
+        cellIcon: (params) => CellIcon(Icons.edit, size: 16)));
     //@demoflu_end:1
-    columns.add(DaviColumn(name: 'Name', cellValue: (row, rowIndex)=>row));
+    columns.add(DaviColumn(name: 'Name', cellValue: (params) => params.data));
     for (int i = 1; i < 10; i++) {
       columns.add(DaviColumn(
-          name: 'Column $i', cellValue: (row, rowIndex) => row.hashCode+i));
+          name: 'Column $i', cellValue: (params) => params.data.hashCode + i));
     }
     _model = DaviModel(rows: rows, columns: columns);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Davi<String>(_model, visibleRowsCount: 6,);
+    return Davi<String>(
+      _model,
+      visibleRowsCount: 6,
+    );
   }
 }

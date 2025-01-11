@@ -33,9 +33,9 @@ class InfiniteScrollExampleState extends State<InfiniteScrollExample> {
     super.initState();
     List<Data> rows = List.generate(30, (index) => Data(index));
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Index', cellValue: (row, rowIndex) => row.index),
-      DaviColumn(name: 'Random 1', cellValue: (row, rowIndex) => row.random1),
-      DaviColumn(name: 'Random 2', cellValue: (row, rowIndex) => row.random2)
+      DaviColumn(name: 'Index', cellValue: (params) => params.data.index),
+      DaviColumn(name: 'Random 1', cellValue: (params) => params.data.random1),
+      DaviColumn(name: 'Random 2', cellValue: (params) => params.data.random2)
     ]);
   }
 

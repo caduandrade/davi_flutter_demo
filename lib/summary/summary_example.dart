@@ -32,11 +32,11 @@ class SummaryExampleState extends State<SummaryExample> {
 
     //@demoflu_start:1
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (row, rowIndex) => row.name),
+      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
       DaviColumn(
           cellPadding: EdgeInsets.all(4),
           name: 'Value',
-          cellValue: (row, rowIndex) => row.value,
+          cellValue: (params) => params.data.value,
           summary: (context) => Text('$_valueSum'))
     ]);
     //@demoflu_end:1

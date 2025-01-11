@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:davi/davi.dart';
-import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -33,7 +32,7 @@ class ScrollbarAlwaysVisibleExampleState
         columns: List.generate(
             3,
             (index) => DaviColumn(
-                name: 'C$index', cellValue: (row, rowIndex) => row + index)));
+                name: 'C$index', cellValue: (params) => params.data + index)));
   }
 
   //@demoflu_start:code
