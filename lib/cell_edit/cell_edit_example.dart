@@ -1,24 +1,16 @@
+import 'dart:math';
+
 import 'package:davi/davi.dart';
 import 'package:flutter/material.dart';
 
-class Person {
-  Person(this.name, this.value);
+class Row {
+  Row(this.id);
 
-  final String name;
-  final int value;
+  final String id;
 
-  bool _valid = true;
+  bool get valid => editable.length < 6;
 
-  bool get valid => _valid;
-
-  String _editable = '';
-
-  String get editable => _editable;
-
-  set editable(String value) {
-    _editable = value;
-    _valid = _editable.length < 6;
-  }
+  String editable = '';
 }
 
 class CellEditExample extends StatefulWidget {
@@ -29,50 +21,49 @@ class CellEditExample extends StatefulWidget {
 }
 
 class CellEditExampleState extends State<CellEditExample> {
-  late DaviModel<Person> _model;
+  late DaviModel<Row> _model;
 
   @override
   void initState() {
     super.initState();
-    List<Person> rows = [
-      Person('Landon', 1),
-      Person('Sari', 0),
-      Person('Julian', 2),
-      Person('Carey', 4),
-      Person('Cadu', 5),
-      Person('Delmar', 2)
-    ];
+    Random random = Random();
+    List<Row> rows = List.generate(
+        100,
+        (index) =>
+            Row(random.nextInt(0xFFFFFF).toRadixString(16).toUpperCase()));
     _model = DaviModel(rows: rows, columns: [
-      DaviColumn(name: 'Name', cellValue: (params) => params.data.name),
-      DaviColumn(name: 'Value', cellValue: (params) => params.data.value),
+      DaviColumn(name: 'ID', cellValue: (params) => params.data.id),
+      //@demoflu_start:1
       DaviColumn(
           name: 'Editable',
           cellWidget: _fieldBuilder,
           cellBackground: (params) =>
               params.data.valid ? null : Colors.red[800])
+      //@demoflu_end:1
     ]);
   }
 
-  Widget _fieldBuilder(WidgetBuilderParams<Person> params) {
+  //@demoflu_start:2
+  Widget _fieldBuilder(WidgetBuilderParams<Row> params) {
     return TextFormField(
+        key: params.localKey,
         initialValue: params.data.editable,
         style:
             TextStyle(color: params.data.valid ? Colors.black : Colors.white),
-        onChanged: (value) => _onFieldChange(value, params.data));
+        onChanged: (value) => _onFieldChange(value, params));
   }
 
-  void _onFieldChange(String value, Person person) {
-    final wasValid = person.valid;
-    person.editable = value;
-    if (wasValid != person.valid) {
-      setState(() {
-        // rebuild
-      });
+  void _onFieldChange(String value, WidgetBuilderParams<Row> params) {
+    final wasValid = params.data.valid;
+    params.data.editable = value;
+    if (wasValid != params.data.valid) {
+      params.rebuildCallback();
     }
   }
+  //@demoflu_end:2
 
   @override
   Widget build(BuildContext context) {
-    return Davi<Person>(_model, visibleRowsCount: 6);
+    return Davi<Row>(_model, visibleRowsCount: 6);
   }
 }
