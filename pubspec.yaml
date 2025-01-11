@@ -29,8 +29,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  demoflu: #^2.4.0
-    path: ../demoflu
+  demoflu: ^2.5.0
+    #path: ../demoflu
   davi: #^3.2.0
     path: ../davi_flutter
 

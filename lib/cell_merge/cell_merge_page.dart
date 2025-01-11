@@ -20,7 +20,9 @@ class CellMergePage extends DemoFluPage {
             _cellCollisionBehaviorItem(CellCollisionBehavior.overlap,
                 'Allows all colliding cells to be rendered, resulting in visual overlap.'),
             _cellCollisionBehaviorItem(CellCollisionBehavior.ignore,
-                'Ignores the colliding cell and does not render it.')
+                'Ignores the colliding cell and does not render it.'),
+            _cellCollisionBehaviorItem(CellCollisionBehavior.error,
+                'Throws an error when a collision is detected.')
           ],
         ));
   }
