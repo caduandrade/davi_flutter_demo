@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 3.2.0
+version: 4.0.0
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
@@ -29,9 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  demoflu: ^1.0.0
+  demoflu: ^2.5.0
     #path: ../demoflu
-  davi: ^3.2.0
+  davi: ^4.0.0-rc.1
     #path: ../davi_flutter
 
 
@@ -44,7 +44,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.1
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -59,30 +59,34 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/examples/
+    - lib/get_started/
+    - lib/column_width/
+    - lib/column_style/
+    - lib/pinned_column/
+    - lib/row_color/
+    - lib/row_cursor/
+    - lib/row_callbacks/
+    - lib/row_hover_listener/
+    - lib/row_zebra_color/
+    - lib/theme_scrollbars/
+    - lib/theme_dividers/
+    - lib/theme_header/
+    - lib/theme_hidden_header/
+    - lib/theme_row_color/
+    - lib/on_sort/
+    - lib/always_sorted/
+    - lib/cell_edit/
+    - lib/custom_cell_widget/
+    - lib/infinite_scroll/
+    - lib/multi_sort/
+    - lib/null_cell_color/
+    - lib/row_fill_height/
+    - lib/row_hover_color/
+    - lib/scrollbar_always_visible/
+    - lib/server_side_sorting/
+    - lib/cell_bar/
+    - lib/cell_painter/
+    - lib/summary/
+    - lib/cell_merge/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware.
 
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
