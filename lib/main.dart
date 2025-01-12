@@ -179,6 +179,7 @@ DemoMenuItem get _themeRowZebraColor =>
 
 DemoMenuItem get _themeRowHoverColor =>
     DemoMenuItem('Row hover color', page: () => RowHoverColorPage());
+
 DemoMenuItem get _themeRowFillHeight =>
     DemoMenuItem('Row fill height', page: () => RowFillHeightPage());
 

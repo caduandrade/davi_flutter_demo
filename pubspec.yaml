@@ -31,8 +31,8 @@ dependencies:
     sdk: flutter
   demoflu: ^2.5.0
     #path: ../demoflu
-  davi: #^3.2.0
-    path: ../davi_flutter
+  davi: ^4.0.0-rc.1
+    #path: ../davi_flutter
 
 
 dev_dependencies:

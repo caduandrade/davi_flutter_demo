@@ -52,10 +52,11 @@ packages:
   davi:
     dependency: "direct main"
     description:
-      path: "../davi_flutter"
-      relative: true
-    source: path
-    version: "3.5.0"
+      name: davi
+      sha256: "30d3b734d6861c449fae25e289865c88a2110bc325d8c686defbff185580eb52"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.0-rc.1"
   demoflu:
     dependency: "direct main"
     description:
