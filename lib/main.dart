@@ -2,6 +2,7 @@ import 'package:davi_demo/always_sorted/always_sorted_page.dart';
 import 'package:davi_demo/cell_bar/cell_bar_page.dart';
 import 'package:davi_demo/cell_edit/cell_edit_page.dart';
 import 'package:davi_demo/cell_painter/cell_painter_page.dart';
+import 'package:davi_demo/column_auto_size/column_auto_size_page.dart';
 import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
 import 'package:davi_demo/custom_cell_widget/custom_cell_page.dart';
@@ -78,10 +79,13 @@ DemoMenuItem get _getStarted =>
 // COLUMNS
 
 DemoMenuItem get _columns => DemoMenuItem('Columns',
-    children: [_columnWidth, _pinnedColumn, _headerBuilder]);
+    children: [_columnWidth, _columnAutoSize, _pinnedColumn, _headerBuilder]);
 
 DemoMenuItem get _columnWidth =>
     DemoMenuItem('Column width', page: () => ColumnWidthPage());
+
+DemoMenuItem get _columnAutoSize =>
+    DemoMenuItem('Auto size', page: () => ColumnAutoSizePage());
 
 DemoMenuItem get _pinnedColumn =>
     DemoMenuItem('Pinned column', page: () => PinnedColumnPage());

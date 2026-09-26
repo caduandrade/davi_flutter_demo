@@ -61,6 +61,7 @@ flutter:
   assets:
     - lib/get_started/
     - lib/column_width/
+    - lib/column_auto_size/
     - lib/column_style/
     - lib/pinned_column/
     - lib/header_builder/
