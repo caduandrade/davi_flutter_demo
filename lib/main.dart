@@ -6,6 +6,7 @@ import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
 import 'package:davi_demo/custom_cell_widget/custom_cell_page.dart';
 import 'package:davi_demo/get_started/get_started_page.dart';
+import 'package:davi_demo/header_builder/header_builder_page.dart';
 import 'package:davi_demo/infinite_scroll/infinite_scroll_page.dart';
 import 'package:davi_demo/macros.dart';
 import 'package:davi_demo/multi_sort/multi_sort_page.dart';
@@ -76,14 +77,17 @@ DemoMenuItem get _getStarted =>
 
 // COLUMNS
 
-DemoMenuItem get _columns =>
-    DemoMenuItem('Columns', children: [_columnWidth, _pinnedColumn]);
+DemoMenuItem get _columns => DemoMenuItem('Columns',
+    children: [_columnWidth, _pinnedColumn, _headerBuilder]);
 
 DemoMenuItem get _columnWidth =>
     DemoMenuItem('Column width', page: () => ColumnWidthPage());
 
 DemoMenuItem get _pinnedColumn =>
     DemoMenuItem('Pinned column', page: () => PinnedColumnPage());
+
+DemoMenuItem get _headerBuilder =>
+    DemoMenuItem('Header builder', page: () => HeaderBuilderPage());
 
 // ROWS
 

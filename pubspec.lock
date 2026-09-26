@@ -55,7 +55,7 @@ packages:
       path: "../davi_flutter"
       relative: true
     source: path
-    version: "5.0.0-beta.1"
+    version: "5.0.0-beta.2"
   demoflu:
     dependency: "direct main"
     description:

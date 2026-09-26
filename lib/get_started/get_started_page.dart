@@ -10,7 +10,7 @@ class GetStartedPage extends DemoFluPage {
     String source = 'lib/get_started/get_started_example.dart';
 
     sections.text(
-        text: 'Davi can be used in two modes. In the controlled mode, a'
+        text: 'Davi can be used in two modes. In the model mode, a'
             ' DaviModel owns the rows and takes care of them, including'
             ' sorting. In the builder mode, the rows come from outside'
             ' (a State, a Bloc, a ChangeNotifier, etc.) and Davi only'
@@ -22,7 +22,7 @@ class GetStartedPage extends DemoFluPage {
 
     sections.code(source, mark: 'logic', loadMode: LoadMode.readOnlyMarked);
 
-    sections.heading('Controlled mode');
+    sections.heading('Model mode');
 
     sections.text(
         text: 'Define a model that holds the rows and configures what data'

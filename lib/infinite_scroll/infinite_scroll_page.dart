@@ -7,7 +7,7 @@ import 'package:flutter/widgets.dart';
 class InfiniteScrollPage extends DemoFluPage {
   @override
   void buildSections(BuildContext context, PageSections sections) {
-    sections.heading('Controlled mode');
+    sections.heading('Model mode');
 
     sections.text(
         text: 'New rows are added to the model when the trailing widget'

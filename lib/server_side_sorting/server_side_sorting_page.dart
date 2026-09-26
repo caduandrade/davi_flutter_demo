@@ -21,7 +21,7 @@ class ServerSideSortingPage extends DemoFluPage {
           file:
               'lib/server_side_sorting/server_side_sorting_builder_example.dart');
 
-    sections.heading('Controlled mode');
+    sections.heading('Model mode');
 
     sections.text(
         text: 'The model ignores the column comparators and onSort replaces'
