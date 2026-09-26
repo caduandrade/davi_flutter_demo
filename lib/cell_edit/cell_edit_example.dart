@@ -36,6 +36,7 @@ class CellEditExampleState extends State<CellEditExample> {
       //@demoflu_start:1
       DaviColumn(
           name: 'Editable',
+          cellFocusTraversalEnabled: true,
           cellWidget: _fieldBuilder,
           cellBackground: (params) =>
               params.data.valid ? null : Colors.red[800])

@@ -1,7 +1,6 @@
 import 'package:davi_demo/always_sorted/always_sorted_page.dart';
 import 'package:davi_demo/cell_bar/cell_bar_page.dart';
 import 'package:davi_demo/cell_edit/cell_edit_page.dart';
-import 'package:davi_demo/cell_merge/cell_merge_page.dart';
 import 'package:davi_demo/cell_painter/cell_painter_page.dart';
 import 'package:davi_demo/column_style/column_style_page.dart';
 import 'package:davi_demo/column_width/column_width_page.dart';
@@ -32,7 +31,7 @@ import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  DemoFluApp app = DemoFluApp(title: 'Davi (4.0.0)', rootMenus: _rootMenus);
+  DemoFluApp app = DemoFluApp(title: 'Davi (5.0.0)', rootMenus: _rootMenus);
   app.macro.widget(Macros.styleExample, (context, section) {
     section
       ..padding = const EdgeInsets.all(10)
@@ -111,7 +110,6 @@ DemoMenuItem get _cells => DemoMenuItem('Cells', children: [
       _cellEdit,
       _cellBar,
       _cellPainter,
-      _cellMerge
     ]);
 
 DemoMenuItem get _customCellWidget =>
@@ -125,9 +123,6 @@ DemoMenuItem get _cellBar =>
 
 DemoMenuItem get _cellPainter =>
     DemoMenuItem('Cell painter', page: () => CellPainterPage());
-
-DemoMenuItem get _cellMerge =>
-    DemoMenuItem('Cell merge', page: () => CellMergePage());
 
 // SORT
 
